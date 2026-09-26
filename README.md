@@ -26,11 +26,23 @@ It runs entirely in the browser — no build step, no server, no account. Your p
 
 `icons/` holds the 12 skill icons drawn for this project (sword, spear, axe, bow, brawling, white and black magic, authority, heavy armor, riding, flying, infantry): one 24×24 SVG per skill plus `sprite.svg` with all of them as `<symbol id="i-…">`. They use `fill="currentColor"`, so they take the text colour; only the two tomes keep fixed covers (white magic is a white book, black magic a dark one). Open `icons/preview.html` to see them all. Simplified shapes after the game's skill icons, drawn for this project, not copies; MIT like the rest.
 
+## Files
+
+Plain HTML, CSS and JavaScript, no build step and no libraries:
+
+- `index.html` — the page: markup, the flags and the skill icon sprite.
+- `css/style.css` — the look, light and dark.
+- `js/i18n.js` — languages: switching, the Ukrainian and English texts, the fixed game terms (skills, stats, tiers) of every language.
+- `js/data.js` — game data: the lords, every fighter (home squad, strengths, growths, how each path recruits them), the class tiers, the tournament teams.
+- `js/app.js` — the planner: saved state and plans, rules, ratings, drawing the page.
+- `js/l10n/<code>.js` — one file per language (`de.js`, `fr.js`, …), one phrase per line as `"English text":"translation"`. A language's file loads only when its flag is picked, so English and Ukrainian load no translation file at all. To fix a translation, edit the text after the colon.
+- `icons/` — the skill icons (see above).
+
 ## Use it
 
 Open `index.html` in a browser, or publish it with GitHub Pages:
 
-1. Create a new repository on GitHub and upload these files (`index.html`, `README.md`, `LICENSE`, `.nojekyll`).
+1. Create a new repository on GitHub and upload all the files and folders (`index.html`, `css/`, `js/`, `icons/`, `README.md`, `LICENSE`, `.nojekyll`).
 2. In the repository go to **Settings → Pages**.
 3. Under **Build and deployment**, choose **Deploy from a branch**, branch `main`, folder `/ (root)`, and save.
 4. After a minute the planner is live at `https://<your-username>.github.io/<repository-name>/`.
