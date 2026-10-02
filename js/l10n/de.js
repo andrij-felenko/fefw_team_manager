@@ -333,5 +333,8 @@ L10N["de"]={
 "Load plans from a file · replaces all four plans here":"Pläne aus einer Datei laden · ersetzt alle vier Pläne hier",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"Pläne aus dieser Datei laden? Sie ersetzen alle vier Pläne hier – exportiere deine vorher, wenn du sie behalten willst.",
 "This file isn't a planner export.":"Diese Datei ist kein Export des Planers.",
-"Save slots":"Speicherplätze"
+"Save slots":"Speicherplätze",
+"Recruiting on each path (★ soonest)":"Rekrutierung auf jeder Route (★ am frühesten)",
+"Sooner on another path":"Auf einer anderen Route früher",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Ruhm wächst langsam: etwa 4 bis Kap. 5, 8 bis Kap. 8, 10 bis Kap. 10"
 };

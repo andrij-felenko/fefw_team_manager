@@ -333,5 +333,8 @@ L10N["ro"]={
 "Load plans from a file · replaces all four plans here":"Încarcă planuri dintr-un fișier · înlocuiește toate cele patru planuri de aici",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"Încarci planurile din acest fișier? Vor înlocui toate cele patru planuri de aici; exportă-le întâi pe ale tale dacă vrei să le păstrezi.",
 "This file isn't a planner export.":"Acest fișier nu este un export al planificatorului.",
-"Save slots":"Sloturi de salvare"
+"Save slots":"Sloturi de salvare",
+"Recruiting on each path (★ soonest)":"Recrutarea pe fiecare rută (★ cel mai devreme)",
+"Sooner on another path":"Mai devreme pe altă rută",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Renumele crește încet: cam 4 la Cap. 5, 8 la Cap. 8, 10 la Cap. 10"
 };

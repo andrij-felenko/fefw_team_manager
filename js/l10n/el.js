@@ -333,5 +333,8 @@ L10N["el"]={
 "Load plans from a file · replaces all four plans here":"Φόρτωση πλάνων από αρχείο · αντικαθιστά και τα τέσσερα πλάνα εδώ",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"Να φορτωθούν τα πλάνα από αυτό το αρχείο; Θα αντικαταστήσουν και τα τέσσερα πλάνα εδώ — κάνε πρώτα εξαγωγή των δικών σου, αν θέλεις να τα κρατήσεις.",
 "This file isn't a planner export.":"Αυτό το αρχείο δεν είναι εξαγωγή του σχεδιαστή.",
-"Save slots":"Θέσεις αποθήκευσης"
+"Save slots":"Θέσεις αποθήκευσης",
+"Recruiting on each path (★ soonest)":"Στρατολόγηση σε κάθε διαδρομή (★ η νωρίτερη)",
+"Sooner on another path":"Νωρίτερα σε άλλη διαδρομή",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Η φήμη ανεβαίνει αργά: περίπου 4 στο Κεφ. 5, 8 στο Κεφ. 8, 10 στο Κεφ. 10"
 };

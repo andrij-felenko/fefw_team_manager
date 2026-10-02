@@ -333,5 +333,8 @@ L10N["fi"]={
 "Load plans from a file · replaces all four plans here":"Lataa suunnitelmat tiedostosta · korvaa kaikki neljä suunnitelmaa täällä",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"Ladataanko suunnitelmat tästä tiedostosta? Ne korvaavat kaikki neljä suunnitelmaa täällä – vie omasi ensin, jos haluat säilyttää ne.",
 "This file isn't a planner export.":"Tämä tiedosto ei ole suunnittelijan vientitiedosto.",
-"Save slots":"Tallennuspaikat"
+"Save slots":"Tallennuspaikat",
+"Recruiting on each path (★ soonest)":"Värväys kullakin reitillä (★ aikaisin)",
+"Sooner on another path":"Aiemmin toisella reitillä",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Maine kasvaa hitaasti: noin 4 luvussa 5, 8 luvussa 8, 10 luvussa 10"
 };

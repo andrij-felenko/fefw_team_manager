@@ -333,5 +333,8 @@ L10N["cy"]={
 "Load plans from a file · replaces all four plans here":"Llwytho cynlluniau o ffeil · yn disodli'r pedwar cynllun sydd yma",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"Llwytho'r cynlluniau o'r ffeil hon? Byddan nhw'n disodli'r pedwar cynllun sydd yma — allforiwch eich rhai chi yn gyntaf os ydych am eu cadw.",
 "This file isn't a planner export.":"Nid allforiad o'r cynllunydd yw'r ffeil hon.",
-"Save slots":"Slotiau cadw"
+"Save slots":"Slotiau cadw",
+"Recruiting on each path (★ soonest)":"Recriwtio ar bob llwybr (★ cynharaf)",
+"Sooner on another path":"Yn gynharach ar lwybr arall",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Mae bri'n codi'n araf: tua 4 erbyn Pen. 5, 8 erbyn Pen. 8, 10 erbyn Pen. 10"
 };

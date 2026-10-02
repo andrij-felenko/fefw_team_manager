@@ -333,5 +333,8 @@ L10N["es"]={
 "Load plans from a file · replaces all four plans here":"Cargar planes desde un archivo · sustituye los cuatro planes de aquí",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"¿Cargar los planes de este archivo? Sustituirán los cuatro planes de aquí; exporta antes los tuyos si quieres conservarlos.",
 "This file isn't a planner export.":"Este archivo no es una exportación del planificador.",
-"Save slots":"Ranuras de guardado"
+"Save slots":"Ranuras de guardado",
+"Recruiting on each path (★ soonest)":"Reclutamiento en cada ruta (★ la más temprana)",
+"Sooner on another path":"Antes en otra ruta",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"El renombre sube despacio: unos 4 en el Cap. 5, 8 en el Cap. 8, 10 en el Cap. 10"
 };

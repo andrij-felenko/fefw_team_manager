@@ -333,5 +333,8 @@ L10N["nb"]={
 "Load plans from a file · replaces all four plans here":"Last inn planer fra en fil · erstatter alle fire planene her",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"Laste inn planene fra denne filen? De erstatter alle fire planene her – eksporter dine først hvis du vil beholde dem.",
 "This file isn't a planner export.":"Denne filen er ikke en eksport fra planleggeren.",
-"Save slots":"Lagringsplasser"
+"Save slots":"Lagringsplasser",
+"Recruiting on each path (★ soonest)":"Rekruttering på hver rute (★ tidligst)",
+"Sooner on another path":"Tidligere på en annen rute",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Ry vokser sakte: omtrent 4 ved Kap. 5, 8 ved Kap. 8, 10 ved Kap. 10"
 };

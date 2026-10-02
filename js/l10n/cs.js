@@ -333,5 +333,8 @@ L10N["cs"]={
 "Load plans from a file · replaces all four plans here":"Načíst plány ze souboru · nahradí všechny čtyři plány tady",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"Načíst plány z tohoto souboru? Nahradí všechny čtyři plány tady — pokud si ty své chceš nechat, nejdřív je vyexportuj.",
 "This file isn't a planner export.":"Tento soubor není export z plánovače.",
-"Save slots":"Pozice pro uložení"
+"Save slots":"Pozice pro uložení",
+"Recruiting on each path (★ soonest)":"Naverbování na každé cestě (★ nejdříve)",
+"Sooner on another path":"Dříve na jiné cestě",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Sláva roste pomalu: zhruba 4 v Kap. 5, 8 v Kap. 8, 10 v Kap. 10"
 };

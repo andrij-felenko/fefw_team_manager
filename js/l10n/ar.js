@@ -333,5 +333,8 @@ L10N["ar"]={
 "Load plans from a file · replaces all four plans here":"تحميل الخطط من ملف · يستبدل الخطط الأربع الموجودة هنا",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"هل تريد تحميل الخطط من هذا الملف؟ ستحل محل الخطط الأربع الموجودة هنا، فصدّر خططك أولًا إن أردت الاحتفاظ بها.",
 "This file isn't a planner export.":"هذا الملف ليس ملف تصدير من المخطط.",
-"Save slots":"خانات الحفظ"
+"Save slots":"خانات الحفظ",
+"Recruiting on each path (★ soonest)":"التجنيد في كل مسار (★ الأبكر)",
+"Sooner on another path":"أبكر في مسار آخر",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"السمعة ترتفع ببطء: نحو 4 في الفصل 5، و8 في الفصل 8، و10 في الفصل 10"
 };

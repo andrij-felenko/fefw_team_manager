@@ -333,5 +333,8 @@ L10N["tr"]={
 "Load plans from a file · replaces all four plans here":"Planları dosyadan yükle · buradaki dört planın yerine geçer",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"Planlar bu dosyadan yüklensin mi? Buradaki dört planın yerine geçecekler; saklamak istiyorsan önce kendi planlarını dışa aktar.",
 "This file isn't a planner export.":"Bu dosya planlayıcıdan dışa aktarılmış bir dosya değil.",
-"Save slots":"Kayıt yuvaları"
+"Save slots":"Kayıt yuvaları",
+"Recruiting on each path (★ soonest)":"Her rotada katılım (★ en erken)",
+"Sooner on another path":"Başka bir rotada daha erken",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Şöhret yavaş artar: Böl. 5'te yaklaşık 4, Böl. 8'de 8, Böl. 10'da 10"
 };

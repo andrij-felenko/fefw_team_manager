@@ -333,5 +333,8 @@ L10N["ka"]={
 "Load plans from a file · replaces all four plans here":"გეგმების ჩატვირთვა ფაილიდან · ჩაანაცვლებს აქ არსებულ ოთხივე გეგმას",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"ჩაიტვირთოს გეგმები ამ ფაილიდან? ისინი ჩაანაცვლებენ აქ არსებულ ოთხივე გეგმას — თუ შენი გეგმების შენახვა გინდა, ჯერ მათი ექსპორტი გააკეთე.",
 "This file isn't a planner export.":"ეს ფაილი დამგეგმავის ექსპორტი არ არის.",
-"Save slots":"შენახვის სლოტები"
+"Save slots":"შენახვის სლოტები",
+"Recruiting on each path (★ soonest)":"აყვანა ყველა მარშრუტზე (★ ყველაზე ადრე)",
+"Sooner on another path":"სხვა მარშრუტზე უფრო ადრე",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"დიდება ნელა იზრდება: დაახლოებით 4 მე-5 თავისთვის, 8 — მე-8 თავისთვის, 10 — მე-10 თავისთვის"
 };

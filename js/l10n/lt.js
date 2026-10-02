@@ -333,5 +333,8 @@ L10N["lt"]={
 "Load plans from a file · replaces all four plans here":"Įkelti planus iš failo · pakeičia visus keturis čia esančius planus",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"Įkelti planus iš šio failo? Jie pakeis visus keturis čia esančius planus — jei nori savuosius išsaugoti, pirmiausia juos eksportuok.",
 "This file isn't a planner export.":"Šis failas nėra planuoklio eksportas.",
-"Save slots":"Išsaugojimo vietos"
+"Save slots":"Išsaugojimo vietos",
+"Recruiting on each path (★ soonest)":"Užverbavimas kiekviename maršrute (★ anksčiausiai)",
+"Sooner on another path":"Kitame maršrute anksčiau",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Šlovė auga lėtai: apie 4 iki 5 sk., 8 iki 8 sk., 10 iki 10 sk."
 };

@@ -333,5 +333,8 @@ L10N["nl"]={
 "Load plans from a file · replaces all four plans here":"Plannen uit een bestand laden · vervangt alle vier plannen hier",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"Plannen uit dit bestand laden? Ze vervangen alle vier plannen hier; exporteer eerst je eigen plannen als je ze wilt houden.",
 "This file isn't a planner export.":"Dit bestand is geen export van de planner.",
-"Save slots":"Opslagplaatsen"
+"Save slots":"Opslagplaatsen",
+"Recruiting on each path (★ soonest)":"Rekrutering per route (★ het vroegst)",
+"Sooner on another path":"Eerder op een andere route",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Roem groeit langzaam: ongeveer 4 bij Hfst. 5, 8 bij Hfst. 8, 10 bij Hfst. 10"
 };

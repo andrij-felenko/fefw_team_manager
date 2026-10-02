@@ -698,6 +698,26 @@ function renderTeam(){
   var distinct={};team().forEach(function(x){counted(x).forEach(function(c){distinct[c]=1})});
   $("meter").textContent=team().length+tr(" бійців · "," fighters · ")+Object.keys(distinct).length+tr(" різних класів (просунуті й майстер)"," distinct classes (Advanced & Master)");
 }
+// after the recruit line of the fighter list: how every path recruits them, soonest first (★);
+// green when another path gets them sooner than the open lord's
+var PATHS_SVG='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15V8.5M8 8.5 3.5 4.5V1.8M8 8.5l4.5-4M1.8 3.4 3.5 1.6 5.2 3.4M10.6 2.4h2.6v2.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+function pathsMark(u){
+  var rows=LORDS.map(function(l){return {id:l.id,w:joinWhen(u,l.id)}});
+  if(!rows.some(function(r){return r.id!==S.cur&&r.w}))return "";
+  if(u.JJ.every(function(s){return s===u.JJ[0]}))return ""; // the same on every path
+  var can=rows.filter(function(r){return r.w}).sort(function(a,b){return cmpWhen(a.w,b.w)});
+  var best=can[0].w, cur=rows.filter(function(r){return r.id===S.cur})[0];
+  var sooner=!!cur.w&&best[0]<cur.w[0];
+  // ★ on every path with the soonest estimate; "≈ Ch." where the renown comes later than the chapter
+  var lines=can.concat(rows.filter(function(r){return !r.w})).map(function(r){
+    return (r.w&&r.w[0]===best[0]?"★ ":"")+lordUa(r.id)+": "+joinInfo(u,r.id).txt.replace(/ · /g,LANG==="ar"?"\u060c ":", ")+
+      (r.w&&r.w[0]>r.w[3]?" "+("(≈ "+tr("Гл. ","Ch. ")+r.w[0]+")").replace(/ /g,"\u00a0"):"");
+  });
+  var tip=(sooner?tr("На іншому маршруті — раніше","Sooner on another path")+" · ":"")+
+    tr("Вербування на кожному маршруті (★ — найраніше)","Recruiting on each path (★ soonest)")+" · "+lines.join(" · ")+" · "+
+    tr("Слава росте повільно: приблизно 4 до Гл. 5, 8 до Гл. 8, 10 до Гл. 10","Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10");
+  return '<span class="paths'+(sooner?" sooner":"")+'" tabindex="0" role="img" aria-label="'+esc(tip)+'" title="'+esc(tip)+'">'+PATHS_SVG+'</span>';
+}
 function renderPool(){
   var q=(S.q||"").trim().toLowerCase();
   var list=U.filter(function(u){
@@ -719,7 +739,7 @@ function renderPool(){
       '<div class="r-head"><span class="r-name">'+esc(u.n)+' <span class="tag"><b class="sxb">'+({f:"♀",m:"♂"}[sxOf(u.n)]||"?")+'</b>'+(ageTxt(u.n)?" · "+ageTxt(u.n)+tr(" р."," y"):"")+'</span></span>'+btn+'</div>'+
       '<div class="c-meta">'+homeTag(u)+uniqBadge(u)+'</div>'+
       '<div class="chips">'+chips(u)+'</div>'+
-      '<div class="join'+(ji.ok?"":" no")+'">'+lordUa(S.cur)+': '+esc(ji.txt)+'</div>'+
+      '<div class="join'+(ji.ok?"":" no")+'">'+lordUa(S.cur)+': '+esc(ji.txt)+pathsMark(u)+'</div>'+
     '</div>';
   }).join("")||'<p class="src">'+tr("Нікого не знайдено.","Nobody found.")+'</p>';
 }
@@ -804,7 +824,7 @@ $("legend").addEventListener("change",function(e){if(e.target.id!=="endLv")retur
   function hide(){tip.hidden=true;cur=null}
   function show(el){
     var t=textOf(el); if(!t){hide();return}
-    cur=el; tip.dir=document.documentElement.dir||"ltr"; tip.textContent=t.replace(/ · /g,"\n"); tip.hidden=false;
+    cur=el; tip.classList.toggle("wide",el.classList.contains("paths")); tip.dir=document.documentElement.dir||"ltr"; tip.textContent=t.replace(/ · /g,"\n"); tip.hidden=false;
     var r=el.getBoundingClientRect(), w=tip.offsetWidth, h=tip.offsetHeight;
     var x=Math.min(Math.max(8,r.left+r.width/2-w/2),innerWidth-w-8), y=r.bottom+8;
     if(y+h>innerHeight-8)y=r.top-h-8;

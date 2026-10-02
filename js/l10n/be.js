@@ -333,5 +333,8 @@ L10N["be"]={
 "Load plans from a file · replaces all four plans here":"Загрузіць планы з файла · заменіць усе чатыры планы тут",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"Загрузіць планы з гэтага файла? Яны заменяць усе чатыры планы тут — спачатку экспартуй свае, калі хочаш іх захаваць.",
 "This file isn't a planner export.":"Гэты файл не падобны на экспарт планавальніка.",
-"Save slots":"Слоты захавання"
+"Save slots":"Слоты захавання",
+"Recruiting on each path (★ soonest)":"Вярбоўка на кожным маршруце (★ — найраней)",
+"Sooner on another path":"На іншым маршруце — раней",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Слава расце павольна: прыкладна 4 да Гл. 5, 8 да Гл. 8, 10 да Гл. 10"
 };

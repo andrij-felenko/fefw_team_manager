@@ -333,5 +333,8 @@ L10N["sv"]={
 "Load plans from a file · replaces all four plans here":"Läs in planer från en fil · ersätter alla fyra planer här",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"Läsa in planerna från den här filen? De ersätter alla fyra planer här – exportera dina först om du vill behålla dem.",
 "This file isn't a planner export.":"Den här filen är ingen export från planeraren.",
-"Save slots":"Sparplatser"
+"Save slots":"Sparplatser",
+"Recruiting on each path (★ soonest)":"Värvning på varje rutt (★ tidigast)",
+"Sooner on another path":"Tidigare på en annan rutt",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Rykte växer långsamt: ungefär 4 vid Kap. 5, 8 vid Kap. 8, 10 vid Kap. 10"
 };

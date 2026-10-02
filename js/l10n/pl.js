@@ -333,5 +333,8 @@ L10N["pl"]={
 "Load plans from a file · replaces all four plans here":"Wczytaj plany z pliku · zastępuje wszystkie cztery plany tutaj",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"Wczytać plany z tego pliku? Zastąpią wszystkie cztery plany tutaj — najpierw wyeksportuj swoje, jeśli chcesz je zachować.",
 "This file isn't a planner export.":"Ten plik nie jest eksportem z planera.",
-"Save slots":"Miejsca zapisu"
+"Save slots":"Miejsca zapisu",
+"Recruiting on each path (★ soonest)":"Werbunek na każdej ścieżce (★ najwcześniej)",
+"Sooner on another path":"Wcześniej na innej ścieżce",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Sława rośnie powoli: około 4 w Rozdz. 5, 8 w Rozdz. 8, 10 w Rozdz. 10"
 };

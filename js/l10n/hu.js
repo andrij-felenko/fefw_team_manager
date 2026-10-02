@@ -333,5 +333,8 @@ L10N["hu"]={
 "Load plans from a file · replaces all four plans here":"Tervek betöltése fájlból · lecseréli az itteni négy tervet",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"Betöltöd a terveket ebből a fájlból? Lecserélik az itteni négy tervet – ha meg akarod tartani a sajátjaidat, előbb exportáld őket.",
 "This file isn't a planner export.":"Ez a fájl nem a tervező exportja.",
-"Save slots":"Mentési helyek"
+"Save slots":"Mentési helyek",
+"Recruiting on each path (★ soonest)":"Toborzás minden útvonalon (★ a legkorábbi)",
+"Sooner on another path":"Másik útvonalon korábban",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"A hírnév lassan nő: kb. 4 az 5. fejezetre, 8 a 8.-ra, 10 a 10.-re"
 };

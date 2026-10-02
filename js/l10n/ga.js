@@ -333,5 +333,8 @@ L10N["ga"]={
 "Load plans from a file · replaces all four plans here":"Luchtaigh pleananna ó chomhad · tagann siad in áit na gceithre phlean atá anseo",
 "Load the plans from this file? They will replace all four plans here — export yours first if you want to keep them.":"Na pleananna ón gcomhad seo a luchtú? Tiocfaidh siad in áit na gceithre phlean atá anseo — easpórtáil do chuid féin ar dtús más mian leat iad a choinneáil.",
 "This file isn't a planner export.":"Ní easpórtáil ón bpleanálaí an comhad seo.",
-"Save slots":"Sliotáin sábhála"
+"Save slots":"Sliotáin sábhála",
+"Recruiting on each path (★ soonest)":"Earcú ar gach bealach (★ an ceann is luaithe)",
+"Sooner on another path":"Níos luaithe ar bhealach eile",
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Fásann an clú go mall: thart ar 4 faoi Chaib. 5, 8 faoi Chaib. 8, 10 faoi Chaib. 10"
 };
