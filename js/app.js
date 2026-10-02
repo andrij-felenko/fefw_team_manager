@@ -46,7 +46,7 @@ S.slots[S.slot]=null;
 function has(o,k){return Object.prototype.hasOwnProperty.call(o,k)}
 function planOf(){return {teams:S.teams,sx:S.sx}}
 // a plan from another slot or from someone's file: known fighters and classes only, each fighter in one squad,
-// and the fighters the story gives a lord always in that lord's squad
+// and every lord in their own squad (a fighter the story gives a lord may have been moved to another squad)
 function cleanPlan(p){
   if(!p||typeof p!=="object"||!p.teams||typeof p.teams!=="object")return null;
   var seen={}, out={teams:{},sx:{}};
@@ -65,7 +65,7 @@ function cleanPlan(p){
     });
   });
   U.forEach(function(u){LORDS.forEach(function(l){
-    if(fixedIn(u,l.id)&&!has(seen,u.n)){seen[u.n]=1;out.teams[l.id].push({n:u.n,path:["","","","",""]})}
+    if(u.JJ[LI[l.id]]==="L"&&!has(seen,u.n)){seen[u.n]=1;out.teams[l.id].push({n:u.n,path:["","","","",""]})}
   })});
   if(p.sx&&typeof p.sx==="object")Object.keys(p.sx).forEach(function(n){
     if(has(BY,n)&&sxEditable(n)&&(p.sx[n]==="f"||p.sx[n]==="m"))out.sx[n]=p.sx[n]});
@@ -190,6 +190,8 @@ function homeTag(u){
 }
 // the lord's own squad as the game gives it (story joins and the tutorial recruit)
 function fixedIn(u,lord){return u.t===lord&&u.JJ[LI[lord]]!=="-"}
+// a lord stays in their own squad; a fighter the story gives a lord can still be planned for another lord
+function isLord(u){return u.JJ.indexOf("L")>=0}
 // classes tied to a lord's path: exclusive ones first, then the ones only this path (and one other) has
 function routeClasses(id){
   var ex=[],un=[];
@@ -314,19 +316,19 @@ function pickList(n,sel,ti,i){
       if(!a.block&&(C.x.excl===S.cur||(C.x.route&&C.x.route.indexOf(S.cur)>=0)))note=(note?note+" · ":"")+tr("клас маршруту ","path class of ")+lordUa(S.cur);
       // a blocked class cannot be picked at all
       return '<button type="button" class="opt '+oc+(c[0]===sel?" on":"")+'" data-set="'+i+'-'+ti+'" data-c="'+c[0]+'"'+(a.block&&c[0]!==sel?" disabled":"")+'>'+
-        '<span class="o-n">'+(taken.length||a.block?"⊘ ":"")+c[0]+'</span>'+rateStrip(rt,true)+'<span class="o-r">'+need+'</span>'+
+        '<span class="o-n">'+(taken.length||a.block?"⊘ ":"")+c[0]+mountBadge(c[0])+'</span>'+rateStrip(rt,true)+'<span class="o-r">'+need+'</span>'+
         (note?'<span class="o-x">'+note+'</span>':'')+'</button>';
     }).join("");
 }
 // how each skill has to grow along the chosen path
 function progression(x,u){
   var cols=[],skills=[];
-  x.path.forEach(function(cn,i){if(!cn||i<1||i>3)return;cols.push(i);CLS[cn].r.forEach(function(q){if(skills.indexOf(q.k)<0)skills.push(q.k)})});
+  x.path.forEach(function(cn,i){if(!cn||i>3)return;cols.push(i);CLS[cn].r.forEach(function(q){if(skills.indexOf(q.k)<0)skills.push(q.k)})});
   if(!cols.length)return "";
   var MK=MARKS[LANG]||MARKS.en;
   function rk(cn,k){var q=CLS[cn].r.filter(function(q){return q.k===k})[0];return q?RANKS.indexOf(q.rk):-1}
   // one rank bar per skill: E+ … S, filled to the highest rank the path needs, stage marks at the rank each stage asks for
-  var h='<div class="prog"><div class="lbl">'+tr("Шлях навичок","Skill path")+" · "+[1,2,3].map(function(i){return MK[i]+" "+STAGE_S[i].toLowerCase()}).join(" · ")+'</div>';
+  var h='<div class="prog"><div class="lbl">'+tr("Шлях навичок","Skill path")+" · "+[0,1,2,3].map(function(i){return MK[i]+" "+STAGE_S[i].toLowerCase()}).join(" · ")+'</div>';
   skills.forEach(function(k){
     var cl=u.X.indexOf(k)>=0?"m":(u.F.indexOf(k)>=0?"p":""), best=-1, marks={};
     cols.forEach(function(i){var v=rk(x.path[i],k);if(v<0)return;best=Math.max(best,v);(marks[v]=marks[v]||[]).push(MK[i])});
@@ -363,8 +365,9 @@ function relAt(x,ti){
 function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
 // ---------- three ratings: damage, evasion, defense ----------
 // Stats are what a fighter is expected to gain level by level along the path: growth = personal + class modifier
-// (Game8), and before the Specialty class the base Commoner class adds nothing. Ideal levels (Game8): Specialty 20,
-// Advanced 35, Master 45. A stage is judged at the level it is left: Specialty at 35, Advanced at 45, Master at the end.
+// (Game8). Up to level 10 the base Commoner class adds nothing; the Beginner class runs from 10. Ideal levels (Game8):
+// Specialty 20, Advanced 35, Master 45. A stage is judged at the level it is left: Beginner at 20, Specialty at 35,
+// Advanced at 45, Master at the end.
 // Damage: attack stat (Str or Mag, whichever the class can use) + Spd for follow-ups (AS +4 over the foe) + Dex for hit
 // and crits (triple damage). Evasion: Spd (Avo) + Lck (lowers enemy crits). Defense: ½ HP + Def + Res. Res counts in full:
 // spells add little Might (Fire 3, Thunder 5 against 8–13 for iron weapons, Game8), so a foe's magic is mostly his Mag
@@ -374,7 +377,7 @@ function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
 // sides cover the third (damage + evasion needs no armour, damage + defense needn't dodge, a dodging wall holds a gap).
 // Colours say how a rating compares with every fighter × class option of the same tier. The overall's colour uses the
 // same rule on how far each side stands from the tier's average (in typical spreads), with the weakest side's hole capped.
-var LV_AT=[1,20,35,45];
+var LV_AT=[10,20,35,45]; // the level each stage starts: Beginner, Specialty, Advanced, Master
 // flat bonus to basic stats while a fighter is in the class (Fextralife class pages, "Bonus Points to Basic Stats"),
 // order HP Str Mag Dex Spd Lck Def Res Cha. It holds only while in that class, so a stage adds the bonus of its own class
 var CB={"Myrmidon":[1,0,0,0,2,0,0,-1,0],"Brigand":[3,2,0,0,0,0,1,-1,0],"Pugilist":[2,1,0,0,1,0,2,-1,0],"Archer":[0,0,0,2,2,0,1,0,0],"Rogue":[0,0,0,1,3,1,0,1,-1],"Armored Knight":[2,1,0,0,-2,0,4,0,0],"Light Cavalry":[1,1,0,0,1,0,2,0,1],"Charioteer":[3,1,0,3,-2,0,3,0,1],"Armored Ornius Rider":[1,0,0,0,2,0,2,0,0],"Wing Soldier":[0,0,0,1,4,0,1,2,1],"Priest":[0,0,1,0,0,2,0,3,1],"Shaman":[0,0,2,1,1,0,0,2,-1],"Warrior":[4,4,0,0,1,0,0,0,0],"Shido":[3,0,0,3,7,0,0,0,0],"Dancer":[4,0,0,5,9,0,0,0,5],"Blacksmith":[5,1,1,0,1,0,3,1,0],"Sniper":[1,0,0,5,5,0,0,0,0],"Forest Knight":[1,0,0,2,5,0,1,0,0],"Ranger":[1,0,0,4,7,1,0,1,1],"Cataphract":[5,2,0,0,-1,0,5,0,0],"Guardian":[3,1,0,0,1,0,3,4,0],"Elephant Rider":[10,2,0,3,-5,0,7,0,3],"Dreadnought":[5,3,0,0,-5,0,9,-1,0],"Bardinger":[3,0,0,0,1,0,1,0,3],"Dragoon":[2,1,0,1,3,0,1,0,0],"Caladrius":[2,0,1,0,3,0,1,2,0],"Ovate":[1,0,4,4,3,0,0,4,-1],"Bishop":[1,0,3,0,1,3,0,5,3],"Troubadour":[0,0,1,1,1,0,1,2,3],"Swordmaster":[5,2,0,7,7,0,0,0,0],"High Savant":[5,2,2,3,3,0,2,0,0],"Battlemaster":[13,6,0,0,2,0,4,0,0],"War Monk":[5,2,0,2,5,0,2,4,0],"Bow Adept":[4,2,0,9,5,0,0,0,0],"Bow Knight":[3,2,0,5,7,0,2,0,0],"Shadow Seeker":[4,4,0,7,9,2,0,0,-2],"Sentinel":[5,4,0,4,2,0,4,5,0],"Castle Knight":[9,6,0,4,-6,0,13,-2,0],"Orichaldia":[7,3,0,3,2,0,2,0,2],"Great Knight":[12,5,0,2,-4,0,5,0,0],"Celestial Trooper":[3,0,0,3,5,0,0,5,2],"Bau Lord":[5,2,0,3,3,0,3,0,0],"Druid":[4,0,7,7,4,0,0,5,-2],"Wiseman":[4,0,5,2,2,4,0,9,2],"Valkyrium":[2,0,2,3,2,0,2,3,2]};
@@ -390,8 +393,8 @@ function avgMod(ti){ // the tier's average modifier stands in for an earlier sta
 }
 // expected gains up to the exit level of stage ti; mods[s] = modifier on stage s (none → the one before carries on)
 function gainsTo(u,mods,ti){
-  var st=u.g.map(function(v){return v*(LV_AT[1]-1)/100}), cur=null;
-  for(var s=1;s<=ti;s++){
+  var st=u.g.map(function(v){return v*(LV_AT[0]-1)/100}), cur=null;
+  for(var s=0;s<=ti;s++){
     if(mods[s])cur=mods[s];
     var n=exitLv(s)-LV_AT[s];
     u.g.forEach(function(v,k){st[k]+=Math.max(0,v+(cur?cur[k]:0))*n/100});
@@ -412,8 +415,8 @@ function axisMax(){
   var key=endLv(); if(AXMAX[key])return AXMAX[key];
   var ws=[[[0,1,0,0.35,0.5,0,0,0,0],[0,0,1,0.35,0.5,0,0,0,0]],[RW[1]],[RW[2]]];
   var best=ws.map(function(list){var top={v:0};list.forEach(function(w){U.forEach(function(u){
-    var t=segPts(u,null,LV_AT[1]-1,w), cls=[];
-    for(var ti=1;ti<=3;ti++){var n=exitLv(ti)-LV_AT[ti], b=-1, bc="";
+    var t=segPts(u,null,LV_AT[0]-1,w), cls=[];
+    for(var ti=0;ti<=3;ti++){var n=exitLv(ti)-LV_AT[ti], b=-1, bc="";
       TIERS[ti].list.forEach(function(c){if(!CG[c[0]])return;var v=segPts(u,CG[c[0]],n,w);
         if(ti===3&&CB[c[0]])CB[c[0]].forEach(function(q,k){v+=(w[k]||0)*q});
         if(v>b){b=v;bc=c[0]}});
@@ -432,7 +435,7 @@ function scaleOf(ti){
   var rows=[], stl=[];
   U.forEach(function(u){TIERS[ti].list.forEach(function(c){
     if(!CG[c[0]])return;
-    var mods=[null]; for(var s=1;s<ti;s++)mods.push(avgMod(s)); mods[ti]=CG[c[0]];
+    var mods=[]; for(var s=0;s<ti;s++)mods.push(avgMod(s)); mods[ti]=CG[c[0]];
     var g=withBonus(gainsTo(u,mods,ti),c[0]); stl.push(g); rows.push(rateIdx(g,CLS[c[0]]).v);
   })});
   var mx=axisMax(), sc={a:[0,1,2].map(function(k){return rows.map(function(r){return r[k]}).sort(function(p,q){return p-q})})};
@@ -453,7 +456,7 @@ function nameBand(r){return !r?"":r.own?(bandOf(r.own[3])||"ord"):bandOf(r.o)}
 // stages are still empty the numbers use that best way too. Chosen earlier classes are used as chosen.
 var PCACHE={};
 function stageCands(n,s){return TIERS[s].list.map(function(c){return c[0]}).filter(function(c){return CG[c]&&!access(n,c).block})}
-function modsOf(path,ti){var m=[null];for(var s=1;s<ti;s++)m.push(path[s]&&CG[path[s]]?CG[path[s]]:null);m[ti]=null;return m}
+function modsOf(path,ti){var m=[];for(var s=0;s<ti;s++)m.push(path[s]&&CG[path[s]]?CG[path[s]]:null);m[ti]=null;return m}
 // best filling of the empty earlier stages for class cn on stage ti; fixed[s] = a chosen class or ""
 function bestFill(u,ti,cn,fixed){
   var key="f|"+u.n+"|"+ti+"|"+cn+"|"+fixed.join(",")+"|"+S.cur+"|"+endLv(); if(PCACHE[key])return PCACHE[key];
@@ -464,7 +467,7 @@ function bestFill(u,ti,cn,fixed){
       if(!best||rel>best.rel)best={rel:rel,path:path.slice()}; return}
     if(fixed[s]){walk(s+1);return}
     stageCands(u.n,s).forEach(function(c){path[s]=c;walk(s+1)}); path[s]="";
-  })(1);
+  })(0);
   return (PCACHE[key]=best||{rel:0,path:fixed.slice()});
 }
 function potential(u,ti,cn){ // the class at its best for this fighter, whatever was chosen before
@@ -486,15 +489,15 @@ function ownRange(u,x,ti){
 // place in the fighter's own range → a mark bandOf reads: top 20% gold, then silver, bronze, green, poor
 function ownMark(q,lo,hi){var f=hi-lo<1e-6?1:(q-lo)/(hi-lo);return f>=0.8?95:f>=0.6?80:f>=0.4?60:f>=0.2?40:10}
 function rateAt(u,x,ti,cn){
-  var C=CLS[cn]; if(!C||!CG[cn]||ti<1||ti>3)return null;
-  var fixed=["","","",""]; for(var s=1;s<ti;s++)fixed[s]=x&&x.path[s]&&CG[x.path[s]]?x.path[s]:"";
+  var C=CLS[cn]; if(!C||!CG[cn]||ti<0||ti>3)return null;
+  var fixed=["","","",""]; for(var s=0;s<ti;s++)fixed[s]=x&&x.path[s]&&CG[x.path[s]]?x.path[s]:"";
   var way=x&&x.n?bestFill(u,ti,cn,fixed).path:fixed, mods=modsOf(way,ti); mods[ti]=CG[cn];
   var st=withBonus(gainsTo(u,mods,ti),cn), ix=rateIdx(st,C), sc=scaleOf(ti);
   var mx=axisMax(), p=[0,1,2].map(function(k){return share(sc.a[k],ix.v[k])});
   var sv=ix.v.map(function(v,k){return 100*v/mx[k].v}), ov=ovOf(sv);
   var z=st.map(function(v,k){return (v-sc.m[k])/sc.sd[k]}), rel=ovRel(ix.v,sc), own=null;
   if(x&&x.n){var R=ownRange(u,x,ti), pot=potential(u,ti,cn);own=pot.map(function(q,k){return ownMark(q,R.lo[k],R.hi[k])})}
-  var filled=[]; for(var s2=1;s2<ti;s2++)if(!fixed[s2]&&way[s2])filled.push(way[s2]);
+  var filled=[]; for(var s2=0;s2<ti;s2++)if(!fixed[s2]&&way[s2])filled.push(way[s2]);
   return {p:p,o:share(sc.o,rel),own:own,n:u.n,filled:filled,pts:sv.map(Math.round).concat(Math.round(ov)),z:z,mag:ix.mag,ti:ti};
 }
 var RT_SVG=['<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5 14.1 8.3 20.9 5.5 17.1 11.3 22.8 15.1 15.7 15.3 16.4 22.5 12 16.8 7.6 22.5 8.3 15.3 1.2 15.1 6.9 11.3 3.1 5.5 9.9 8.3Z"/></svg>',
@@ -596,6 +599,7 @@ function renderLegend(){
       [skTile("sw","na"),tr("клас не дозволяє","not allowed")],[skTile("ax","","","up"),tr("рамка — схильність","frame — strength")],
       [skTile("ax","","","dn"),tr("рамка — слабкість","frame — weakness")],[skTile("sp","","C"),tr("ранг для іспиту","exam rank")]]
       .map(function(p){return '<span>'+p[0]+p[1]+'</span>'}).join("")+'</span>'+
+    '<span><span class="mt">'+ic("m-horse")+'</span>'+tr("тварина класу (наведи — як дістати)","the class's mount (hover: how to get one)")+'</span>'+
     '<span><i class="sw-rd"></i>'+tr("приріст, важливий для обраної зброї","growth key for the chosen weapons")+'</span><span><i class="sw-ri"></i>'+tr("допомагає їй","helps them")+'</span>'+
     '<span class="ln lt">'+[0,1,2,3].map(function(k){return '<span><span class="rt-t'+(k===3?" rt-o":"")+'">'+RT_SVG[k]+'</span>'+rtName(k)+'</span>'}).join("")+
       '<span>'+tr("бали з 100 (100 — найкраще можливе в грі до рівня кінця): урон = Сил або Маг + ½ Шв + 0,35 Спр · ухилення = Шв + 0,4 Уд · захист = ½ HP + Зах + Оп · загальна = (дві найкращі + ½ найслабшої) / 2,5; відсотки — у підказці",
@@ -603,8 +607,8 @@ function renderLegend(){
     '<span class="ln">'+tr("тло плитки — порівняння з усіма бійцями; колір числа й назви класу — з іншими класами цього ж бійця на етапі (золото — найкращий варіант для бійця): ",
       "tile — compared with every fighter; the colour of the number and the class name — with the same fighter's other classes on the tier (gold is their best option): ")+'<b style="color:var(--gold)">'+tr("золото","gold")+'</b> 90+ · <b style="color:var(--silver)">'+tr("срібло","silver")+'</b> 75+ · '+
       '<b style="color:var(--bronze)">'+tr("бронза","bronze")+'</b> 55+ · <b>'+tr("звичайна","ordinary")+'</b> 30+ ('+tr("число — ","its number is ")+'<b style="color:var(--unripe)">'+tr("зелене, «недозріле»","green, “not ripe yet”")+'</b>) · <b style="color:var(--block)">'+tr("погана","poor")+'</b>'+
-      tr(" · стати накопичуються по шляху: до 20 рівня власний ріст, далі з модифікатором класу, плюс бонус статів класу, в якому боєць зараз; спец. оцінюю на 35 рівні, прос. на 45, майстра на рівні ",
-         " · stats build up along the path: own growth up to level 20, then with the class modifier, plus the stat bonus of the class the fighter is in; Specialty is judged at 35, Advanced at 45, Master at level ")+
+      tr(" · стати накопичуються по шляху: до 10 рівня власний ріст, далі з модифікатором класу (початковий клас з 10-го, спец. з 20-го), плюс бонус статів класу, в якому боєць зараз; початковий оцінюю на 20 рівні, спец. на 35, прос. на 45, майстра на рівні ",
+         " · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ")+
       '<input type="number" id="endLv" min="46" max="99" value="'+endLv()+'" aria-label="'+tr("Рівень кінця гри","End-game level")+'"></span>';
   var open=$("legend").dataset.open; if(open==null)open=innerWidth>700?"1":"";
   $("legend").innerHTML='<details'+(open?' open':'')+'><summary>'+tr("Легенда","Legend")+'</summary><div class="lg">'+html+'</div></details>';
@@ -615,8 +619,8 @@ function renderTeam(){
   $("team").innerHTML=team().map(function(x,i){
     var u=BY[x.n]; if(!u)return "";
     var sx=sxOf(x.n), anyBad=false, anyDup=false;
-    // the planner goes Specialty → Advanced → Master; Beginner carries nothing to plan and Divine is only in the class list
-    var stages=[1,2,3].map(function(ti){var cn=x.path[ti];
+    // the planner goes Beginner → Specialty → Advanced → Master; Divine is only in the class list
+    var stages=[0,1,2,3].map(function(ti){var cn=x.path[ti];
       var c=CLS[cn], fl=[], key=i+"-"+ti, open=OPEN===key, clash=false, a=null;
       if(c){
         a=access(x.n,cn); var dup=holders(cn,x.n);
@@ -632,7 +636,7 @@ function renderTeam(){
         // stage name with the picker arrow under it on the left, so the class and its skills get the full width
         '<div class="st-row"><div class="st-l"><span class="st-t" title="'+STAGE[ti]+' · '+treq(ti)+'">'+STAGE_S[ti]+'</span>'+
           '<button type="button" class="pick" data-pick="'+key+'" aria-expanded="'+open+'" aria-label="'+STAGE[ti]+tr(": обрати клас",": choose class")+'">▾</button></div>'+
-          '<span class="st-v">'+(c?'<b'+(rt?' title="'+rtTip(rt,3)+'"':'')+'>'+c.name+'</b>'+rateStrip(rt)+reqLine(c,u,x,ti,i):'<span class="muted">—</span>')+'</span></div>'+
+          '<span class="st-v">'+(c?'<b'+(rt?' title="'+rtTip(rt,3)+'"':'')+'>'+c.name+'</b>'+mountBadge(c.name)+rateStrip(rt)+reqLine(c,u,x,ti,i):'<span class="muted">—</span>')+'</span></div>'+
         (c&&(fl.length||restr(c))?'<div class="st-note">'+restr(c)+(fl.length?'<div class="fit">'+fl.join("")+'</div>':'')+'</div>':'')+
         (c?classGrow(u,cn,relAt(x,ti)):'')+
         '<div class="drawer"'+(open?'':' hidden')+'>'+(open?pickList(x.n,cn,ti,i):'')+'</div>'+
@@ -647,18 +651,20 @@ function renderTeam(){
                return '<button type="button" data-sx="'+s[0]+'" data-n="'+esc(x.n)+'" class="'+(sx===s[0]?"on":"")+'" aria-pressed="'+(sx===s[0])+'">'+s[1]+'</button>'}).join("")+'</span>'
             :'<span class="c-sx" title="'+(sx==="f"?tr("жінка","woman"):tr("чоловік","man"))+'">'+(sx==="f"?"♀":"♂")+'</span>')+
           chips(u)+'</div>'+
-        // right side: the remove button; the game's own squad stays fixed
+        // right side: the story mark for the fighters the game gives this lord, and the remove button
+        // (they can still be moved to another lord's squad; only a lord stays put)
         '<div class="c-right">'+
-        (fixedIn(u,S.cur)?'<span class="c-story" role="img" title="'+tr("Сюжет: гра дає цього бійця автоматично, прибрати не можна","Story: the game gives you this fighter, it can't be removed")+
-          '" aria-label="'+tr("Сюжетний боєць","Story fighter")+'">'+STORY_SVG+'</span>'
-          :'<button type="button" class="round" data-rm="'+i+'" aria-label="'+tr("Прибрати ","Remove ")+esc(u.n)+'" title="'+tr("Прибрати","Remove")+'">−</button>')+'</div></div>'+
+        (fixedIn(u,S.cur)?'<span class="c-story" role="img" title="'+(isLord(u)?tr("Лідер загону","The squad's lord"):
+          tr("Сюжет: на цьому маршруті гра дає цього бійця сама; його можна перенести в загін іншого лідера","Story: on this path the game gives you this fighter; you can still move them to another lord's squad"))+
+          '" aria-label="'+tr("Сюжетний боєць","Story fighter")+'">'+STORY_SVG+'</span>':'')+
+        (isLord(u)?'':'<button type="button" class="round" data-rm="'+i+'" aria-label="'+tr("Прибрати ","Remove ")+esc(u.n)+'" title="'+tr("Прибрати","Remove")+'">−</button>')+'</div></div>'+
       // under the name: age and, when it is not the squad being built, the home squad; recruit conditions on the right
       '<div class="c-sub"><span class="c-age" title="'+tr("Вік до перестрибування в часі","Age before the timeskip")+'">'+(ageTxt(x.n)?ageTxt(x.n)+tr(" р."," y")+(ageBand(x.n)==="long"?tr(sxOf(x.n)==="f"?" · довгожителька":" · довгожитель"," · long-lived"):""):tr("вік ?","age ?"))+'</span>'+
-        (u.t&&u.t!==S.cur?'<span class="tag lock">'+home(u.t)+'</span>':'')+recTag(u)+'</div>'+
+        (u.t&&u.t!==S.cur?'<span class="tag lock"'+(LI[u.t]!=null?' title="'+esc(fmt(tr("Домашній загін: {w} — {t}","Home squad: {w} — {t}"),{w:lordUa(u.t),t:joinInfo(u,u.t).txt}))+'"':'')+'>'+home(u.t)+'</span>':'')+recTag(u)+'</div>'+
       (cant?'<div class="warn">⛔ '+lordUa(S.cur)+tr(" не може його завербувати"," cannot recruit this fighter")+'</div>':'')+
-      growBars(u,relAt(x,x.path[3]?3:(x.path[2]?2:1)))+
+      growBars(u,relAt(x,x.path[3]?3:(x.path[2]?2:(x.path[1]?1:0))))+
       '<div class="path">'+stages+'</div>'+
-      (x.path.slice(1,4).some(function(c){return c})?'<button type="button" class="ghost clear-all" data-clear="'+i+'">'+tr("Очистити класи","Clear classes")+'</button>':'')+
+      (x.path.slice(0,4).some(function(c){return c})?'<button type="button" class="ghost clear-all" data-clear="'+i+'">'+tr("Очистити класи","Clear classes")+'</button>':'')+
       progression(x,u)+
       '<div class="ability"><b>'+esc(ability(u).split(":")[0])+'</b>'+(ability(u).indexOf(":")>0?":"+esc(ability(u).slice(ability(u).indexOf(":")+1)):"")+'</div>'+
     '</article>';
@@ -669,32 +675,42 @@ function renderTeam(){
     var s=sxOf(x.n); if(s==="f")f++;else if(s==="m")mm++;else q++;
     ab[ageBand(x.n)]++;
   });
-  // one fixed column per skill so the stages line up; weapons also show how many hold them as priority
-  var head='<tr><th></th>'+GROUPS.map(function(g){return '<th colspan="'+g[1].length+'" class="gh">'+pick(g[0])+'</th>'}).join("")+'<th></th></tr>'+
-    '<tr><th></th>'+GROUPS.map(function(g){return g[1].map(function(k,j){
-      return '<th class="sk-h'+(j===0?" gs":"")+'" title="'+SK[k]+'">'+ic(k)+'<span>'+SK[k]+'</span></th>'}).join("")}).join("")+'<th class="nc">'+tr("без класу","no class")+'</th></tr>';
-  var body=[1,2,3].map(function(ti){
+  // per stage: who uses each skill and rides each animal; an empty stage means the fighter stays in the previous class
+  // (e.g. keeps the Specialty class through Advanced)
+  var rows=[0,1,2,3].map(function(ti){
     var use={},pri={},none=0;
     team().forEach(function(x){
-      // an empty stage means the fighter stays in his previous class (e.g. keeps the Specialty class through Advanced)
-      var src=ti; while(src>=1&&!x.path[src])src--;
-      var c=src>=1?CLS[x.path[src]]:null; if(!c){none++;return}
+      var src=ti; while(src>=0&&!x.path[src])src--;
+      var c=src>=0?CLS[x.path[src]]:null; if(!c){none++;return}
       // no riding and no flying: the class fights on foot, so it counts as infantry
       var sk=c.w.slice(); prioAt(x,src).forEach(function(k){if(sk.indexOf(k)<0)sk.push(k)});
       if(sk.indexOf("ri")<0&&sk.indexOf("fl")<0&&sk.indexOf("in")<0)sk.push("in");
+      if(MOUNT_OF[c.name])sk.push("m-"+MOUNT_OF[c.name]);
       sk.forEach(function(k){(use[k]=use[k]||[]).push(x.n+(src<ti?" ("+c.name+")":""))});
       prioAt(x,src).forEach(function(k){(pri[k]=pri[k]||[]).push(x.n)})});
-    return '<tr><th class="st" title="'+STAGE[ti]+'">'+STAGE_S[ti]+'</th>'+GROUPS.map(function(g){return g[1].map(function(k,j){
-      var n=use[k]?use[k].length:0, p=pri[k]?pri[k].length:0;
-      return '<td class="'+(j===0?"gs":"")+(n?"":" z")+'" title="'+(n?use[k].join(", "):"")+(p?tr(" · пріоритет: "," · priority: ")+pri[k].join(", "):"")+'">'+
-        // one white number when everyone holding it has it as priority; otherwise "total / priority"
-        (n?'<b>'+n+'</b>'+(PHYS.indexOf(k)>=0&&p!==n?' / <span class="pr">'+p+'</span>':''):'−')+'</td>'}).join("")}).join("")+
-      '<td class="nc">'+(none||'−')+'</td></tr>';
-  }).join("");
+    return {ti:ti,use:use,pri:pri,none:none};
+  });
+  function cell(r,k,j){
+    var n=r.use[k]?r.use[k].length:0, p=r.pri[k]?r.pri[k].length:0;
+    return '<td class="'+(j===0?"gs":"")+(n?"":" z")+'" title="'+(n?r.use[k].join(", "):"")+(p?tr(" · пріоритет: "," · priority: ")+r.pri[k].join(", "):"")+'">'+
+      // one white number when everyone holding it has it as priority; otherwise "total / priority"
+      (n?'<b>'+n+'</b>'+(PHYS.indexOf(k)>=0&&p!==n?' / <span class="pr">'+p+'</span>':''):'−')+'</td>';
+  }
+  function stTh(ti){return '<th class="st" title="'+STAGE[ti]+'">'+STAGE_S[ti]+'</th>'}
+  function colTh(k,j,name){return '<th class="sk-h'+(j===0?" gs":"")+'" title="'+name+'">'+ic(k)+'<span>'+name+'</span></th>'}
+  // skills: one fixed column per skill so the stages line up; weapons also show how many hold them as priority
+  var skills='<tr><th></th>'+GROUPS.map(function(g){return '<th colspan="'+g[1].length+'" class="gh">'+pick(g[0])+'</th>'}).join("")+'<th></th></tr>'+
+    '<tr><th></th>'+GROUPS.map(function(g){return g[1].map(function(k,j){return colTh(k,j,SK[k])}).join("")}).join("")+'<th class="nc">'+tr("без класу","no class")+'</th></tr>'+
+    rows.map(function(r){return '<tr>'+stTh(r.ti)+GROUPS.map(function(g){return g[1].map(function(k,j){return cell(r,k,j)}).join("")}).join("")+
+      '<td class="nc">'+(r.none||'−')+'</td></tr>'}).join("");
+  // animals, a table of their own: how many of each the squad needs at the stage
+  var animals='<tr><th></th><th colspan="'+MOUNT_KEYS.length+'" class="gh">'+tr("Тварини","Animals")+'</th></tr>'+
+    '<tr><th></th>'+MOUNT_KEYS.map(function(m,j){return colTh("m-"+m,j,mountName(m))}).join("")+'</tr>'+
+    rows.map(function(r){return '<tr>'+stTh(r.ti)+MOUNT_KEYS.map(function(m,j){return cell(r,"m-"+m,j)}).join("")+'</tr>'}).join("");
   $("tstats").innerHTML='<div class="ts-head"><span class="ts-g"><b>'+team().length+'</b>'+tr(" бійців"," fighters")+' · ♂ <b>'+mm+'</b> · ♀ <b>'+f+'</b>'+(q?' · ? <b>'+q+'</b>':'')+'</span>'+
     '<span class="ts-g"><span title="'+tr("18 і менше","18 and under")+'">'+tr("підлітки","teens")+'</span> <b>'+ab.young+'</b> · <span title="19–31">'+tr("молоді","young")+'</span> <b>'+ab.mid+'</b> · <span title="32+">'+tr("дорослі","adults")+'</span> <b>'+ab.old+'</b>'+
       (ab.long?' · <span title="'+tr("понад 100 років","over 100 years")+'">'+tr("довгожителі","long-lived")+'</span> <b>'+ab.long+'</b>':'')+(ab["?"]?' · '+tr("невідомо","unknown")+' <b>'+ab["?"]+'</b>':'')+'</span></div>'+
-    '<div class="ts-tbl"><table>'+head+body+'</table></div>';
+    '<div class="ts-tbls"><div class="ts-tbl"><table>'+skills+'</table></div><div class="ts-tbl"><table>'+animals+'</table></div></div>';
   var distinct={};team().forEach(function(x){counted(x).forEach(function(c){distinct[c]=1})});
   $("meter").textContent=team().length+tr(" бійців · "," fighters · ")+Object.keys(distinct).length+tr(" різних класів (просунуті й майстер)"," distinct classes (Advanced & Master)");
 }
@@ -738,6 +754,21 @@ function pathsCard(u){
     '<div class="pc-h">'+tr("Вербування на кожному маршруті (★ — найраніше)","Recruiting on each path (★ soonest)")+'</div>'+h+'</tbody></table>'+
     (same&&conds[0]?'<div class="pc-x">'+tr("Умова","Condition")+': '+esc(cond(conds[0]))+'</div>':'');
 }
+// the animal a mounted class rides; the tooltip says how to get a better one than the standard mount
+function mountName(m){return pick(MOUNTS[m].name)}
+function mountTip(cn){
+  var m=MOUNT_OF[cn], M=MOUNTS[m], L=[fmt(tr("Тварина: {w}","Mount: {w}"),{w:mountName(m)})];
+  if(cn==="Charioteer")L.push(tr("колісниця, яку тягнуть коні","a chariot drawn by horses"));
+  L.push(M.food?fmt(tr("Ловити: маршрут Цая з Гл. 5, приманка — {w}","Capture: Cai's path from Ch. 5, lure with {w}"),{w:pick(FOOD[M.food])}):
+    tr("Слони — нагорода побічного завдання Частини III","Elephants: the reward of a Part III side quest"));
+  if(M.del)L.push(fmt(tr("{w} хоче делікатес","{w} wants a delicacy"),{w:M.del}));
+  if(M.own)L.push(fmt(tr("{n} приходить зі своїм: {w}","{n} comes with {w}"),{n:M.own[0],w:M.own[1]}));
+  if(M.food)L.push(tr("Звичайна тварина дається з класом; спіймана краща: до +5 до стату, +25% росту й свої вміння",
+    "A standard mount comes with the class; a caught one is better: up to +5 to a stat, +25% growth and its own abilities"));
+  if(m==="bau")L.push(tr("Bau для цього класу — поки лише з фанатської вікі","Bau for this class: from a fan wiki only so far"));
+  return L.join(" · ");
+}
+function mountBadge(cn){var m=MOUNT_OF[cn];return m?'<span class="mt" title="'+esc(mountTip(cn))+'">'+ic("m-"+m)+'</span>':""}
 function renderPool(){
   var q=(S.q||"").trim().toLowerCase();
   var list=U.filter(function(u){
@@ -767,13 +798,13 @@ function renderClassTools(){
   var names=team().map(function(x){return x.n});
   if(S.forU&&names.indexOf(S.forU)<0)S.forU="";
   $("forU").innerHTML='<option value="">'+tr("Для всього загону","For the whole squad")+'</option>'+names.map(function(n){return '<option value="'+esc(n)+'"'+(n===S.forU?" selected":"")+'>'+tr("Для: ","For: ")+esc(n)+'</option>'}).join("");
-  $("tierF").innerHTML='<option value="">'+tr("Усі рівні","All tiers")+'</option>'+[1,2,3,4].map(function(i){return '<option value="'+i+'"'+(String(i)===S.tierF?" selected":"")+'>'+tname(i)+'</option>'}).join("");
+  $("tierF").innerHTML='<option value="">'+tr("Усі рівні","All tiers")+'</option>'+[0,1,2,3,4].map(function(i){return '<option value="'+i+'"'+(String(i)===S.tierF?" selected":"")+'>'+tname(i)+'</option>'}).join("");
   $("hideBlocked").checked=!!S.hideB;
 }
 function renderTiers(){
   var m=usedMap(), open=S.open||{1:1,2:1};
   var one=S.forU||null, ou=one?BY[one]:null;
-  $("tiers").innerHTML=[1,2,3,4].filter(function(ti){return !S.tierF||String(ti)===S.tierF}).map(function(ti){
+  $("tiers").innerHTML=[0,1,2,3,4].filter(function(ti){return !S.tierF||String(ti)===S.tierF}).map(function(ti){
     var t=TIERS[ti], cells=[], used=0, list=t.list.filter(function(c){return !offPath(c[0])});
     list.forEach(function(c){
       var C=CLS[c[0]], who=C.x.div?(holdersAll(c[0],null).length?holdersAll(c[0],null):null):m[c[0]], st="", why="";
@@ -797,7 +828,7 @@ function renderTiers(){
              (unk.length?(can.length?'<br>':'')+'<span class="warn">'+tr("вкажи стать: ","set gender: ")+unk.join(", ")+'</span>':'')+
              (no.length&&no.length<=3?'<br><span>'+tr("не можуть: ","can't: ")+no.join(", ")+'</span>':'')+'</div>';
       }
-      cells.push('<div class="cl'+(who?" used":"")+(st?" "+st:"")+'"><div class="t">'+c[0]+'</div>'+
+      cells.push('<div class="cl'+(who?" used":"")+(st?" "+st:"")+'"><div class="t">'+c[0]+mountBadge(c[0])+'</div>'+
         '<div class="lbl">'+rule+'</div>'+
         reqLine(C,ou)+restr(C)+
         (who?'<div class="who">'+tr("зайнято: ","taken: ")+who.join(", ")+'</div>':'')+why+
@@ -886,7 +917,7 @@ $("team").addEventListener("click",function(e){
   if(b.dataset.set){var p=b.dataset.set.split("-"),xs=team()[+p[0]];xs.path[+p[1]]=b.dataset.c;
     if(xs.main)delete xs.main[+p[1]]; // new class: back to the default priority
     OPEN=null;save();renderTeam();renderTiers();return}
-  if(b.dataset.rm!==undefined){if(fixedIn(BY[team()[+b.dataset.rm].n],S.cur))return;OPEN=null;team().splice(+b.dataset.rm,1);save();renderAll();return}
+  if(b.dataset.rm!==undefined){if(isLord(BY[team()[+b.dataset.rm].n]))return;OPEN=null;team().splice(+b.dataset.rm,1);save();renderAll();return}
   if(b.dataset.sx!==undefined){S.sx[b.dataset.n]=b.dataset.sx;save();renderTeam();renderTiers()}
 });
 $("pool").addEventListener("click",function(e){var n=e.target.dataset.add;if(!n||lordOf(n))return;team().push({n:n,path:["","","","",""]});save();renderAll()});
