@@ -48,7 +48,6 @@ export default {
 "— remove class":"— إزالة الصنف",
 "taken: ":"محجوز: ",
 "path class of ":"صنف مسار ",
-"Skill path":"تقدّم المهارات",
 "Damage":"الضرر",
 "Evasion":"التفادي",
 "Defense":"الدفاع",

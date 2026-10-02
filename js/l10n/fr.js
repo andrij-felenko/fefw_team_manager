@@ -48,7 +48,6 @@ export default {
 "— remove class":"— retirer la classe",
 "taken: ":"prise par ",
 "path class of ":"classe de la route de ",
-"Skill path":"Progression des compétences",
 "Damage":"Dégâts",
 "Evasion":"Esquive",
 "Defense":"Défense",

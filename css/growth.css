@@ -1,16 +1,17 @@
 /* skill path bars, the ability line, growth bars */
-.prog{display:grid;gap:6px}
+.prog{display:grid;gap:4px}
 .sk{display:grid;grid-template-columns:108px 1fr 22px;align-items:end;gap:8px;font-size:13px}
 .sk-n{display:inline-flex;align-items:center;gap:4px;white-space:nowrap;padding-bottom:2px}
 .sk.p .sk-n,.sk.p .sk-g{color:var(--plus)} .sk.m .sk-n,.sk.m .sk-g{color:var(--minus)}
 .sk-g{text-align:center;font-weight:600;padding-bottom:2px}
 .track{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px}
-.seg{position:relative;display:grid;grid-template-rows:12px 6px 12px;text-align:center}
+.seg{position:relative;display:grid;grid-template-rows:12px 6px;text-align:center}
 .seg::before{content:"";grid-row:2;background:var(--line);border-radius:2px}
 .seg.on::before{background:var(--accent)}
 .sk.m .seg.on::before{background:var(--minus)}
 .seg em{grid-row:1;font-style:normal;font-size:9px;line-height:12px;color:var(--ink);white-space:nowrap;overflow:visible}
-.seg i{grid-row:3;font-style:normal;font-size:9px;line-height:12px;color:var(--muted)}
+/* the ranks once under the skill bars, below their columns */
+.sk-ft .track i{font-style:normal;font-size:9px;line-height:12px;color:var(--muted);text-align:center}
 .ability{font-size:13px;color:var(--muted)}
 .ability b{color:var(--ink);font-weight:600}
 .fit{font-size:13px;display:grid;gap:2px}

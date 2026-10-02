@@ -48,7 +48,6 @@ export default {
 "— remove class":"— tynnu'r dosbarth",
 "taken: ":"wedi'i gymryd: ",
 "path class of ":"dosbarth llwybr ",
-"Skill path":"Llwybr sgiliau",
 "Damage":"Difrod",
 "Evasion":"Osgoi",
 "Defense":"Amddiffyn",

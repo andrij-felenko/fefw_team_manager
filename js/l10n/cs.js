@@ -48,7 +48,6 @@ export default {
 "— remove class":"— odebrat třídu",
 "taken: ":"obsazeno: ",
 "path class of ":"třída cesty: ",
-"Skill path":"Cesta dovedností",
 "Damage":"Poškození",
 "Evasion":"Úhyb",
 "Defense":"Obrana",

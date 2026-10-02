@@ -48,7 +48,6 @@ export default {
 "— remove class":"— kaszt eltávolítása",
 "taken: ":"foglalt: ",
 "path class of ":"útvonalkaszt: ",
-"Skill path":"Készségek útja",
 "Damage":"Sebzés",
 "Evasion":"Kitérés",
 "Defense":"Védelem",

@@ -17,7 +17,9 @@
 .chip.m{background:var(--minus-soft);color:var(--minus)}
 .chip.n{background:var(--ground);color:var(--muted)}
 .c-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
-.c-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;min-width:0}
+/* name and leanings always share one line (gender is on the line under it): the leaning tiles shrink a little when room is short */
+.c-line{display:flex;flex-wrap:nowrap;align-items:baseline;gap:4px 8px;min-width:0}
+.c-line .c-name{white-space:nowrap}
 .c-sx{font-size:18px;line-height:1;font-weight:700;-webkit-text-stroke:.6px currentColor;color:var(--ink)}
 .c-age{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
 .c-right{display:flex;align-items:center;gap:8px;flex:none}
@@ -30,3 +32,14 @@ button.round.add{color:var(--accent);border-color:var(--accent)}
 .c-sub .c-rec{margin-inline-start:auto}
 /* the level the fighter joins the open lord at (an estimate) */
 .tag.join{cursor:help;letter-spacing:.03em}
+/* the line under the name: gender, story mark, age, join level, home squad, recruit box — one height, one centre line,
+   the same small text for age and join level, a compact gender switch, so every card's second line sits the same */
+.c-sub{column-gap:10px;min-height:20px;margin-top:-4px}
+/* the head is as tall with or without the remove button (a lord has none), so the second line starts at the same height */
+.c-top{min-height:28px}
+.c-sub > *{line-height:18px}
+.c-sub .c-sx{font-size:14px;width:12px;text-align:center;-webkit-text-stroke:.4px currentColor}
+.c-sub .c-story svg{width:15px;height:15px}
+.c-sub .tag.join{font-size:12px;letter-spacing:0;text-transform:none}
+.c-sub .sx button{padding:0 7px;font-size:12px;line-height:16px}
+.c-sub .c-rec{line-height:16px}

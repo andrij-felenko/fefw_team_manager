@@ -48,7 +48,6 @@ export default {
 "— remove class":"— fjern klasse",
 "taken: ":"optaget: ",
 "path class of ":"ruteklasse for ",
-"Skill path":"Færdighedssti",
 "Damage":"Skade",
 "Evasion":"Undvigelse",
 "Defense":"Forsvar",

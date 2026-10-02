@@ -48,7 +48,6 @@ export default {
 "— remove class":"— Klasse entfernen",
 "taken: ":"belegt: ",
 "path class of ":"Routenklasse von ",
-"Skill path":"Fertigkeitspfad",
 "Damage":"Schaden",
 "Evasion":"Ausweichen",
 "Defense":"Abwehr",

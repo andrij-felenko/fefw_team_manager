@@ -48,7 +48,6 @@ export default {
 "— remove class":"— прыбраць клас",
 "taken: ":"занята: ",
 "path class of ":"клас маршруту ",
-"Skill path":"Шлях навыкаў",
 "Damage":"Шкода",
 "Evasion":"Ухіленне",
 "Defense":"Абарона",

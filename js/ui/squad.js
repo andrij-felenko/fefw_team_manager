@@ -46,16 +46,17 @@ function progression(x,u,shown){
   if(!cols.length)return "";
   var MK=MARKS[LANG]||MARKS.en;
   function rk(cn,k){var q=CLS[cn].r.filter(function(q){return q.k===k})[0];return q?RANKS.indexOf(q.rk):-1}
-  // one rank bar per skill: E+ … S, filled to the highest rank the path needs, stage marks at the rank each stage asks for
-  var h='<div class="prog"><div class="lbl">'+tr("Шлях навичок","Skill path")+" · "+shown.map(function(i){return MK[i]+" "+STAGE_S[i].toLowerCase()}).join(" · ")+'</div>';
+  // one rank bar per skill: E+ … S, filled to the highest rank the path needs, stage marks at the rank each stage asks for;
+  // the ranks are written once under the bars, like a table's foot, so each skill takes one short line
+  var h='<div class="prog">';
   skills.forEach(function(k){
     var cl=u.X.indexOf(k)>=0?"m":(u.F.indexOf(k)>=0?"p":""), best=-1, marks={};
     cols.forEach(function(i){var v=rk(x.path[i],k);if(v<0)return;best=Math.max(best,v);(marks[v]=marks[v]||[]).push(MK[i])});
     h+='<div class="sk '+cl+'"><span class="sk-n">'+ic(k)+SK[k]+'</span><div class="track">'+
-      RANKS.map(function(r,v){return '<span class="seg'+(v<=best?" on":"")+'">'+(marks[v]?'<em>'+marks[v].join(" ")+'</em>':'')+'<i>'+r+'</i></span>'}).join("")+
+      RANKS.map(function(r,v){return '<span class="seg'+(v<=best?" on":"")+'" title="'+r+'">'+(marks[v]?'<em>'+marks[v].join(" ")+'</em>':'')+'</span>'}).join("")+
       '</div><b class="sk-g">'+RANKS[best]+'</b></div>';
   });
-  return h+'</div>';
+  return h+'<div class="sk sk-ft" aria-hidden="true"><span></span><div class="track">'+RANKS.map(function(r){return '<i>'+r+'</i>'}).join("")+'</div><b></b></div></div>';
 }
 function relCls(rel,i,mx,v){return rel&&rel.r[i]===2?"rd":(rel&&rel.r[i]===1?"ri":(v===mx?"hi":""))}
 function relTip(rel,i){return rel&&rel.r[i]?" · "+(rel.r[i]===2?tr("важливо для: ","key for: "):tr("допомагає: ","helps: "))+rel.why[i].join(", "):""}
@@ -126,20 +127,19 @@ function card(x,i,shown){
     return '<article class="card'+(anyDup?" dup":"")+(anyBad||cant?" bad":"")+'">'+
       '<div class="c-top">'+
         '<div class="c-line"><span class="c-name">'+esc(u.n)+'</span>'+
+          chips(u)+'</div>'+
+        // right side: the remove button (a fighter the story gives this lord can still be moved; only a lord stays put)
+        '<div class="c-right">'+
+        (isLord(u)?'':'<button type="button" class="round" data-rm="'+i+'" aria-label="'+tr("Прибрати ","Remove ")+esc(u.n)+'" title="'+tr("Прибрати","Remove")+'">−</button>')+'</div></div>'+
+      // under the name, from the left: gender, the story mark, age and, when it is not the squad being built, the home squad; recruit conditions on the right
+      '<div class="c-sub">'+
           (sxEditable(x.n)
             ?'<span class="sx" role="group" aria-label="'+tr("Стать","Gender")+'">'+[["f","♀"],["m","♂"],["","?"]].map(function(s){
                return '<button type="button" data-sx="'+s[0]+'" data-n="'+esc(x.n)+'" class="'+(sx===s[0]?"on":"")+'" aria-pressed="'+(sx===s[0])+'">'+s[1]+'</button>'}).join("")+'</span>'
             :'<span class="c-sx" title="'+(sx==="f"?tr("жінка","woman"):tr("чоловік","man"))+'">'+(sx==="f"?"♀":"♂")+'</span>')+
-          chips(u)+'</div>'+
-        // right side: the story mark for the fighters the game gives this lord, and the remove button
-        // (they can still be moved to another lord's squad; only a lord stays put)
-        '<div class="c-right">'+
-        (fixedIn(u,S.cur)?'<span class="c-story" role="img" title="'+(isLord(u)?tr("Лідер загону","The squad's lord"):
+(fixedIn(u,S.cur)?'<span class="c-story" role="img" title="'+(isLord(u)?tr("Лідер загону","The squad's lord"):
           tr("Сюжет: на цьому маршруті гра дає цього бійця сама; його можна перенести в загін іншого лідера","Story: on this path the game gives you this fighter; you can still move them to another lord's squad"))+
-          '" aria-label="'+tr("Сюжетний боєць","Story fighter")+'">'+STORY_SVG+'</span>':'')+
-        (isLord(u)?'':'<button type="button" class="round" data-rm="'+i+'" aria-label="'+tr("Прибрати ","Remove ")+esc(u.n)+'" title="'+tr("Прибрати","Remove")+'">−</button>')+'</div></div>'+
-      // under the name: age and, when it is not the squad being built, the home squad; recruit conditions on the right
-      '<div class="c-sub"><span class="c-age" title="'+tr("Вік до перестрибування в часі","Age before the timeskip")+'">'+(ageTxt(x.n)?ageTxt(x.n)+tr(" р."," y")+(ageBand(x.n)==="long"?tr(sxOf(x.n)==="f"?" · довгожителька":" · довгожитель"," · long-lived"):""):tr("вік ?","age ?"))+'</span>'+
+          '" aria-label="'+tr("Сюжетний боєць","Story fighter")+'">'+STORY_SVG+'</span>':'')+'<span class="c-age" title="'+tr("Вік до перестрибування в часі","Age before the timeskip")+'">'+(ageTxt(x.n)?ageTxt(x.n)+tr(" р."," y")+(ageBand(x.n)==="long"?tr(sxOf(x.n)==="f"?" · довгожителька":" · довгожитель"," · long-lived"):""):tr("вік ?","age ?"))+'</span>'+
         (u.t&&u.t!==S.cur?'<span class="tag lock"'+(LI[u.t]!=null?' title="'+esc(fmt(tr("Домашній загін: {w} — {t}","Home squad: {w} — {t}"),{w:lordUa(u.t),t:joinInfo(u,u.t).txt}))+'"':'')+'>'+home(u.t)+'</span>':'')+joinTag(u,J)+recTag(u)+'</div>'+
       (cant?'<div class="warn">⛔ '+lordUa(S.cur)+tr(" не може його завербувати"," cannot recruit this fighter")+'</div>':'')+
       growBars(u,relAt(x,topStage(x,shown)))+

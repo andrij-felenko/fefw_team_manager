@@ -48,7 +48,6 @@ export default {
 "— remove class":"— pašalinti klasę",
 "taken: ":"užimta: ",
 "path class of ":"maršruto klasė: ",
-"Skill path":"Įgūdžių kelias",
 "Damage":"Žala",
 "Evasion":"Išsisukimas",
 "Defense":"Gynyba",

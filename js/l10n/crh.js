@@ -48,7 +48,6 @@ export default {
 "— remove class":"— sınıfnı çıqar",
 "taken: ":"alınğan: ",
 "path class of ":"yol sınıfı: ",
-"Skill path":"Maharet yolu",
 "Damage":"Zarar",
 "Evasion":"Qaçınuv",
 "Defense":"Qorçalav",

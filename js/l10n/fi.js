@@ -48,7 +48,6 @@ export default {
 "— remove class":"— poista luokka",
 "taken: ":"varattu: ",
 "path class of ":"reittiluokka: ",
-"Skill path":"Taitopolku",
 "Damage":"Vahinko",
 "Evasion":"Väistö",
 "Defense":"Puolustus",

@@ -48,7 +48,6 @@ export default {
 "— remove class":"— კლასის მოხსნა",
 "taken: ":"დაკავებულია: ",
 "path class of ":"მარშრუტის კლასი: ",
-"Skill path":"უნარების გზა",
 "Damage":"ზიანი",
 "Evasion":"აცილება",
 "Defense":"დაცვა",

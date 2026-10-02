@@ -48,7 +48,6 @@ export default {
 "— remove class":"— αφαίρεση κλάσης",
 "taken: ":"κατειλημμένη: ",
 "path class of ":"κλάση διαδρομής: ",
-"Skill path":"Πορεία δεξιοτήτων",
 "Damage":"Ζημιά",
 "Evasion":"Αποφυγή",
 "Defense":"Άμυνα",

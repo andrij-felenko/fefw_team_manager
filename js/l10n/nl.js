@@ -48,7 +48,6 @@ export default {
 "— remove class":"— klasse verwijderen",
 "taken: ":"bezet door: ",
 "path class of ":"routeklasse van ",
-"Skill path":"Vaardighedenpad",
 "Damage":"Schade",
 "Evasion":"Ontwijking",
 "Defense":"Verdediging",

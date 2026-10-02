@@ -48,7 +48,6 @@ export default {
 "— remove class":"— elimină clasa",
 "taken: ":"ocupată: ",
 "path class of ":"clasa rutei ",
-"Skill path":"Progresul abilităților",
 "Damage":"Ofensivă",
 "Evasion":"Eschivă",
 "Defense":"Apărare",

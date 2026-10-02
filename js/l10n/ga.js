@@ -48,7 +48,6 @@ export default {
 "— remove class":"— bain an aicme",
 "taken: ":"tógtha ag: ",
 "path class of ":"aicme ar bhealach ",
-"Skill path":"Forbairt scileanna",
 "Damage":"Damáiste",
 "Evasion":"Seachaint",
 "Defense":"Cosaint",

@@ -48,7 +48,6 @@ export default {
 "— remove class":"— sınıfı kaldır",
 "taken: ":"alındı: ",
 "path class of ":"rota sınıfı: ",
-"Skill path":"Yetenek gelişimi",
 "Damage":"Hasar",
 "Evasion":"Kaçınma",
 "Defense":"Savunma",
