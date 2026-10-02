@@ -336,5 +336,9 @@ L10N["de"]={
 "Save slots":"Speicherplätze",
 "Recruiting on each path (★ soonest)":"Rekrutierung auf jeder Route (★ am frühesten)",
 "Sooner on another path":"Auf einer anderen Route früher",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Ruhm wächst langsam: etwa 4 bis Kap. 5, 8 bis Kap. 8, 10 bis Kap. 10"
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Ruhm wächst langsam: etwa 4 bis Kap. 5, 8 bis Kap. 8, 10 bis Kap. 10",
+"Path":"Route",
+"Condition":"Bedingung",
+"automatic":"automatisch",
+"orange “≈ Ch.” — later because of renown":"orangefarbenes „≈ Kap.“: später wegen Ruhm"
 };

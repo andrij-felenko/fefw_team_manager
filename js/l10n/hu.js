@@ -336,5 +336,9 @@ L10N["hu"]={
 "Save slots":"Mentési helyek",
 "Recruiting on each path (★ soonest)":"Toborzás minden útvonalon (★ a legkorábbi)",
 "Sooner on another path":"Másik útvonalon korábban",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"A hírnév lassan nő: kb. 4 az 5. fejezetre, 8 a 8.-ra, 10 a 10.-re"
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"A hírnév lassan nő: kb. 4 az 5. fejezetre, 8 a 8.-ra, 10 a 10.-re",
+"Path":"Útvonal",
+"Condition":"Feltétel",
+"automatic":"automatikus",
+"orange “≈ Ch.” — later because of renown":"narancs „≈ Fej.”: a hírnév miatt később"
 };

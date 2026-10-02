@@ -336,5 +336,9 @@ L10N["fi"]={
 "Save slots":"Tallennuspaikat",
 "Recruiting on each path (★ soonest)":"Värväys kullakin reitillä (★ aikaisin)",
 "Sooner on another path":"Aiemmin toisella reitillä",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Maine kasvaa hitaasti: noin 4 luvussa 5, 8 luvussa 8, 10 luvussa 10"
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Maine kasvaa hitaasti: noin 4 luvussa 5, 8 luvussa 8, 10 luvussa 10",
+"Path":"Reitti",
+"Condition":"Ehto",
+"automatic":"automaattisesti",
+"orange “≈ Ch.” — later because of renown":"oranssi ”≈ Luku”: myöhemmin maineen takia"
 };

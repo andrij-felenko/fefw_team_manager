@@ -336,5 +336,9 @@ L10N["pt"]={
 "Save slots":"Espaços de gravação",
 "Recruiting on each path (★ soonest)":"Recrutamento em cada rota (★ a mais cedo)",
 "Sooner on another path":"Mais cedo noutra rota",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"O renome sobe devagar: cerca de 4 no Cap. 5, 8 no Cap. 8, 10 no Cap. 10"
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"O renome sobe devagar: cerca de 4 no Cap. 5, 8 no Cap. 8, 10 no Cap. 10",
+"Path":"Rota",
+"Condition":"Condição",
+"automatic":"automático",
+"orange “≈ Ch.” — later because of renown":"«≈ Cap.» a laranja: mais tarde por causa do renome"
 };

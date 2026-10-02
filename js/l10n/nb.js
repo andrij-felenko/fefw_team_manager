@@ -336,5 +336,9 @@ L10N["nb"]={
 "Save slots":"Lagringsplasser",
 "Recruiting on each path (★ soonest)":"Rekruttering på hver rute (★ tidligst)",
 "Sooner on another path":"Tidligere på en annen rute",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Ry vokser sakte: omtrent 4 ved Kap. 5, 8 ved Kap. 8, 10 ved Kap. 10"
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Ry vokser sakte: omtrent 4 ved Kap. 5, 8 ved Kap. 8, 10 ved Kap. 10",
+"Path":"Rute",
+"Condition":"Betingelse",
+"automatic":"automatisk",
+"orange “≈ Ch.” — later because of renown":"oransje «≈ Kap.»: senere på grunn av ry"
 };

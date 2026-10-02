@@ -336,5 +336,9 @@ L10N["el"]={
 "Save slots":"Θέσεις αποθήκευσης",
 "Recruiting on each path (★ soonest)":"Στρατολόγηση σε κάθε διαδρομή (★ η νωρίτερη)",
 "Sooner on another path":"Νωρίτερα σε άλλη διαδρομή",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Η φήμη ανεβαίνει αργά: περίπου 4 στο Κεφ. 5, 8 στο Κεφ. 8, 10 στο Κεφ. 10"
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Η φήμη ανεβαίνει αργά: περίπου 4 στο Κεφ. 5, 8 στο Κεφ. 8, 10 στο Κεφ. 10",
+"Path":"Διαδρομή",
+"Condition":"Προϋπόθεση",
+"automatic":"αυτόματα",
+"orange “≈ Ch.” — later because of renown":"πορτοκαλί «≈ Κεφ.»: αργότερα λόγω φήμης"
 };

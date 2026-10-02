@@ -336,5 +336,9 @@ L10N["be"]={
 "Save slots":"Слоты захавання",
 "Recruiting on each path (★ soonest)":"Вярбоўка на кожным маршруце (★ — найраней)",
 "Sooner on another path":"На іншым маршруце — раней",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Слава расце павольна: прыкладна 4 да Гл. 5, 8 да Гл. 8, 10 да Гл. 10"
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Слава расце павольна: прыкладна 4 да Гл. 5, 8 да Гл. 8, 10 да Гл. 10",
+"Path":"Маршрут",
+"Condition":"Умова",
+"automatic":"аўтаматычна",
+"orange “≈ Ch.” — later because of renown":"аранжавае «≈ Гл.» — пазней праз славу"
 };

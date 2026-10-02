@@ -336,5 +336,9 @@ L10N["nl"]={
 "Save slots":"Opslagplaatsen",
 "Recruiting on each path (★ soonest)":"Rekrutering per route (★ het vroegst)",
 "Sooner on another path":"Eerder op een andere route",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Roem groeit langzaam: ongeveer 4 bij Hfst. 5, 8 bij Hfst. 8, 10 bij Hfst. 10"
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Roem groeit langzaam: ongeveer 4 bij Hfst. 5, 8 bij Hfst. 8, 10 bij Hfst. 10",
+"Path":"Route",
+"Condition":"Voorwaarde",
+"automatic":"automatisch",
+"orange “≈ Ch.” — later because of renown":"oranje „≈ Hfst.”: later door roem"
 };

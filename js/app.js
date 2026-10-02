@@ -698,25 +698,47 @@ function renderTeam(){
   var distinct={};team().forEach(function(x){counted(x).forEach(function(c){distinct[c]=1})});
   $("meter").textContent=team().length+tr(" бійців · "," fighters · ")+Object.keys(distinct).length+tr(" різних класів (просунуті й майстер)"," distinct classes (Advanced & Master)");
 }
-// after the recruit line of the fighter list: how every path recruits them, soonest first (★);
-// green when another path gets them sooner than the open lord's
+// after the recruit line of the fighter list: how every path recruits them, as a small table
+// (soonest path on green with ★); the mark is green when another path gets them sooner than the open lord's
 var PATHS_SVG='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15V8.5M8 8.5 3.5 4.5V1.8M8 8.5l4.5-4M1.8 3.4 3.5 1.6 5.2 3.4M10.6 2.4h2.6v2.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-function pathsMark(u){
-  var rows=LORDS.map(function(l){return {id:l.id,w:joinWhen(u,l.id)}});
-  if(!rows.some(function(r){return r.id!==S.cur&&r.w}))return "";
-  if(u.JJ.every(function(s){return s===u.JJ[0]}))return ""; // the same on every path
+function pathRows(u){
+  var rows=LORDS.map(function(l){return {id:l.id,s:u.JJ[LI[l.id]],w:joinWhen(u,l.id)}});
   var can=rows.filter(function(r){return r.w}).sort(function(a,b){return cmpWhen(a.w,b.w)});
-  var best=can[0].w, cur=rows.filter(function(r){return r.id===S.cur})[0];
-  var sooner=!!cur.w&&best[0]<cur.w[0];
-  // ★ on every path with the soonest estimate; "≈ Ch." where the renown comes later than the chapter
-  var lines=can.concat(rows.filter(function(r){return !r.w})).map(function(r){
-    return (r.w&&r.w[0]===best[0]?"★ ":"")+lordUa(r.id)+": "+joinInfo(u,r.id).txt.replace(/ · /g,LANG==="ar"?"\u060c ":", ")+
-      (r.w&&r.w[0]>r.w[3]?" "+("(≈ "+tr("Гл. ","Ch. ")+r.w[0]+")").replace(/ /g,"\u00a0"):"");
+  var cur=rows.filter(function(r){return r.id===S.cur})[0], best=can.length?can[0].w:null;
+  return {all:can.concat(rows.filter(function(r){return !r.w})),best:best,cur:cur,sooner:!!(cur.w&&best&&best[0]<cur.w[0])};
+}
+function pathsMark(u){
+  var P=pathRows(u);
+  if(!P.all.some(function(r){return r.id!==S.cur&&r.w}))return "";
+  if(u.JJ.every(function(s){return s===u.JJ[0]}))return ""; // the same on every path
+  var label=(P.sooner?tr("На іншому маршруті — раніше","Sooner on another path")+". ":"")+tr("Вербування на кожному маршруті (★ — найраніше)","Recruiting on each path (★ soonest)");
+  return '<span class="paths'+(P.sooner?" sooner":"")+'" tabindex="0" role="img" aria-label="'+esc(label)+'" data-paths="'+esc(u.n)+'">'+PATHS_SVG+'</span>';
+}
+// the card behind the mark. An extra condition shared by every path is written once under the table,
+// a column appears only when the paths ask for different things (often different gold)
+function pathsCard(u){
+  var P=pathRows(u), best=P.best;
+  var cond=function(c){var t=extra(c);return LANG==="en"?t.replace(" to "+u.n,""):t};
+  var conds=P.all.filter(function(r){return r.w&&r.s.indexOf("/")>0}).map(function(r){return r.s.split("/")[3]||""});
+  var same=conds.length>0&&conds.every(function(c){return c===conds[0]}), col=!same&&conds.length>0;
+  var ch=tr("Гл. ","Ch. ").trim(), n=col?6:5;
+  var h='<table class="pc"><thead><tr><th>'+tr("Маршрут","Path")+'</th><th class="n">'+ch+'</th><th class="n">'+tr("Підтримка ","Support ").trim()+
+    '</th><th class="n">'+tr("Слава ","Renown ").trim()+'</th><th class="n">≈ '+ch+'</th>'+(col?'<th>'+tr("Умова","Condition")+'</th>':'')+'</tr></thead><tbody>';
+  P.all.forEach(function(r){
+    var top=r.w&&r.w[0]===best[0], s=r.s;
+    h+='<tr class="'+(top?"best":"")+(r.id===S.cur?" cur":"")+'"><td class="ln">'+(top?"★ ":"")+esc(lordUa(r.id))+'</td>';
+    if(!r.w||s==="P")h+='<td colspan="'+(n-1)+'" class="na">'+esc(joinInfo(u,r.id).txt)+'</td>';
+    else if(s[0]==="a")h+='<td class="n">'+r.w[3]+'</td><td colspan="2" class="na">'+tr("автоматично","automatic")+'</td><td class="n">'+r.w[0]+'</td>'+(col?'<td></td>':'');
+    else{var p=s.split("/");
+      h+='<td class="n">'+p[0]+'</td><td class="n">'+p[1]+'</td><td class="n">'+p[2]+'</td><td class="n'+(r.w[0]>r.w[3]?" late":"")+'">'+r.w[0]+'</td>'+
+        (col?'<td class="cd">'+esc(p[3]?cond(p[3]):"—")+'</td>':'');}
+    h+='</tr>';
   });
-  var tip=(sooner?tr("На іншому маршруті — раніше","Sooner on another path")+" · ":"")+
-    tr("Вербування на кожному маршруті (★ — найраніше)","Recruiting on each path (★ soonest)")+" · "+lines.join(" · ")+" · "+
-    tr("Слава росте повільно: приблизно 4 до Гл. 5, 8 до Гл. 8, 10 до Гл. 10","Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10");
-  return '<span class="paths'+(sooner?" sooner":"")+'" tabindex="0" role="img" aria-label="'+esc(tip)+'" title="'+esc(tip)+'">'+PATHS_SVG+'</span>';
+  return (P.sooner?'<div class="pc-s">'+tr("На іншому маршруті — раніше","Sooner on another path")+'</div>':'')+
+    '<div class="pc-h">'+tr("Вербування на кожному маршруті (★ — найраніше)","Recruiting on each path (★ soonest)")+'</div>'+h+'</tbody></table>'+
+    (same&&conds[0]?'<div class="pc-x">'+tr("Умова","Condition")+': '+esc(cond(conds[0]))+'</div>':'')+
+    '<div class="pc-n">'+tr("Слава росте повільно: приблизно 4 до Гл. 5, 8 до Гл. 8, 10 до Гл. 10","Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10")+
+    (P.all.some(function(r){return r.w&&r.w[0]>r.w[3]})?'; '+tr("помаранчеве «≈ Гл.» — пізніше через славу","orange “≈ Ch.” — later because of renown"):'')+'</div>';
 }
 function renderPool(){
   var q=(S.q||"").trim().toLowerCase();
@@ -816,26 +838,30 @@ document.querySelector(".lang").addEventListener("click",function(e){var b=e.tar
   var l=b.dataset.lang; LANG_WANT=l;
   withLang(l,function(){if(LANG_WANT!==l)return;LANG=l;S.lang=LANG;setLangTables();save();renderAll()})});
 $("legend").addEventListener("change",function(e){if(e.target.id!=="endLv")return;S.endLv=+e.target.value;S.endLv=endLv();save();renderAll()});
-// tooltips: titles become a small card, one fact per line (" · " separates facts); on touch screens a tap shows it
+// tooltips: titles become a small card, one fact per line (" · " separates facts); on touch screens a tap shows it.
+// The recruit-paths mark (data-paths) gets a table instead
 (function(){
   var tip=document.createElement("div"), cur=null, timer=null;
   tip.className="tip"; tip.setAttribute("role","tooltip"); tip.hidden=true; document.body.appendChild(tip);
   function textOf(el){if(el.hasAttribute("title")){el.dataset.tip=el.getAttribute("title");el.removeAttribute("title")}return el.dataset.tip||""}
   function hide(){tip.hidden=true;cur=null}
   function show(el){
-    var t=textOf(el); if(!t){hide();return}
-    cur=el; tip.classList.toggle("wide",el.classList.contains("paths")); tip.dir=document.documentElement.dir||"ltr"; tip.textContent=t.replace(/ · /g,"\n"); tip.hidden=false;
+    var pc=el.dataset.paths, t=pc?"":textOf(el); if(!pc&&!t){hide();return}
+    cur=el; tip.classList.toggle("pcard",!!pc); tip.dir=document.documentElement.dir||"ltr";
+    if(pc)tip.innerHTML=pathsCard(BY[pc]); else tip.textContent=t.replace(/ · /g,"\n");
+    tip.hidden=false;
     var r=el.getBoundingClientRect(), w=tip.offsetWidth, h=tip.offsetHeight;
     var x=Math.min(Math.max(8,r.left+r.width/2-w/2),innerWidth-w-8), y=r.bottom+8;
     if(y+h>innerHeight-8)y=r.top-h-8;
     tip.style.left=x+"px"; tip.style.top=Math.max(8,y)+"px";
   }
-  document.addEventListener("mouseover",function(e){var el=e.target.closest&&e.target.closest("[title],[data-tip]");if(el!==cur){if(el)show(el);else hide()}});
-  document.addEventListener("focusin",function(e){var el=e.target.closest&&e.target.closest("[title],[data-tip]");if(el)show(el)});
+  var TIPPED="[title],[data-tip],[data-paths]";
+  document.addEventListener("mouseover",function(e){var el=e.target.closest&&e.target.closest(TIPPED);if(el!==cur){if(el)show(el);else hide()}});
+  document.addEventListener("focusin",function(e){var el=e.target.closest&&e.target.closest(TIPPED);if(el)show(el)});
   document.addEventListener("focusout",hide);
   window.addEventListener("scroll",hide,true);
-  document.addEventListener("touchstart",function(e){var el=e.target.closest&&e.target.closest("[title],[data-tip]");
-    if(el){show(el);clearTimeout(timer);timer=setTimeout(hide,4000)}else hide()},{passive:true});
+  document.addEventListener("touchstart",function(e){var el=e.target.closest&&e.target.closest(TIPPED);
+    if(el){show(el);clearTimeout(timer);timer=setTimeout(hide,el.dataset.paths?9000:4000)}else hide()},{passive:true});
 })();
 $("slots").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
   if(b.dataset.slot!=null)useSlot(+b.dataset.slot);

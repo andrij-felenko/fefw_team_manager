@@ -336,5 +336,9 @@ L10N["pl"]={
 "Save slots":"Miejsca zapisu",
 "Recruiting on each path (★ soonest)":"Werbunek na każdej ścieżce (★ najwcześniej)",
 "Sooner on another path":"Wcześniej na innej ścieżce",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Sława rośnie powoli: około 4 w Rozdz. 5, 8 w Rozdz. 8, 10 w Rozdz. 10"
+"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Sława rośnie powoli: około 4 w Rozdz. 5, 8 w Rozdz. 8, 10 w Rozdz. 10",
+"Path":"Ścieżka",
+"Condition":"Warunek",
+"automatic":"automatycznie",
+"orange “≈ Ch.” — later because of renown":"pomarańczowe „≈ Rozdz.”: później przez sławę"
 };
