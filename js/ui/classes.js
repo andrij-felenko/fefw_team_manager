@@ -1,7 +1,7 @@
-// Classes: every tier's classes with who in the squad can take them, filtered by fighter and tier.
+// Classes: every tier's classes with who in the squad can take them — for the fighter opened above, or the squad.
 import {tr,pick} from "../core/i18n.js";
 import {$,esc} from "../core/utils.js";
-import {S,save,team} from "../core/state.js";
+import {S,save,team,classFor} from "../core/state.js";
 import {lordUa} from "../data/lords.js";
 import {BY} from "../data/fighters.js";
 import {TIERS,CLS,tname,treq,NOTES,TEMPLE_UK} from "../data/classes.js";
@@ -24,15 +24,14 @@ export function restr(c){
 }
 function usedMap(){var m={};team().forEach(function(x){x.path.forEach(function(c){if(c)(m[c]=m[c]||[]).push(x.n)})});return m}
 export function renderClassTools(){
-  var names=team().map(function(x){return x.n});
-  if(S.forU&&names.indexOf(S.forU)<0)S.forU="";
-  $("forU").innerHTML='<option value="">'+tr("Для всього загону","For the whole squad")+'</option>'+names.map(function(n){return '<option value="'+esc(n)+'"'+(n===S.forU?" selected":"")+'>'+tr("Для: ","For: ")+esc(n)+'</option>'}).join("");
+  var one=classFor();
+  $("clsFor").textContent=one?tr("Для: ","For: ")+one:tr("Для всього загону","For the whole squad");
   $("tierF").innerHTML='<option value="">'+tr("Усі рівні","All tiers")+'</option>'+[0,1,2,3,4].map(function(i){return '<option value="'+i+'"'+(String(i)===S.tierF?" selected":"")+'>'+tname(i)+'</option>'}).join("");
   $("hideBlocked").checked=!!S.hideB;
 }
 export function renderTiers(){
   var m=usedMap(), open=S.open||{1:1,2:1};
-  var one=S.forU||null, ou=one?BY[one]:null;
+  var one=classFor()||null, ou=one?BY[one]:null;
   $("tiers").innerHTML=[0,1,2,3,4].filter(function(ti){return !S.tierF||String(ti)===S.tierF}).map(function(ti){
     var t=TIERS[ti], cells=[], used=0, list=t.list.filter(function(c){return !offPath(c[0])});
     list.forEach(function(c){
@@ -68,7 +67,6 @@ export function renderTiers(){
   }).join("");
 }
 export function bindClasses(){
-  $("forU").addEventListener("change",function(){S.forU=this.value;save();renderTiers()});
   $("tierF").addEventListener("change",function(){S.tierF=this.value;save();renderTiers()});
   $("hideBlocked").addEventListener("change",function(){S.hideB=this.checked;save();renderTiers()});
   $("tiers").addEventListener("toggle",function(e){var t=e.target.dataset&&e.target.dataset.t;if(t==null||S.tierF)return;S.open=S.open||{1:1,2:1};

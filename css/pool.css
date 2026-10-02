@@ -5,9 +5,29 @@
 .tools label{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--muted);cursor:pointer}
 .tools label input{width:auto}
 .pool{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:8px}
-.row{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:grid;gap:6px}
+.row{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:start}
+.r-main{display:grid;gap:6px;min-width:0}
+/* right side: the add button, and under it how the open lord recruits them (chapter, support, renown) */
+.r-side{display:flex;flex-direction:column;align-items:flex-end;gap:6px;text-align:end}
+.r-rec{font-size:11px;line-height:1.35;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.r-rec .no{color:var(--minus);white-space:normal}
+.r-cond{grid-column:1/-1;margin-top:-4px}
+.r-rec .paths{margin-inline-start:0;margin-inline-end:4px;vertical-align:-3px}
 .row.in{opacity:.5}
-.r-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+/* already in the open squad: shown with the lord's colour */
+.row.mine{border-color:var(--accent)}
 .r-name{font-weight:600}
 .join{font-size:12px;color:var(--muted)}
-.join.no{color:var(--minus)}
+/* All fighters' filters: two switches, gender buttons, strengths as skill icons */
+.pool-tools{gap:8px 16px}
+.sw{display:inline-flex;align-items:center;gap:8px;border:0;background:none;padding:2px 0;color:var(--ink);font-size:14px}
+.sw i{width:30px;height:17px;border-radius:999px;background:var(--line);position:relative;flex:none;transition:background .15s}
+.sw i::after{content:"";position:absolute;top:2px;inset-inline-start:2px;width:13px;height:13px;border-radius:50%;background:var(--surface);box-shadow:0 1px 2px rgba(0,0,0,.3);transition:inset-inline-start .15s}
+.sw.on i{background:var(--accent)}
+.sw.on i::after{inset-inline-start:15px}
+.skf{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px}
+.skf .lb{font-size:13px;color:var(--muted);margin-inline-end:2px}
+.tgl{padding:3px 8px;font-size:14px;line-height:1.3;color:var(--muted)}
+.tgl svg.ic{width:18px;height:18px;vertical-align:-4px}
+.tgl.on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.cls-for{font-size:14px;color:var(--muted)}

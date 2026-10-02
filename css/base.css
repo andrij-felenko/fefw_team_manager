@@ -7,3 +7,9 @@ h1{font-family:var(--display);font-weight:400;font-size:46px;line-height:1;margi
 .sub{color:var(--muted);margin:6px 0 0}
 h2{font-family:var(--display);font-weight:400;font-size:28px;margin:0 0 14px}
 .meter{font-variant-numeric:tabular-nums;font-weight:600;padding:6px 14px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+/* a section's heading folds it: the arrow points down when open, sideways when folded */
+.fold{font:inherit;color:inherit;background:none;border:0;padding:0;display:inline-flex;align-items:center;gap:12px;cursor:pointer}
+.fold::after{content:"";width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(-4px) rotate(45deg);transition:transform .15s}
+.fold[aria-expanded="false"]::after{transform:rotate(-45deg)}
+[dir=rtl] .fold[aria-expanded="false"]::after{transform:rotate(135deg)}
+.fold:hover{color:var(--accent)}

@@ -8,13 +8,15 @@ import {joinInfo,pathRows} from "../model/recruit.js";
 import {PATHS_SVG} from "./icons.js";
 
 // after the recruit line of the fighter list: how every path recruits them, as a small table
-// (soonest path on green with ★); the mark is green when another path gets them sooner than the open lord's
+// (soonest path on gold with ★). The mark: gold when the open lord's path is the soonest, teal when the fighter joins
+// this path on their own, grey when another path gets them sooner (or this one can't)
 export function pathsMark(u){
   var P=pathRows(u);
   if(!P.all.some(function(r){return r.id!==S.cur&&r.w}))return "";
   if(u.JJ.every(function(s){return s===u.JJ[0]}))return ""; // the same on every path
   var label=(P.sooner?tr("На іншому маршруті — раніше","Sooner on another path")+". ":"")+tr("Вербування на кожному маршруті (★ — найраніше)","Recruiting on each path (★ soonest)");
-  return '<span class="paths'+(P.sooner?" sooner":"")+'" tabindex="0" role="img" aria-label="'+esc(label)+'" data-paths="'+esc(u.n)+'">'+PATHS_SVG+'</span>';
+  var mk=P.cur.s&&P.cur.s[0]==="a"?" auto":(P.cur.w&&!P.sooner?" best":"");
+  return '<span class="paths'+mk+'" tabindex="0" role="img" aria-label="'+esc(label)+'" data-paths="'+esc(u.n)+'">'+PATHS_SVG+'</span>';
 }
 // the card behind the mark. An extra condition shared by every path is written once under the table,
 // a column appears only when the paths ask for different things (often different gold)
@@ -30,7 +32,7 @@ export function pathsCard(u){
     var top=r.w&&r.w[0]===best[0], s=r.s;
     h+='<tr class="'+(top?"best":"")+(r.id===S.cur?" cur":"")+'"><td class="ln">'+(top?"★ ":"")+esc(lordUa(r.id))+'</td>';
     if(!r.w||s==="P")h+='<td colspan="'+(n-1)+'" class="na">'+esc(joinInfo(u,r.id).txt)+'</td>';
-    else if(s[0]==="a")h+='<td class="n">'+r.w[3]+'</td><td colspan="2" class="na">'+tr("автоматично","automatic")+'</td><td class="n">'+r.w[0]+'</td>'+(col?'<td></td>':'');
+    else if(s[0]==="a")h+='<td class="n">'+r.w[3]+'</td><td colspan="2" class="au">'+tr("автоматично","automatic")+'</td><td class="n">'+r.w[0]+'</td>'+(col?'<td></td>':'');
     else{var p=s.split("/");
       h+='<td class="n">'+p[0]+'</td><td class="n">'+p[1]+'</td><td class="n">'+p[2]+'</td><td class="n'+(r.w[0]>r.w[3]?" late":"")+'">'+r.w[0]+'</td>'+
         (col?'<td class="cd">'+esc(p[3]?cond(p[3]):"—")+'</td>':'');}

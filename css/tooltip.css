@@ -3,10 +3,10 @@
 .tip{position:fixed;z-index:50;max-width:250px;padding:8px 11px;border-radius:9px;background:var(--surface);color:var(--ink);
   border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.35);font-size:12px;line-height:1.45;white-space:pre-line;pointer-events:none}
 .tip::first-line{font-weight:600}
-/* the recruit-paths card: a small table, the soonest path on green */
+/* the recruit-paths card: a small table, the soonest path on gold, joining on their own in teal */
 .tip.pcard{max-width:min(460px,calc(100vw - 16px));white-space:normal;padding:8px 9px}
 .tip.pcard::first-line{font-weight:inherit}
-.pc-s{color:var(--plus);font-weight:600}
+.pc-s{color:var(--muted);font-weight:600}
 .pc-h{font-weight:600;margin-bottom:4px}
 .pc{border-collapse:separate;border-spacing:0 2px;font-variant-numeric:tabular-nums;width:100%}
 .pc th{font-weight:500;color:var(--muted);font-size:11px;text-align:start;padding:0 6px 3px;border-bottom:1px solid var(--line);white-space:nowrap}
@@ -14,15 +14,17 @@
 .pc .n{text-align:center}
 .pc td.cd{white-space:normal;min-width:7em}
 .pc td.na{color:var(--muted);text-align:center}
+.pc td.au{color:var(--rel);text-align:center}
 .pc td.late{color:var(--warn)}
 .pc tr.cur td.ln{font-weight:600}
-.pc tr.best td{background:var(--plus-soft)}
-.pc tr.best td.ln{color:var(--plus)}
+.pc tr.best td{background:color-mix(in srgb,var(--gold) 16%,transparent)}
+.pc tr.best td.ln{color:var(--gold)}
 .pc tr.best td:first-child{border-start-start-radius:5px;border-end-start-radius:5px}
 .pc tr.best td:last-child{border-start-end-radius:5px;border-end-end-radius:5px}
 .pc-x{margin-top:5px}
-/* after the recruit line: how the other paths recruit (green: sooner on another path) */
+/* after the recruit line: how the other paths recruit (gold: this path is the soonest, teal: joins on their own, grey: sooner elsewhere) */
 .paths{display:inline-flex;vertical-align:-3px;margin-inline-start:6px;color:var(--muted);cursor:help;border-radius:4px}
 .paths svg{width:15px;height:15px;display:block}
-.paths.sooner{color:var(--plus)}
+.paths.best{color:var(--gold)}
+.paths.auto{color:var(--rel)}
 .paths:focus-visible{outline:2px solid var(--accent);outline-offset:1px}

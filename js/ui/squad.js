@@ -19,7 +19,7 @@ import {rtTip,rateStrip} from "./rating.js";
 import {mountBadge} from "./mounts.js";
 import {pickList} from "./picker.js";
 import {renderSummary} from "./summary.js";
-import {restr,renderTiers} from "./classes.js";
+import {restr,renderTiers,renderClassTools} from "./classes.js";
 
 // the level the fighter joins the open lord at, when it is past the Beginner level (an estimate, the tooltip says how)
 function joinTag(u,J){
@@ -161,7 +161,7 @@ export function bindSquad(renderAll){
   // compact view: a plate opens or closes the fighter's full card (several can be open)
   $("sqChips").addEventListener("click",function(e){var b=e.target.closest("[data-card]");if(!b)return;
     var n=b.dataset.card, at=S.cardOpen.indexOf(n); if(at>=0)S.cardOpen.splice(at,1);else S.cardOpen.push(n);
-    save();renderTeam()});
+    save();renderTeam();renderClassTools();renderTiers()});
   $("team").addEventListener("keydown",function(e){var m=e.target.closest("[data-main]");if(m&&(e.key==="Enter"||e.key===" ")){e.preventDefault();toggleMain(m)}});
   $("team").addEventListener("click",function(e){
     var m=e.target.closest("[data-main]"); if(m){toggleMain(m);return}

@@ -37,7 +37,6 @@ function cleanPlan(p){
 }
 function openPlan(p){
   S.teams=p.teams; S.sx=p.sx;
-  if(!S.teams[S.cur].some(function(x){return x.n===S.forU}))S.forU="";
   setOpen(null);
 }
 // an empty slot starts like a first visit: each lord with the fighters the game gives them.

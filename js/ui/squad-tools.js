@@ -5,11 +5,11 @@ import {$,esc} from "../core/utils.js";
 import {STAGE_S} from "../core/terms.js";
 import {S,save,STAGE_WINDOWS} from "../core/state.js";
 import {renderTeam} from "./squad.js";
-import {renderTiers} from "./classes.js";
+import {renderTiers,renderClassTools} from "./classes.js";
 
 export function renderSquadTools(){
   function seg(attr,cur,opts,label){
-    return '<span class="seg" role="group" aria-label="'+esc(label)+'">'+opts.map(function(o){
+    return '<span class="segs" role="group" aria-label="'+esc(label)+'">'+opts.map(function(o){
       return '<button type="button" data-'+attr+'="'+o[0]+'" class="'+(cur===o[0]?"on":"")+'" aria-pressed="'+(cur===o[0])+'"'+(o[2]?' title="'+esc(o[2])+'"':'')+'>'+o[1]+'</button>'}).join("")+'</span>';
   }
   $("sqTools").innerHTML=
@@ -22,7 +22,7 @@ export function renderSquadTools(){
 export function bindSquadTools(){
   $("sqTools").addEventListener("click",function(e){
     var b=e.target.closest("button"); if(!b)return;
-    if(b.dataset.view){S.view=b.dataset.view;save();renderSquadTools();renderTeam();return}
+    if(b.dataset.view){S.view=b.dataset.view;save();renderSquadTools();renderTeam();renderClassTools();renderTiers();return}
     if(b.dataset.calc){S.calc=b.dataset.calc;save();renderSquadTools();renderTeam();renderTiers()}
   });
   $("sqTools").addEventListener("change",function(e){if(e.target.id!=="stw")return;S.stw=e.target.value;save();renderTeam()});

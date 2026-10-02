@@ -4,6 +4,7 @@ import {LANG,setLang,withLang} from "./core/i18n.js";
 import {S,loadState} from "./core/state.js";
 import {renderAll} from "./ui/render.js";
 import {bindTopbar} from "./ui/topbar.js";
+import {bindFolds} from "./ui/page.js";
 import {bindLegend} from "./ui/legend.js";
 import {initTooltip} from "./ui/tooltip.js";
 import {bindSlots} from "./ui/slots.js";
@@ -17,6 +18,7 @@ loadState();
 setLang(S.lang||"en");
 // the pieces that redraw the whole page get renderAll passed in, so no piece imports render.js (no import cycles)
 bindTopbar(renderAll);
+bindFolds();
 bindLegend(renderAll);
 initTooltip();
 bindSlots(renderAll);

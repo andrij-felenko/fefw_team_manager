@@ -53,39 +53,32 @@
 
   <section>
     <div class="tstats" id="tstats"></div>
-    <h2 data-i18n="h_squad"></h2>
-    <div class="sq-tools" id="sqTools"></div>
-    <div class="sq-chips" id="sqChips"></div>
-    <div class="team" id="team"></div>
+    <h2><button type="button" class="fold" data-fold="squad" aria-expanded="true"><span data-i18n="h_squad"></span></button></h2>
+    <div class="fold-body" id="fold-squad">
+      <div class="sq-tools" id="sqTools"></div>
+      <div class="sq-chips" id="sqChips"></div>
+      <div class="team" id="team"></div>
+    </div>
   </section>
 
   <section>
-    <h2 data-i18n="h_all"></h2>
-    <div class="tools">
-      <input id="q" autocomplete="off">
-      <select id="filter">
-        <option value="avail"></option>
-        <option value="free" data-i18n="f_free"></option>
-        <option value="all" data-i18n="f_all"></option>
-      </select>
-      <select id="ttF"></select>
-      <select id="sxF">
-        <option value="" data-i18n="sx_any"></option>
-        <option value="f" data-i18n="sx_f"></option>
-        <option value="m" data-i18n="sx_m"></option>
-      </select>
+    <h2><button type="button" class="fold" data-fold="pool" aria-expanded="true"><span data-i18n="h_all"></span></button></h2>
+    <div class="fold-body" id="fold-pool">
+      <div class="tools pool-tools" id="poolTools"></div>
+      <div class="pool" id="pool"></div>
     </div>
-    <div class="pool" id="pool"></div>
   </section>
 
   <section>
-    <h2 data-i18n="h_classes"></h2>
-    <div class="tools">
-      <select id="forU"></select>
-      <select id="tierF"></select>
-      <label><input type="checkbox" id="hideBlocked"> <span data-i18n="hide_blocked"></span></label>
+    <h2><button type="button" class="fold" data-fold="classes" aria-expanded="true"><span data-i18n="h_classes"></span></button></h2>
+    <div class="fold-body" id="fold-classes">
+      <div class="tools">
+        <span class="cls-for" id="clsFor"></span>
+        <select id="tierF"></select>
+        <label><input type="checkbox" id="hideBlocked"> <span data-i18n="hide_blocked"></span></label>
+      </div>
+      <div id="tiers"></div>
     </div>
-    <div id="tiers"></div>
   </section>
 
   <p class="src" id="srcNote"></p>

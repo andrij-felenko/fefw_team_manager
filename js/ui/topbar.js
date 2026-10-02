@@ -15,7 +15,6 @@ export function renderTabs(){
   var rc=routeClasses(S.cur);
   $("teamSub").innerHTML=tr("Загін: ","Lord: ")+lordUa(S.cur)+tr(" · класи маршруту: "," · path classes: ")+
     rc.ex.map(function(c){return '<b class="rc-ex">'+c+'</b>'}).concat(rc.un.map(function(c){return '<span class="rc-un">'+c+'</span>'})).join(", ");
-  $("filter").options[0].textContent=tr("Доступні: ","Available to ")+lordUa(S.cur);
 }
 // a language loads on its first click; when flags are clicked quickly, the last click wins
 let LANG_WANT=null;
@@ -23,5 +22,5 @@ export function bindTopbar(renderAll){
   document.querySelector(".lang").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
     var l=b.dataset.lang; LANG_WANT=l;
     withLang(l,function(){if(LANG_WANT!==l)return;setLang(l);S.lang=LANG;save();renderAll()})});
-  $("tabs").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;S.cur=b.dataset.lord;S.forU="";setOpen(null);save();renderAll()});
+  $("tabs").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;S.cur=b.dataset.lord;setOpen(null);save();renderAll()});
 }
