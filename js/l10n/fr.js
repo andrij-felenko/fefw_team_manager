@@ -1,6 +1,6 @@
-// Français: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Français: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Français; corrections are welcome.
-L10N["fr"]={
+export default {
 "en":"en",
 "Leda's squad":"Escouade de Leda",
 "Cai's squad":"Escouade de Cai",
@@ -121,7 +121,7 @@ L10N["fr"]={
 "its number is ":"nombre en ",
 "green, “not ripe yet”":"vert, « pas encore mûr »",
 "poor":"faible",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · les stats s'accumulent le long du parcours : croissance propre jusqu'au niveau 10, puis avec le modificateur de classe (Novice dès le 10, Spécialité dès le 20), plus le bonus de stats de la classe actuelle de l'unité ; Novice évaluée au niveau 20, Spécialité au 35, Élite au 45, Suprême au niveau ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · les stats s'accumulent le long du parcours : croissance propre jusqu'au niveau 5, puis avec le modificateur de classe (Novice dès le 5, Spécialité dès le 20), plus le bonus de stats de la classe actuelle de l'unité ; Novice évaluée au niveau 20, Spécialité au 35, Élite au 45, Suprême au niveau ",
 "End-game level":"Niveau en fin de jeu",
 "duplicate · main: ":"doublon · unité principale : ",
 ": choose class":": choisir la classe",
@@ -356,5 +356,21 @@ L10N["fr"]={
 "the class's mount (hover: how to get one)":"monture de la classe (survol : comment l'obtenir)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Histoire : sur cette route le jeu fournit cette unité ; vous pouvez quand même la placer dans l'escouade d'un autre seigneur",
 "The squad's lord":"Seigneur de l'escouade",
-"Home squad: {w} — {t}":"Escouade d'origine : {w} — {t}"
+"Home squad: {w} — {t}":"Escouade d'origine : {w} — {t}",
+"≈ Lv {n}":"≈ Niv. {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Arrivée chez {w} : {c}, ≈ Niv. {n} (estimation d'après les niveaux recommandés des chapitres)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Avant, l'unité progresse seule en {k} ; les classes que vous choisissez comptent à partir de ce niveau",
+"before joining":"avant l'arrivée",
+"from ≈ Lv {n}":"dès ≈ Niv. {n}",
+"Full cards":"Fiches complètes",
+"Compact":"Compact",
+"View":"Vue",
+"Stages:":"Étapes :",
+"All (planning)":"Toutes (planification)",
+"From joining":"Depuis l'arrivée",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Les stats comptent à partir du niveau d'arrivée de l'unité : une recrue tardive arrive déjà montée en niveau",
+"Whole path":"Tout le parcours",
+"Stats count from level 1, as if the fighter were with you from the start":"Les stats comptent depuis le niveau 1, comme si l'unité était avec vous depuis le début",
+"Stats":"Stats",
+"Open or close the full card":"Ouvrir ou fermer la fiche complète"
 };

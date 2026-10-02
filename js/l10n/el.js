@@ -1,6 +1,6 @@
-// Ελληνικά: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Ελληνικά: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Ελληνικά; corrections are welcome.
-L10N["el"]={
+export default {
 "en":"en",
 "Leda's squad":"Ομάδα της Leda",
 "Cai's squad":"Ομάδα του Cai",
@@ -121,7 +121,7 @@ L10N["el"]={
 "its number is ":"ο αριθμός σε ",
 "green, “not ripe yet”":"πράσινο, «δεν ωρίμασε ακόμη»",
 "poor":"αδύναμο",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · τα στατιστικά συσσωρεύονται στην πορεία: ως το επίπεδο 10 η ατομική ανάπτυξη, μετά με τον τροποποιητή της κλάσης (Αρχάριος από το 10, Ειδίκευση από το 20), συν το μπόνους στατιστικών της τρέχουσας κλάσης της μονάδας. Αξιολόγηση: Αρχάριος στο 20, Ειδίκευση στο 35, Προχωρημένος στο 45, Δάσκαλος στο επίπεδο ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · τα στατιστικά συσσωρεύονται στην πορεία: ως το επίπεδο 5 η ατομική ανάπτυξη, μετά με τον τροποποιητή της κλάσης (Αρχάριος από το 5, Ειδίκευση από το 20), συν το μπόνους στατιστικών της τρέχουσας κλάσης της μονάδας. Αξιολόγηση: Αρχάριος στο 20, Ειδίκευση στο 35, Προχωρημένος στο 45, Δάσκαλος στο επίπεδο ",
 "End-game level":"Τελικό επίπεδο",
 "duplicate · main: ":"διπλότυπο · κύρια μονάδα: ",
 ": choose class":": επιλογή κλάσης",
@@ -356,5 +356,21 @@ L10N["el"]={
 "the class's mount (hover: how to get one)":"το ζώο ίππευσης της κλάσης (πέρασε από πάνω: πώς το αποκτάς)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Ιστορία: σε αυτή τη διαδρομή το παιχνίδι σού δίνει αυτή τη μονάδα· μπορείς όμως να τη μεταφέρεις στην ομάδα άλλου αρχηγού",
 "The squad's lord":"Αρχηγός της ομάδας",
-"Home squad: {w} — {t}":"Αρχική ομάδα: {w} — {t}"
+"Home squad: {w} — {t}":"Αρχική ομάδα: {w} — {t}",
+"≈ Lv {n}":"≈ Επ. {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Ένταξη — {w}: {c}, ≈ Επ. {n} (εκτίμηση από τα προτεινόμενα επίπεδα των κεφαλαίων)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Πριν από αυτό αναπτύσσεται μόνη της ως {k}· οι κλάσεις που επιλέγεις μετράνε από εκείνο το επίπεδο",
+"before joining":"πριν από την ένταξη",
+"from ≈ Lv {n}":"από ≈ Επ. {n}",
+"Full cards":"Πλήρεις κάρτες",
+"Compact":"Συμπαγές",
+"View":"Προβολή",
+"Stages:":"Στάδια:",
+"All (planning)":"Όλα (σχεδιασμός)",
+"From joining":"Από την ένταξη",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Τα στατιστικά μετρούν από το επίπεδο με το οποίο εντάσσεται η μονάδα: ένας αργός νεοσύλλεκτος έρχεται ήδη ανεβασμένος",
+"Whole path":"Όλη η διαδρομή",
+"Stats count from level 1, as if the fighter were with you from the start":"Τα στατιστικά μετρούν από το επίπεδο 1, σαν να ήταν η μονάδα μαζί σου από την αρχή",
+"Stats":"Στατιστικά",
+"Open or close the full card":"Άνοιγμα ή κλείσιμο της πλήρους κάρτας"
 };

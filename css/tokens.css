@@ -1,0 +1,28 @@
+/* colours and fonts: light and dark themes, each lord's accent */
+:root{
+  color-scheme:light;
+  --ground:#F6F1F2; --surface:#FFFFFF; --ink:#2A1E22; --muted:#76666B; --line:#E5D9DC;
+  --accent:#A94F68; --accent-soft:#F3E1E6; --plus:#2F7A52; --plus-soft:#E2F1E8;
+  --minus:#7A4A9C; --minus-soft:#EEE4F5; --warn:#B4541E; --warn-soft:#FBE9DE; --bar:#D9B8C2;
+  --block:#9A8E92; --block-soft:#ECE6E8; --rel:#138A8C; --rel-soft:#A9D9DA; --gold:#A87A06; --silver:#6F7C8C; --bronze:#9E522E; --unripe:#66732E;
+  --display:"Forum","Palatino Linotype",Georgia,serif;
+  --body:"Commissioner","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme:dark;
+    --ground:#1A1417; --surface:#241C20; --ink:#F1E7EA; --muted:#A8979C; --line:#3A2E33;
+    --accent:#DC8CA2; --accent-soft:#3A2530; --plus:#7FCB9D; --plus-soft:#1F3328;
+    --minus:#C39BE3; --minus-soft:#2F2438; --warn:#F0A172; --warn-soft:#3A2519; --bar:#6E4655;
+    --block:#6F6468; --block-soft:#211A1D; --rel:#5FCFCD; --rel-soft:#2C6667; --gold:#EAC45A; --silver:#C4CEDA; --bronze:#D98A63; --unripe:#9CA65A;
+  }
+}
+/* lord colours: Rose Tempest rose, Ribeira Winds blue, House Lamine black-grey, Megaira's Beacon gold */
+body[data-lord="cai"]{--accent:#3F6FA8;--accent-soft:#E0EAF5;--bar:#B7CAE2}
+body[data-lord="die"]{--accent:#4A4A55;--accent-soft:#E6E4E8;--bar:#C3C0C8}
+body[data-lord="the"]{--accent:#A67A1A;--accent-soft:#F6ECD6;--bar:#E3CD98}
+@media (prefers-color-scheme: dark){
+  body[data-lord="cai"]{--accent:#8DB4E6;--accent-soft:#1E2B3B;--bar:#3F5878}
+  body[data-lord="die"]{--accent:#C8C4D2;--accent-soft:#2A282F;--bar:#55525E}
+  body[data-lord="the"]{--accent:#E5C06A;--accent-soft:#352B17;--bar:#6E5A2C}
+}

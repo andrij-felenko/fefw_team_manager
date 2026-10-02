@@ -1,6 +1,6 @@
-// Qırımtatarca: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Qırımtatarca: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Qırımtatarca; corrections are welcome.
-L10N["crh"]={
+export default {
 "en":"en",
 "Leda's squad":"Leda bölügi",
 "Cai's squad":"Cai bölügi",
@@ -121,7 +121,7 @@ L10N["crh"]={
 "its number is ":"sayısı ",
 "green, “not ripe yet”":"yeşil, “ale pişmegen”",
 "poor":"zayıf",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · hususiyetler yol boyunca toplana: 10 seviyege qadar öz ösümi, soñra sınıf modifikatorı ile (Başlanğıç 10-dan, Mutehassıslıq 20-den), üstüne cenkçiniñ şimdiki sınıfınıñ bonusı; baalanuv seviyeleri: Başlanğıç 20, Mutehassıslıq 35, İlerlegen 45, Usta ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · hususiyetler yol boyunca toplana: 5 seviyege qadar öz ösümi, soñra sınıf modifikatorı ile (Başlanğıç 5-ten, Mutehassıslıq 20-den), üstüne cenkçiniñ şimdiki sınıfınıñ bonusı; baalanuv seviyeleri: Başlanğıç 20, Mutehassıslıq 35, İlerlegen 45, Usta ",
 "End-game level":"Oyun soñu seviyesi",
 "duplicate · main: ":"tekrar · esas: ",
 ": choose class":": sınıf sayla",
@@ -356,5 +356,21 @@ L10N["crh"]={
 "the class's mount (hover: how to get one)":"sınıfnıñ ayvanı (üstüne ketir: nasıl alınır)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Hikâye: bu yolda bu cenkçini oyun özü bere; amma onı başqa liderniñ bölügine köçürmek mümkün",
 "The squad's lord":"Bölükniñ lideri",
-"Home squad: {w} — {t}":"Öz bölügi: {w} — {t}"
+"Home squad: {w} — {t}":"Öz bölügi: {w} — {t}",
+"≈ Lv {n}":"≈ {n} sev.",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Qoşuluv — {w}: {c}, ≈ {n} sev. (baplarnıñ tevsiye etilgen seviyelerine köre taxmin)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Ondan evel özü {k} olaraq öse; sen saylağan sınıflar o seviyeden saylana",
+"before joining":"qoşuluvdan evel",
+"from ≈ Lv {n}":"≈ {n} sev.-den",
+"Full cards":"Tolu kartalar",
+"Compact":"Qısqa",
+"View":"Körüniş",
+"Stages:":"Basamaqlar:",
+"All (planning)":"Episi (planlav)",
+"From joining":"Qoşuluvdan",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Hususiyetler cenkçiniñ qoşulğan seviyesinden sayıla: keç kelgen cenkçi endi ösken kele",
+"Whole path":"Bütün yol",
+"Stats count from level 1, as if the fighter were with you from the start":"Hususiyetler 1-nci seviyeden sayıla, sanki cenkçi baştan seniñnen",
+"Stats":"Hususiyetler",
+"Open or close the full card":"Tolu kartanı aç ya da qapat"
 };

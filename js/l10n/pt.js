@@ -1,6 +1,6 @@
-// Português: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Português: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Português; corrections are welcome.
-L10N["pt"]={
+export default {
 "en":"en",
 "Leda's squad":"Esquadrão de Leda",
 "Cai's squad":"Esquadrão de Cai",
@@ -121,7 +121,7 @@ L10N["pt"]={
 "its number is ":"o número fica ",
 "green, “not ripe yet”":"verde, “ainda não amadureceu”",
 "poor":"fraca",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · os atributos acumulam-se ao longo do caminho: crescimento próprio até ao nível 10, depois com o modificador da classe (Iniciante a partir do 10, Especialidade a partir do 20), mais a bonificação de atributos da classe atual da unidade; Iniciante avaliada no nível 20, Especialidade no 35, Avançada no 45, Mestre no nível ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · os atributos acumulam-se ao longo do caminho: crescimento próprio até ao nível 5, depois com o modificador da classe (Iniciante a partir do 5, Especialidade a partir do 20), mais a bonificação de atributos da classe atual da unidade; Iniciante avaliada no nível 20, Especialidade no 35, Avançada no 45, Mestre no nível ",
 "End-game level":"Nível no fim do jogo",
 "duplicate · main: ":"duplicada · titular: ",
 ": choose class":": escolher classe",
@@ -356,5 +356,21 @@ L10N["pt"]={
 "the class's mount (hover: how to get one)":"montada da classe (passa o cursor: como obter)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"História: nesta rota o jogo dá esta unidade; ainda assim podes passá-la para o esquadrão de outro líder",
 "The squad's lord":"Líder do esquadrão",
-"Home squad: {w} — {t}":"Esquadrão de origem: {w} — {t}"
+"Home squad: {w} — {t}":"Esquadrão de origem: {w} — {t}",
+"≈ Lv {n}":"≈ Nv. {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Entrada com {w}: {c}, ≈ Nv. {n} (estimativa pelos níveis recomendados dos capítulos)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Antes disso cresce sozinho como {k}; as classes que escolheres contam a partir desse nível",
+"before joining":"antes da entrada",
+"from ≈ Lv {n}":"a partir de ≈ Nv. {n}",
+"Full cards":"Fichas completas",
+"Compact":"Compacto",
+"View":"Vista",
+"Stages:":"Etapas:",
+"All (planning)":"Todas (planeamento)",
+"From joining":"Desde a entrada",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Os atributos contam a partir do nível com que a unidade entra: um recruta tardio já chega com nível alto",
+"Whole path":"Caminho todo",
+"Stats count from level 1, as if the fighter were with you from the start":"Os atributos contam a partir do nível 1, como se a unidade estivesse contigo desde o início",
+"Stats":"Atributos",
+"Open or close the full card":"Abrir ou fechar a ficha completa"
 };

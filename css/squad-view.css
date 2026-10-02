@@ -1,0 +1,18 @@
+/* the squad's view switches: segmented buttons and the stage window */
+.sq-tools{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:-4px 0 12px;font-size:14px;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;border-radius:0;padding:4px 11px;font-size:13px;background:transparent}
+.seg button+button{border-inline-start:1px solid var(--line)}
+.seg button.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.sq-st{display:inline-flex;align-items:center;gap:6px}
+.sq-st select{width:auto}
+/* compact view: a plate per fighter; a click opens the full card below */
+.sq-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.sq-chips:empty{display:none}
+.sq-chip{display:inline-flex;align-items:baseline;gap:8px;padding:5px 12px;border-radius:999px}
+.sq-chip.on{border-color:var(--accent);background:var(--accent-soft)}
+.sq-chip .ch-n{font-weight:600}
+.sq-chip .ch-c{font-size:12px;color:var(--muted)}
+.sq-chip .ch-p{font-variant-numeric:tabular-nums}
+.sq-chip .rb-gold{color:var(--gold)} .sq-chip .rb-silver{color:var(--silver)} .sq-chip .rb-bronze{color:var(--bronze)}
+.sq-chip .rb-ord{color:var(--unripe)} .sq-chip .rb-poor{color:var(--block)}

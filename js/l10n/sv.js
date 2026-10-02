@@ -1,6 +1,6 @@
-// Svenska: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Svenska: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Svenska; corrections are welcome.
-L10N["sv"]={
+export default {
 "en":"en",
 "Leda's squad":"Ledas trupp",
 "Cai's squad":"Cais trupp",
@@ -121,7 +121,7 @@ L10N["sv"]={
 "its number is ":"siffran är ",
 "green, “not ripe yet”":"grön, “inte mogen än”",
 "poor":"dålig",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · stats byggs upp längs vägen: egen tillväxt upp till nivå 10, sedan med klassmodifikatorn (Nybörjare från 10, Specialist från 20), plus statsbonusen från kämpens nuvarande klass; Nybörjare bedöms på nivå 20, Specialist på 35, Avancerad på 45, Mästare på nivå ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · stats byggs upp längs vägen: egen tillväxt upp till nivå 5, sedan med klassmodifikatorn (Nybörjare från 5, Specialist från 20), plus statsbonusen från kämpens nuvarande klass; Nybörjare bedöms på nivå 20, Specialist på 35, Avancerad på 45, Mästare på nivå ",
 "End-game level":"Nivå vid spelets slut",
 "duplicate · main: ":"dubblett · räknas för: ",
 ": choose class":": välj klass",
@@ -356,5 +356,21 @@ L10N["sv"]={
 "the class's mount (hover: how to get one)":"klassens riddjur (hovra: hur du får ett)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Story: på den här rutten ger spelet dig den här kämpen; du kan ändå flytta den till en annan ledares trupp",
 "The squad's lord":"Truppens ledare",
-"Home squad: {w} — {t}":"Hemtrupp: {w} — {t}"
+"Home squad: {w} — {t}":"Hemtrupp: {w} — {t}",
+"≈ Lv {n}":"≈ Nv. {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Ansluter hos {w}: {c}, ≈ Nv. {n} (uppskattat från kapitlens rekommenderade nivåer)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Innan dess växer den på egen hand som {k}; klasserna du väljer räknas från den nivån",
+"before joining":"innan anslutning",
+"from ≈ Lv {n}":"från ≈ Nv. {n}",
+"Full cards":"Hela kort",
+"Compact":"Kompakt",
+"View":"Vy",
+"Stages:":"Steg:",
+"All (planning)":"Alla (planering)",
+"From joining":"Från anslutning",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Stats räknas från nivån kämpen ansluter på: en sen rekryt kommer redan uppnivåad",
+"Whole path":"Hela vägen",
+"Stats count from level 1, as if the fighter were with you from the start":"Stats räknas från nivå 1, som om kämpen varit med dig från början",
+"Stats":"Stats",
+"Open or close the full card":"Öppna eller stäng hela kortet"
 };

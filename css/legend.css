@@ -1,0 +1,8 @@
+/* the legend */
+.legend{font-size:13px;color:var(--muted)} .legend .lg{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:6px}
+.legend summary{cursor:pointer;font-size:12px;letter-spacing:.06em;text-transform:uppercase;width:max-content}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend span.ln{display:block;flex-basis:100%}
+.legend{--host:var(--ground)} #endLv{width:3.4em;padding:0 4px;font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:6px} .legend span.lt{display:flex;flex-wrap:wrap;gap:8px 14px}
+.legend i.sw-rd,.legend i.sw-ri{display:inline-block;width:10px;height:10px;border-radius:2px}
+.legend i.sw-rd{background:var(--rel)} .legend i.sw-ri{background:var(--rel-soft)}

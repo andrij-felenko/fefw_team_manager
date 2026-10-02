@@ -1,6 +1,6 @@
-// Čeština: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Čeština: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Čeština; corrections are welcome.
-L10N["cs"]={
+export default {
 "en":"en",
 "Leda's squad":"Oddíl Leda",
 "Cai's squad":"Oddíl Cai",
@@ -121,7 +121,7 @@ L10N["cs"]={
 "its number is ":"číslo je ",
 "green, “not ripe yet”":"zelené, „ještě nezralé“",
 "poor":"slabá",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · staty se sčítají po cestě: do úrovně 10 vlastní růst, pak s modifikátorem třídy (Začátečník od 10, Specializace od 20), plus bonus statů aktuální třídy postavy; Začátečník se hodnotí na úrovni 20, Specializace na 35, Pokročilá na 45, Mistr na úrovni ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · staty se sčítají po cestě: do úrovně 5 vlastní růst, pak s modifikátorem třídy (Začátečník od 5, Specializace od 20), plus bonus statů aktuální třídy postavy; Začátečník se hodnotí na úrovni 20, Specializace na 35, Pokročilá na 45, Mistr na úrovni ",
 "End-game level":"Úroveň na konci hry",
 "duplicate · main: ":"duplikát · hlavní: ",
 ": choose class":": vybrat třídu",
@@ -356,5 +356,21 @@ L10N["cs"]={
 "the class's mount (hover: how to get one)":"zvíře třídy (najeď myší: jak ho získat)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Příběh: na této cestě tuto postavu dává hra; přesto ji můžeš přesunout do oddílu jiného vůdce",
 "The squad's lord":"Vůdce oddílu",
-"Home squad: {w} — {t}":"Domovský oddíl: {w} — {t}"
+"Home squad: {w} — {t}":"Domovský oddíl: {w} — {t}",
+"≈ Lv {n}":"≈ úr. {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Připojení — {w}: {c}, ≈ úr. {n} (odhad podle doporučených úrovní kapitol)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Do té doby roste sama jako {k}; tebou zvolené třídy se počítají od této úrovně",
+"before joining":"před připojením",
+"from ≈ Lv {n}":"od ≈ úr. {n}",
+"Full cards":"Plné karty",
+"Compact":"Kompaktně",
+"View":"Zobrazení",
+"Stages:":"Fáze:",
+"All (planning)":"Všechny (plánování)",
+"From joining":"Od připojení",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Staty se počítají od úrovně, se kterou se postava připojí: pozdní rekrut přichází už vylepšený",
+"Whole path":"Celá cesta",
+"Stats count from level 1, as if the fighter were with you from the start":"Staty se počítají od úrovně 1, jako by postava byla s tebou od začátku",
+"Stats":"Staty",
+"Open or close the full card":"Otevřít nebo zavřít plnou kartu"
 };

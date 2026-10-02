@@ -1,0 +1,9 @@
+/* the page: box model, body, page width, the squad header and headings */
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1600px;margin:0 auto;padding-inline:16px;padding-block:20px 64px;display:grid;gap:28px}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:16px}
+h1{font-family:var(--display);font-weight:400;font-size:46px;line-height:1;margin:0;color:var(--accent)}
+.sub{color:var(--muted);margin:6px 0 0}
+h2{font-family:var(--display);font-weight:400;font-size:28px;margin:0 0 14px}
+.meter{font-variant-numeric:tabular-nums;font-weight:600;padding:6px 14px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}

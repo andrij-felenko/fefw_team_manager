@@ -1,6 +1,6 @@
-// ქართული: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// ქართული: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is ქართული; corrections are welcome.
-L10N["ka"]={
+export default {
 "en":"en",
 "Leda's squad":"Leda-ს რაზმი",
 "Cai's squad":"Cai-ს რაზმი",
@@ -121,7 +121,7 @@ L10N["ka"]={
 "its number is ":"მისი რიცხვი ",
 "green, “not ripe yet”":"მწვანეა, “ჯერ არ მომწიფებულა”",
 "poor":"ცუდი",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · მახასიათებლები გზაზე გროვდება: მე-10 დონემდე საკუთარი ზრდით, შემდეგ კლასის მოდიფიკატორით (დამწყები მე-10-დან, სპეციალობა მე-20-დან), პლუს იმ კლასის ბონუსი, რომელშიც მებრძოლი ახლაა; დამწყები ფასდება მე-20 დონეზე, სპეციალობა 35-ეზე, დაწინაურებული 45-ეზე, ოსტატი ბოლო დონეზე: ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · მახასიათებლები გზაზე გროვდება: მე-5 დონემდე საკუთარი ზრდით, შემდეგ კლასის მოდიფიკატორით (დამწყები მე-5-დან, სპეციალობა მე-20-დან), პლუს იმ კლასის ბონუსი, რომელშიც მებრძოლი ახლაა; დამწყები ფასდება მე-20 დონეზე, სპეციალობა 35-ეზე, დაწინაურებული 45-ეზე, ოსტატი ბოლო დონეზე: ",
 "End-game level":"თამაშის ბოლო დონე",
 "duplicate · main: ":"დუბლიკატი · მთავარი: ",
 ": choose class":": აირჩიე კლასი",
@@ -356,5 +356,21 @@ L10N["ka"]={
 "the class's mount (hover: how to get one)":"კლასის ცხოველი (მიიტანე კურსორი: როგორ მოიპოვო)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"სიუჟეტი: ამ მარშრუტზე ამ მებრძოლს თამაში თავად გაძლევს; მაინც შეგიძლია გადაიყვანო სხვა ლიდერის რაზმში",
 "The squad's lord":"რაზმის ლიდერი",
-"Home squad: {w} — {t}":"მშობლიური რაზმი: {w} — {t}"
+"Home squad: {w} — {t}":"მშობლიური რაზმი: {w} — {t}",
+"≈ Lv {n}":"≈ დონე {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"შემოსვლა — {w}: {c}, ≈ დონე {n} (შეფასება თავების რეკომენდებული დონეებით)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"მანამდე თავისით იზრდება როგორც {k}; შენ მიერ არჩეული კლასები ამ დონიდან ითვლება",
+"before joining":"შემოსვლამდე",
+"from ≈ Lv {n}":"≈ დონე {n}-დან",
+"Full cards":"სრული ბარათები",
+"Compact":"კომპაქტურად",
+"View":"ხედი",
+"Stages:":"ეტაპები:",
+"All (planning)":"ყველა (დაგეგმვა)",
+"From joining":"შემოსვლიდან",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"მახასიათებლები ითვლება იმ დონიდან, რომლითაც მებრძოლი შემოდის: გვიანი რეკრუტი უკვე გაძლიერებული მოდის",
+"Whole path":"მთელი გზა",
+"Stats count from level 1, as if the fighter were with you from the start":"მახასიათებლები ითვლება 1-ლი დონიდან, თითქოს მებრძოლი თავიდანვე შენთან იყოს",
+"Stats":"მახასიათებლები",
+"Open or close the full card":"სრული ბარათის გახსნა ან დამალვა"
 };

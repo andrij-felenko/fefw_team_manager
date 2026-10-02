@@ -1,6 +1,6 @@
-// Gaeilge: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Gaeilge: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Gaeilge; corrections are welcome.
-L10N["ga"]={
+export default {
 "en":"en",
 "Leda's squad":"Scuad Leda",
 "Cai's squad":"Scuad Cai",
@@ -121,7 +121,7 @@ L10N["ga"]={
 "its number is ":"tá an uimhir ",
 "green, “not ripe yet”":"glas, “gan aibiú fós”",
 "poor":"lag",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · carnann na staitisticí feadh na conaire: fás pearsanta go leibhéal 10, ansin le mionathraitheoir na haicme (Tosaitheoir ó 10, Speisialtacht ó 20), móide bónas staitisticí na haicme ina bhfuil an trodaí; measúnaítear Tosaitheoir ag 20, Speisialtacht ag 35, Ardleibhéal ag 45, Máistir ag leibhéal ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · carnann na staitisticí feadh na conaire: fás pearsanta go leibhéal 5, ansin le mionathraitheoir na haicme (Tosaitheoir ó 5, Speisialtacht ó 20), móide bónas staitisticí na haicme ina bhfuil an trodaí; measúnaítear Tosaitheoir ag 20, Speisialtacht ag 35, Ardleibhéal ag 45, Máistir ag leibhéal ",
 "End-game level":"Leibhéal deiridh",
 "duplicate · main: ":"dúblach · príomhshealbhóir: ",
 ": choose class":": roghnaigh aicme",
@@ -356,5 +356,21 @@ L10N["ga"]={
 "the class's mount (hover: how to get one)":"ainmhí na haicme (cuir an cúrsóir air: conas ceann a fháil)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Scéal: ar an mbealach seo tugann an cluiche an trodaí seo duit; is féidir é a bhogadh go scuad ceannaire eile fós",
 "The squad's lord":"Ceannaire an scuaid",
-"Home squad: {w} — {t}":"Scuad baile: {w} — {t}"
+"Home squad: {w} — {t}":"Scuad baile: {w} — {t}",
+"≈ Lv {n}":"≈ Lbh. {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Ag teacht isteach — {w}: {c}, ≈ Lbh. {n} (meastachán ó leibhéil mholta na gcaibidlí)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Roimhe sin fásann sé as a stuaim féin mar {k}; áirítear na haicmí a roghnaíonn tú ón leibhéal sin",
+"before joining":"roimh theacht isteach",
+"from ≈ Lv {n}":"ó ≈ Lbh. {n}",
+"Full cards":"Cártaí iomlána",
+"Compact":"Dlúth",
+"View":"Amharc",
+"Stages:":"Céimeanna:",
+"All (planning)":"Gach ceann (pleanáil)",
+"From joining":"Ón teacht isteach",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Áirítear na staitisticí ón leibhéal ag a dtagann an trodaí isteach: tagann earcach déanach ardaithe cheana",
+"Whole path":"An bealach ar fad",
+"Stats count from level 1, as if the fighter were with you from the start":"Áirítear na staitisticí ó leibhéal 1, amhail is go raibh an trodaí leat ón tús",
+"Stats":"Staitisticí",
+"Open or close the full card":"Oscail nó dún an cárta iomlán"
 };

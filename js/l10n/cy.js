@@ -1,6 +1,6 @@
-// Cymraeg: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Cymraeg: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Cymraeg; corrections are welcome.
-L10N["cy"]={
+export default {
 "en":"en",
 "Leda's squad":"Carfan Leda",
 "Cai's squad":"Carfan Cai",
@@ -121,7 +121,7 @@ L10N["cy"]={
 "its number is ":"mae'r rhif yn ",
 "green, “not ripe yet”":"wyrdd, “heb aeddfedu eto”",
 "poor":"gwael",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · mae'r ystadegau'n cronni ar hyd y llwybr: twf personol hyd at lefel 10, yna gydag addasydd y dosbarth (Dechreuwr o 10, Arbenigol o 20), ynghyd â bonws ystadegau dosbarth presennol y cymeriad; barnir Dechreuwr ar 20, Arbenigol ar 35, Uwch ar 45, Meistr ar lefel ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · mae'r ystadegau'n cronni ar hyd y llwybr: twf personol hyd at lefel 5, yna gydag addasydd y dosbarth (Dechreuwr o 5, Arbenigol o 20), ynghyd â bonws ystadegau dosbarth presennol y cymeriad; barnir Dechreuwr ar 20, Arbenigol ar 35, Uwch ar 45, Meistr ar lefel ",
 "End-game level":"Lefel diwedd y gêm",
 "duplicate · main: ":"dyblyg · prif ddeiliad: ",
 ": choose class":": dewis dosbarth",
@@ -356,5 +356,21 @@ L10N["cy"]={
 "the class's mount (hover: how to get one)":"anifail y dosbarth (hofran: sut i gael un)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Stori: ar y llwybr hwn mae'r gêm yn rhoi'r cymeriad hwn i chi; gallwch ei symud i garfan arweinydd arall o hyd",
 "The squad's lord":"Arweinydd y garfan",
-"Home squad: {w} — {t}":"Carfan gartref: {w} — {t}"
+"Home squad: {w} — {t}":"Carfan gartref: {w} — {t}",
+"≈ Lv {n}":"≈ Lef. {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Ymuno â {w}: {c}, ≈ Lef. {n} (amcangyfrif o lefelau argymelledig y penodau)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Cyn hynny mae'n tyfu ar ei ben ei hun fel {k}; mae'r dosbarthiadau a ddewiswch yn cyfrif o'r lefel honno",
+"before joining":"cyn ymuno",
+"from ≈ Lv {n}":"o ≈ Lef. {n}",
+"Full cards":"Cardiau llawn",
+"Compact":"Cryno",
+"View":"Golwg",
+"Stages:":"Camau:",
+"All (planning)":"Pob un (cynllunio)",
+"From joining":"O ymuno",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Mae'r ystadegau'n cyfrif o'r lefel y mae'r cymeriad yn ymuno arni: mae recriwt hwyr yn cyrraedd wedi codi lefel yn barod",
+"Whole path":"Y llwybr cyfan",
+"Stats count from level 1, as if the fighter were with you from the start":"Mae'r ystadegau'n cyfrif o lefel 1, fel petai'r cymeriad gyda chi o'r dechrau",
+"Stats":"Ystadegau",
+"Open or close the full card":"Agor neu gau'r cerdyn llawn"
 };

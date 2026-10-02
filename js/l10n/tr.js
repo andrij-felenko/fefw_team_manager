@@ -1,6 +1,6 @@
-// Türkçe: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Türkçe: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Türkçe; corrections are welcome.
-L10N["tr"]={
+export default {
 "en":"en",
 "Leda's squad":"Leda'nın ekibi",
 "Cai's squad":"Cai'nin ekibi",
@@ -121,7 +121,7 @@ L10N["tr"]={
 "its number is ":"sayısı ",
 "green, “not ripe yet”":"yeşil, “henüz olgun değil”",
 "poor":"zayıf",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · statlar yol boyunca birikir: 10. seviyeye kadar kendi gelişimi, sonra sınıf değiştiricisiyle (Başlangıç 10'dan, Uzmanlık 20'den), üstüne savaşçının bulunduğu sınıfın stat bonusu; değerlendirme seviyesi: Başlangıç 20, Uzmanlık 35, İleri 45, Usta ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · statlar yol boyunca birikir: 5. seviyeye kadar kendi gelişimi, sonra sınıf değiştiricisiyle (Başlangıç 5'ten, Uzmanlık 20'den), üstüne savaşçının bulunduğu sınıfın stat bonusu; değerlendirme seviyesi: Başlangıç 20, Uzmanlık 35, İleri 45, Usta ",
 "End-game level":"Oyun sonu seviyesi",
 "duplicate · main: ":"kopya · asıl sahibi: ",
 ": choose class":": sınıf seç",
@@ -356,5 +356,21 @@ L10N["tr"]={
 "the class's mount (hover: how to get one)":"sınıfın bineği (üzerine gel: nasıl alınır)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Hikâye: bu rotada bu savaşçıyı oyun kendisi verir; yine de başka bir liderin ekibine taşıyabilirsin",
 "The squad's lord":"Ekibin lideri",
-"Home squad: {w} — {t}":"Asıl ekibi: {w} — {t}"
+"Home squad: {w} — {t}":"Asıl ekibi: {w} — {t}",
+"≈ Lv {n}":"≈ Sv. {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"{w} ekibine katılım: {c}, ≈ Sv. {n} (bölümlerin önerilen seviyelerine göre tahmin)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Ondan önce {k} olarak kendi kendine gelişir; seçtiğin sınıflar o seviyeden itibaren sayılır",
+"before joining":"katılımdan önce",
+"from ≈ Lv {n}":"≈ Sv. {n} itibarıyla",
+"Full cards":"Tam kartlar",
+"Compact":"Kompakt",
+"View":"Görünüm",
+"Stages:":"Aşamalar:",
+"All (planning)":"Tümü (planlama)",
+"From joining":"Katılımdan itibaren",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Statlar savaşçının katıldığı seviyeden sayılır: geç katılan zaten seviye atlamış gelir",
+"Whole path":"Tüm yol",
+"Stats count from level 1, as if the fighter were with you from the start":"Statlar 1. seviyeden sayılır, sanki savaşçı baştan beri seninleymiş gibi",
+"Stats":"Statlar",
+"Open or close the full card":"Tam kartı aç ya da kapat"
 };

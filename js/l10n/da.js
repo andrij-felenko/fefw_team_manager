@@ -1,6 +1,6 @@
-// Dansk: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Dansk: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Dansk; corrections are welcome.
-L10N["da"]={
+export default {
 "en":"en",
 "Leda's squad":"Ledas trup",
 "Cai's squad":"Cais trup",
@@ -121,7 +121,7 @@ L10N["da"]={
 "its number is ":"tallet er ",
 "green, “not ripe yet”":"grøn, »ikke moden endnu«",
 "poor":"dårlig",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · stats opbygges undervejs: egen vækst op til niveau 10, derefter med klassemodifikatoren (Begynder fra 10, Specialist fra 20), plus statbonussen fra kæmperens nuværende klasse; Begynder vurderes på niveau 20, Specialist på 35, Avanceret på 45, Mester på niveau ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · stats opbygges undervejs: egen vækst op til niveau 5, derefter med klassemodifikatoren (Begynder fra 5, Specialist fra 20), plus statbonussen fra kæmperens nuværende klasse; Begynder vurderes på niveau 20, Specialist på 35, Avanceret på 45, Mester på niveau ",
 "End-game level":"Slutspilsniveau",
 "duplicate · main: ":"dublet · primær: ",
 ": choose class":": vælg klasse",
@@ -356,5 +356,21 @@ L10N["da"]={
 "the class's mount (hover: how to get one)":"klassens ridedyr (hold musen over: hvordan man får et)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Historie: på denne rute giver spillet dig denne kæmper; du kan stadig flytte den til en anden leders trup",
 "The squad's lord":"Truppens leder",
-"Home squad: {w} — {t}":"Hjemmetrup: {w} — {t}"
+"Home squad: {w} — {t}":"Hjemmetrup: {w} — {t}",
+"≈ Lv {n}":"≈ Niv. {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Slutter sig til {w}: {c}, ≈ Niv. {n} (skøn ud fra kapitlernes anbefalede niveauer)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Indtil da vokser den af sig selv som {k}; de klasser du vælger tæller fra det niveau",
+"before joining":"før den slutter sig til",
+"from ≈ Lv {n}":"fra ≈ Niv. {n}",
+"Full cards":"Hele kort",
+"Compact":"Kompakt",
+"View":"Visning",
+"Stages:":"Trin:",
+"All (planning)":"Alle (planlægning)",
+"From joining":"Fra tilslutning",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Stats tæller fra det niveau, kæmperen slutter sig til på: en sen rekrut kommer allerede opleveret",
+"Whole path":"Hele vejen",
+"Stats count from level 1, as if the fighter were with you from the start":"Stats tæller fra niveau 1, som om kæmperen var med dig fra starten",
+"Stats":"Stats",
+"Open or close the full card":"Åbn eller luk hele kortet"
 };

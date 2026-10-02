@@ -1,6 +1,6 @@
-// Nederlands: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Nederlands: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Nederlands; corrections are welcome.
-L10N["nl"]={
+export default {
 "en":"en",
 "Leda's squad":"Ploeg van Leda",
 "Cai's squad":"Ploeg van Cai",
@@ -121,7 +121,7 @@ L10N["nl"]={
 "its number is ":"het getal is ",
 "green, “not ripe yet”":"groen, “nog niet rijp”",
 "poor":"slecht",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · stats bouwen op langs de route: eigen groei tot niveau 10, daarna met de klassemodificator (Beginner vanaf 10, Specialist vanaf 20), plus de statbonus van de huidige klasse van de eenheid; Beginner beoordeeld op 20, Specialist op 35, Gevorderd op 45, Meester op niveau ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · stats bouwen op langs de route: eigen groei tot niveau 5, daarna met de klassemodificator (Beginner vanaf 5, Specialist vanaf 20), plus de statbonus van de huidige klasse van de eenheid; Beginner beoordeeld op 20, Specialist op 35, Gevorderd op 45, Meester op niveau ",
 "End-game level":"Eindniveau",
 "duplicate · main: ":"dubbel · hoofd: ",
 ": choose class":": klasse kiezen",
@@ -356,5 +356,21 @@ L10N["nl"]={
 "the class's mount (hover: how to get one)":"rijdier van de klasse (beweeg erover: hoe je er een krijgt)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Verhaal: op deze route geeft het spel je deze eenheid; je kunt hem toch naar de ploeg van een andere leider verplaatsen",
 "The squad's lord":"Leider van de ploeg",
-"Home squad: {w} — {t}":"Thuisploeg: {w} — {t}"
+"Home squad: {w} — {t}":"Thuisploeg: {w} — {t}",
+"≈ Lv {n}":"≈ Nv. {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Toetreden bij {w}: {c}, ≈ Nv. {n} (schatting op basis van de aanbevolen niveaus per hoofdstuk)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Daarvoor groeit de eenheid zelf als {k}; jouw gekozen klassen tellen vanaf dat niveau",
+"before joining":"vóór het toetreden",
+"from ≈ Lv {n}":"vanaf ≈ Nv. {n}",
+"Full cards":"Volledige kaarten",
+"Compact":"Compact",
+"View":"Weergave",
+"Stages:":"Fasen:",
+"All (planning)":"Alle (planning)",
+"From joining":"Vanaf toetreden",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Stats tellen vanaf het niveau waarop de eenheid toetreedt: een late rekruut komt al opgeleveld",
+"Whole path":"Hele pad",
+"Stats count from level 1, as if the fighter were with you from the start":"Stats tellen vanaf niveau 1, alsof de eenheid er vanaf het begin bij was",
+"Stats":"Stats",
+"Open or close the full card":"Volledige kaart openen of sluiten"
 };

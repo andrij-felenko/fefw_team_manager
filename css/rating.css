@@ -1,0 +1,14 @@
+/* rating tiles */
+/* rating tiles: damage, evasion, defense, overall; the number sits in the corner like a skill rank */
+.rt{display:inline-flex;align-items:center;gap:7px;padding:0 6px 5px 0;align-self:center}
+.rt-t{position:relative;width:22px;height:22px;flex:none;border-radius:5px;background:var(--line);color:var(--ink);display:inline-flex;align-items:center;justify-content:center}
+.rt-t svg{width:15px;height:15px;fill:currentColor}
+.rt-t.rt-o{margin-left:3px}
+.rt-t.rb-gold{background:color-mix(in srgb,var(--gold) 45%,var(--line))}
+.rt-t.rb-silver{background:color-mix(in srgb,var(--silver) 40%,var(--line))}
+.rt-t.rb-bronze{background:color-mix(in srgb,var(--bronze) 45%,var(--line))}
+.rt-t.rb-poor{background:var(--block-soft)} .rt-t.rb-poor svg{opacity:.35}
+.sk-r.pb-gold{color:var(--gold)} .sk-r.pb-silver{color:var(--silver)}
+/* an ordinary number is swamp green — "not ripe yet" — so it can't be taken for silver */
+.sk-r.pb-ord{color:var(--unripe)} .sk-r.pb-bronze{color:var(--bronze)} .sk-r.pb-poor{color:var(--block)}
+.rt.sm .rt-t{width:19px;height:19px} .rt.sm .rt-t svg{width:13px;height:13px} .rt.sm{gap:6px}

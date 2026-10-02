@@ -1,0 +1,21 @@
+/* the class tiers, restriction tags, the source note */
+details.tier{border-top:1px solid var(--line);padding-block:10px}
+details.tier summary{cursor:pointer;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+details.tier summary b{font-family:var(--display);font-weight:400;font-size:21px}
+details.tier summary span{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
+.cls{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px;margin-top:10px}
+.cl{border:1px solid var(--line);border-radius:8px;padding:8px 10px;display:grid;gap:4px;background:var(--surface)}
+.cl.used{border-color:var(--accent);background:var(--accent-soft)}
+.cl.st-block{background:var(--block-soft);color:var(--block)}
+.cl.st-block .req{opacity:.6}
+.cl .t{font-weight:600}
+.rs{display:flex;flex-wrap:wrap;gap:4px}
+.rs i{font-style:normal;font-size:11px;padding:1px 7px;border-radius:999px;background:var(--warn-soft);color:var(--warn)}
+.rs i.soft{background:var(--ground);color:var(--muted)}
+.rs i.mine{background:var(--accent-soft);color:var(--accent)}
+.sub .rc-ex{color:var(--accent);font-weight:600}
+.sub .rc-un{color:var(--ink)}
+.cl .who{font-size:12px;color:var(--accent);font-weight:600}
+.cl .why{font-size:12px}
+.src{color:var(--muted);font-size:13px;max-width:80ch}
+.src a{color:var(--accent)}

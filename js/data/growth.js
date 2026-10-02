@@ -1,0 +1,19 @@
+// Game data: what a class adds to a fighter's growth rates (CG) and, while in it, to the basic stats (CB).
+// class growth-rate modifiers, HP Str Mag Dex Spd Lck Def Res Cha: Fextralife class pages, checked against Game8 class pages
+// (September 2026); where they disagree (Light Cavalry, Charioteer, Ovate) Game8 is used
+export const CG={
+"Gladiator":[10,10,0,0,0,0,0,0,0],"Hunter":[10,0,0,10,10,0,0,0,0],"Soldier":[10,5,0,5,-5,0,10,0,0],"Ornius Rider":[10,0,0,5,10,5,0,5,0],"Diviner":[5,-5,15,5,0,0,-5,10,0],
+"Myrmidon":[10,0,0,10,15,5,0,0,5],"Brigand":[15,15,-5,0,5,0,5,0,5],"Pugilist":[15,10,-5,5,10,0,10,0,5],"Archer":[10,5,0,10,10,5,5,0,5],"Rogue":[10,0,0,10,15,5,0,5,0],
+"Armored Knight":[10,10,-5,5,-5,0,25,-5,5],"Light Cavalry":[10,5,-5,0,5,5,5,0,10],"Charioteer":[10,5,-5,15,-5,5,10,0,10],"Armored Ornius Rider":[10,0,-5,5,10,5,10,0,5],
+"Wing Soldier":[10,0,5,5,0,5,5,5,10],"Priest":[5,-5,10,5,5,15,-10,15,10],"Shaman":[5,-5,15,10,10,10,-10,10,0],
+"Warrior":[20,20,-5,0,0,0,5,-5,5],"Shido":[10,5,0,10,15,5,0,-5,5],"Dancer":[15,5,0,10,25,10,0,5,20],"Blacksmith":[15,10,10,5,0,0,10,10,5],"Sniper":[10,5,0,20,10,5,5,5,5],
+"Forest Knight":[10,5,0,10,10,5,5,5,5],"Ranger":[10,5,0,15,15,15,0,10,0],"Cataphract":[15,15,-5,0,-10,0,10,-5,5],"Guardian":[10,10,0,5,0,5,10,15,5],"Elephant Rider":[20,10,-5,-10,20,5,15,-5,10],
+"Dreadnought":[15,15,-5,5,-10,0,30,-10,5],"Bardinger":[10,10,-5,0,0,5,5,10,10],"Dragoon":[15,5,0,5,0,10,10,10,5],"Caladrius":[15,0,10,10,5,5,10,10,5],"Ovate":[10,-5,20,15,5,10,-10,15,0],
+"Bishop":[10,-5,15,0,0,20,-10,20,10],"Troubadour":[10,0,15,0,5,15,5,15,10],
+"Swordmaster":[15,10,0,15,20,5,0,0,5],"High Savant":[10,15,15,5,10,5,5,5,5],"Battlemaster":[25,25,-5,5,-5,-5,10,-5,5],"War Monk":[15,10,0,0,15,5,5,15,5],"Bow Adept":[15,5,0,20,15,5,5,5,5],
+"Bow Knight":[10,10,0,10,15,5,5,0,5],"Shadow Seeker":[15,5,0,25,15,15,0,10,0],"Sentinel":[15,15,0,5,5,5,10,15,5],"Castle Knight":[25,20,-5,5,-15,0,30,-10,5],"Orichaldia":[15,15,-5,5,0,5,5,5,10],
+"Great Knight":[20,20,-5,0,-10,0,15,-10,5],"Celestial Trooper":[15,5,-5,5,10,15,5,15,10],"Bau Lord":[15,5,0,0,5,10,10,10,5],"Druid":[10,-5,30,10,15,10,-10,20,0],"Wiseman":[10,-5,20,5,0,20,-10,25,10],
+"Valkyrium":[10,0,15,5,5,15,5,10,10]};
+// flat bonus to basic stats while a fighter is in the class (Fextralife class pages, "Bonus Points to Basic Stats"),
+// order HP Str Mag Dex Spd Lck Def Res Cha. It holds only while in that class, so a stage adds the bonus of its own class
+export const CB={"Myrmidon":[1,0,0,0,2,0,0,-1,0],"Brigand":[3,2,0,0,0,0,1,-1,0],"Pugilist":[2,1,0,0,1,0,2,-1,0],"Archer":[0,0,0,2,2,0,1,0,0],"Rogue":[0,0,0,1,3,1,0,1,-1],"Armored Knight":[2,1,0,0,-2,0,4,0,0],"Light Cavalry":[1,1,0,0,1,0,2,0,1],"Charioteer":[3,1,0,3,-2,0,3,0,1],"Armored Ornius Rider":[1,0,0,0,2,0,2,0,0],"Wing Soldier":[0,0,0,1,4,0,1,2,1],"Priest":[0,0,1,0,0,2,0,3,1],"Shaman":[0,0,2,1,1,0,0,2,-1],"Warrior":[4,4,0,0,1,0,0,0,0],"Shido":[3,0,0,3,7,0,0,0,0],"Dancer":[4,0,0,5,9,0,0,0,5],"Blacksmith":[5,1,1,0,1,0,3,1,0],"Sniper":[1,0,0,5,5,0,0,0,0],"Forest Knight":[1,0,0,2,5,0,1,0,0],"Ranger":[1,0,0,4,7,1,0,1,1],"Cataphract":[5,2,0,0,-1,0,5,0,0],"Guardian":[3,1,0,0,1,0,3,4,0],"Elephant Rider":[10,2,0,3,-5,0,7,0,3],"Dreadnought":[5,3,0,0,-5,0,9,-1,0],"Bardinger":[3,0,0,0,1,0,1,0,3],"Dragoon":[2,1,0,1,3,0,1,0,0],"Caladrius":[2,0,1,0,3,0,1,2,0],"Ovate":[1,0,4,4,3,0,0,4,-1],"Bishop":[1,0,3,0,1,3,0,5,3],"Troubadour":[0,0,1,1,1,0,1,2,3],"Swordmaster":[5,2,0,7,7,0,0,0,0],"High Savant":[5,2,2,3,3,0,2,0,0],"Battlemaster":[13,6,0,0,2,0,4,0,0],"War Monk":[5,2,0,2,5,0,2,4,0],"Bow Adept":[4,2,0,9,5,0,0,0,0],"Bow Knight":[3,2,0,5,7,0,2,0,0],"Shadow Seeker":[4,4,0,7,9,2,0,0,-2],"Sentinel":[5,4,0,4,2,0,4,5,0],"Castle Knight":[9,6,0,4,-6,0,13,-2,0],"Orichaldia":[7,3,0,3,2,0,2,0,2],"Great Knight":[12,5,0,2,-4,0,5,0,0],"Celestial Trooper":[3,0,0,3,5,0,0,5,2],"Bau Lord":[5,2,0,3,3,0,3,0,0],"Druid":[4,0,7,7,4,0,0,5,-2],"Wiseman":[4,0,5,2,2,4,0,9,2],"Valkyrium":[2,0,2,3,2,0,2,3,2]};

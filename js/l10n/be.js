@@ -1,6 +1,6 @@
-// Беларуская: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Беларуская: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Беларуская; corrections are welcome.
-L10N["be"]={
+export default {
 "en":"en",
 "Leda's squad":"Загон Leda",
 "Cai's squad":"Загон Cai",
@@ -121,7 +121,7 @@ L10N["be"]={
 "its number is ":"лік — ",
 "green, “not ripe yet”":"зялёны, «няспелы»",
 "poor":"дрэнная",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · статы назапашваюцца па шляху: уласны прырост да ўзроўню 10, далей з мадыфікатарам класа (Пачатковы з 10-га, Спецыяльны з 20-га), плюс бонус статаў класа, у якім баец зараз; Пачатковы ацэньваецца на 20, Спецыяльны на 35, Прасунуты на 45, Майстар на ўзроўні ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · статы назапашваюцца па шляху: уласны прырост да ўзроўню 5, далей з мадыфікатарам класа (Пачатковы з 5-га, Спецыяльны з 20-га), плюс бонус статаў класа, у якім баец зараз; Пачатковы ацэньваецца на 20, Спецыяльны на 35, Прасунуты на 45, Майстар на ўзроўні ",
 "End-game level":"Узровень канца гульні",
 "duplicate · main: ":"дубль · асноўны: ",
 ": choose class":": абраць клас",
@@ -356,5 +356,21 @@ L10N["be"]={
 "the class's mount (hover: how to get one)":"жывёла класа (навядзі — як здабыць)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Сюжэт: на гэтым маршруце гульня сама дае гэтага байца; але яго можна перанесці ў загон іншага лідара",
 "The squad's lord":"Лідар загона",
-"Home squad: {w} — {t}":"Родны загон: {w} — {t}"
+"Home squad: {w} — {t}":"Родны загон: {w} — {t}",
+"≈ Lv {n}":"≈ {n} узр.",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Уступ — {w}: {c}, ≈ {n} узровень (ацэнка паводле рэкамендаваных узроўняў глаў)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Да таго расце сам як {k}; абраныя табой класы дзейнічаюць з гэтага ўзроўню",
+"before joining":"да ўступу",
+"from ≈ Lv {n}":"з ≈ {n} узроўню",
+"Full cards":"Поўныя карткі",
+"Compact":"Кампактна",
+"View":"Выгляд",
+"Stages:":"Этапы:",
+"All (planning)":"Усе (планаванне)",
+"From joining":"Ад уступу",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Статы лічацца ад узроўню, з якім баец далучаецца: позні рэкрут прыходзіць ужо прапампаваным",
+"Whole path":"Увесь шлях",
+"Stats count from level 1, as if the fighter were with you from the start":"Статы лічацца з 1 узроўню, быццам баец з табой ад пачатку",
+"Stats":"Статы",
+"Open or close the full card":"Адкрыць або схаваць поўную картку"
 };

@@ -1,0 +1,13 @@
+/* filters and the list of all fighters */
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px;align-items:center}
+.tools input{flex:1 1 220px;width:auto}
+.tools select{flex:0 1 250px;width:auto}
+.tools label{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--muted);cursor:pointer}
+.tools label input{width:auto}
+.pool{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:8px}
+.row{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:grid;gap:6px}
+.row.in{opacity:.5}
+.r-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.r-name{font-weight:600}
+.join{font-size:12px;color:var(--muted)}
+.join.no{color:var(--minus)}

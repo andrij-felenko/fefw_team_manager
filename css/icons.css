@@ -1,0 +1,5 @@
+/* skill icons and the mount badge */
+svg.ic{width:16px;height:16px;flex:none;vertical-align:-3px;fill:currentColor}
+/* the animal a mounted class rides, next to the class name */
+.mt{display:inline-flex;vertical-align:-3px;margin-inline-start:5px;color:var(--muted);cursor:help;font-weight:400}
+.mt svg.ic{width:17px;height:17px;vertical-align:0}

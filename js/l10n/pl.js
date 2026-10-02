@@ -1,6 +1,6 @@
-// Polski: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Polski: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Polski; corrections are welcome.
-L10N["pl"]={
+export default {
 "en":"en",
 "Leda's squad":"Oddział Ledy",
 "Cai's squad":"Oddział Caia",
@@ -121,7 +121,7 @@ L10N["pl"]={
 "its number is ":"liczba ",
 "green, “not ripe yet”":"zielona, „jeszcze niedojrzała”",
 "poor":"słaba",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · statystyki rosną po drodze: do poziomu 10 własny przyrost, potem z modyfikatorem klasy (Początkowa od 10, Specjalna od 20), plus premia do statystyk obecnej klasy postaci; Początkowa oceniana na poziomie 20, Specjalna na 35, Zaawansowana na 45, Mistrzowska na poziomie ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · statystyki rosną po drodze: do poziomu 5 własny przyrost, potem z modyfikatorem klasy (Początkowa od 5, Specjalna od 20), plus premia do statystyk obecnej klasy postaci; Początkowa oceniana na poziomie 20, Specjalna na 35, Zaawansowana na 45, Mistrzowska na poziomie ",
 "End-game level":"Poziom na koniec gry",
 "duplicate · main: ":"duplikat · główna postać: ",
 ": choose class":": wybierz klasę",
@@ -356,5 +356,21 @@ L10N["pl"]={
 "the class's mount (hover: how to get one)":"wierzchowiec klasy (najedź: jak zdobyć)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Fabuła: na tej ścieżce gra sama daje tę postać; nadal możesz przenieść ją do oddziału innego lidera",
 "The squad's lord":"Lider oddziału",
-"Home squad: {w} — {t}":"Oddział macierzysty: {w} — {t}"
+"Home squad: {w} — {t}":"Oddział macierzysty: {w} — {t}",
+"≈ Lv {n}":"≈ poz. {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Dołączenie — {w}: {c}, ≈ poz. {n} (szacunek według zalecanych poziomów rozdziałów)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Wcześniej rośnie sama jako {k}; wybrane przez ciebie klasy liczą się od tego poziomu",
+"before joining":"przed dołączeniem",
+"from ≈ Lv {n}":"od ≈ poz. {n}",
+"Full cards":"Pełne karty",
+"Compact":"Kompaktowo",
+"View":"Widok",
+"Stages:":"Etapy:",
+"All (planning)":"Wszystkie (planowanie)",
+"From joining":"Od dołączenia",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Statystyki liczą się od poziomu, z którym postać dołącza: późny rekrut przychodzi już podciągnięty",
+"Whole path":"Cała ścieżka",
+"Stats count from level 1, as if the fighter were with you from the start":"Statystyki liczą się od poziomu 1, jakby postać była z tobą od początku",
+"Stats":"Statystyki",
+"Open or close the full card":"Otwórz lub zamknij pełną kartę"
 };

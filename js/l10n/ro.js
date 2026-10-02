@@ -1,6 +1,6 @@
-// Română: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Română: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Română; corrections are welcome.
-L10N["ro"]={
+export default {
 "en":"en",
 "Leda's squad":"Echipa Ledei",
 "Cai's squad":"Echipa lui Cai",
@@ -121,7 +121,7 @@ L10N["ro"]={
 "its number is ":"numărul e ",
 "green, “not ripe yet”":"verde, “încă necopt”",
 "poor":"slab",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · atributele se acumulează pe parcurs: creștere proprie până la nivelul 10, apoi cu modificatorul clasei (Începător de la 10, Specialitate de la 20), plus bonusul de atribute al clasei curente; Începător se evaluează la 20, Specialitate la 35, Avansat la 45, Maestru la nivelul ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · atributele se acumulează pe parcurs: creștere proprie până la nivelul 5, apoi cu modificatorul clasei (Începător de la 5, Specialitate de la 20), plus bonusul de atribute al clasei curente; Începător se evaluează la 20, Specialitate la 35, Avansat la 45, Maestru la nivelul ",
 "End-game level":"Nivel la final de joc",
 "duplicate · main: ":"duplicat · principal: ",
 ": choose class":": alege clasa",
@@ -356,5 +356,21 @@ L10N["ro"]={
 "the class's mount (hover: how to get one)":"montura clasei (treci cu cursorul: cum o obții)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Poveste: pe această rută jocul îți dă această unitate; o poți totuși muta în echipa altui lider",
 "The squad's lord":"Liderul echipei",
-"Home squad: {w} — {t}":"Echipa de origine: {w} — {t}"
+"Home squad: {w} — {t}":"Echipa de origine: {w} — {t}",
+"≈ Lv {n}":"≈ Nv. {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Intrare la {w}: {c}, ≈ Nv. {n} (estimare după nivelurile recomandate ale capitolelor)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Înainte crește singură ca {k}; clasele alese de tine contează de la acel nivel",
+"before joining":"înainte de intrare",
+"from ≈ Lv {n}":"de la ≈ Nv. {n}",
+"Full cards":"Fișe complete",
+"Compact":"Compact",
+"View":"Vizualizare",
+"Stages:":"Etape:",
+"All (planning)":"Toate (planificare)",
+"From joining":"De la intrare",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Atributele se socotesc de la nivelul cu care se alătură unitatea: un recrut târziu vine deja crescut în nivel",
+"Whole path":"Tot drumul",
+"Stats count from level 1, as if the fighter were with you from the start":"Atributele se socotesc de la nivelul 1, ca și cum unitatea ar fi cu tine de la început",
+"Stats":"Atribute",
+"Open or close the full card":"Deschide sau închide fișa completă"
 };

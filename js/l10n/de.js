@@ -1,6 +1,6 @@
-// Deutsch: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Deutsch: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Deutsch; corrections are welcome.
-L10N["de"]={
+export default {
 "en":"en",
 "Leda's squad":"Ledas Trupp",
 "Cai's squad":"Cais Trupp",
@@ -121,7 +121,7 @@ L10N["de"]={
 "its number is ":"die Zahl ist ",
 "green, “not ripe yet”":"grün, “noch nicht reif”",
 "poor":"schlecht",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · Werte bauen sich entlang des Pfads auf: bis Level 10 eigenes Wachstum, danach mit Klassenmodifikator (Primarstufe ab 10, Spezialstufe ab 20), plus Wertebonus der aktuellen Klasse; Primarstufe wird mit Level 20 bewertet, Spezialstufe mit 35, Oberstufe mit 45, Ultimastufe mit Level ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · Werte bauen sich entlang des Pfads auf: bis Level 5 eigenes Wachstum, danach mit Klassenmodifikator (Primarstufe ab 5, Spezialstufe ab 20), plus Wertebonus der aktuellen Klasse; Primarstufe wird mit Level 20 bewertet, Spezialstufe mit 35, Oberstufe mit 45, Ultimastufe mit Level ",
 "End-game level":"Level am Spielende",
 "duplicate · main: ":"doppelt · zählt für: ",
 ": choose class":": Klasse wählen",
@@ -356,5 +356,21 @@ L10N["de"]={
 "the class's mount (hover: how to get one)":"Reittier der Klasse (Maus darüber: wie man es bekommt)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Story: Auf dieser Route gibt dir das Spiel diese Einheit; du kannst sie trotzdem in den Trupp eines anderen Anführers verschieben",
 "The squad's lord":"Anführer des Trupps",
-"Home squad: {w} — {t}":"Heimtrupp: {w} — {t}"
+"Home squad: {w} — {t}":"Heimtrupp: {w} — {t}",
+"≈ Lv {n}":"≈ Lv. {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Beitritt bei {w}: {c}, ≈ Lv. {n} (geschätzt nach den empfohlenen Leveln der Kapitel)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Vorher wächst die Einheit allein als {k}; deine gewählten Klassen zählen ab diesem Level",
+"before joining":"vor dem Beitritt",
+"from ≈ Lv {n}":"ab ≈ Lv. {n}",
+"Full cards":"Volle Karten",
+"Compact":"Kompakt",
+"View":"Ansicht",
+"Stages:":"Stufen:",
+"All (planning)":"Alle (Planung)",
+"From joining":"Ab Beitritt",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Werte zählen ab dem Level, mit dem die Einheit beitritt: ein später Rekrut kommt schon aufgelevelt",
+"Whole path":"Ganzer Weg",
+"Stats count from level 1, as if the fighter were with you from the start":"Werte zählen ab Level 1, als wäre die Einheit von Anfang an dabei",
+"Stats":"Werte",
+"Open or close the full card":"Volle Karte öffnen oder schließen"
 };

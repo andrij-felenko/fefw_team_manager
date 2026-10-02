@@ -1,0 +1,24 @@
+/* the top bar: squad tabs, language flags, plans (save slots); kept left to right in Arabic */
+.topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+/* language: one flag per language, the current one framed */
+.lang{display:flex;flex-wrap:wrap;gap:3px;justify-content:flex-end}
+@media (max-width:600px){.lang{justify-content:flex-start}}
+.lang button{padding:2px;border:1.5px solid transparent;border-radius:5px;background:transparent;line-height:0;opacity:.6}
+.lang button:hover{opacity:1}
+.lang button.on{border-color:var(--accent);opacity:1}
+.lang svg{width:24px;height:16px;display:block;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+/* under the flags: the four plans (save slots) and the export / import buttons */
+.side{display:grid;gap:6px;justify-items:end;margin-inline-start:auto}
+@media (max-width:600px){.side{justify-items:start}}
+.slots{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.slots .lb{font-size:12px;color:var(--muted);margin-inline-end:2px}
+.slots button{padding:1px 9px;font-size:13px;line-height:20px;border-radius:6px;font-variant-numeric:tabular-nums}
+.slots button.empty{color:var(--muted);border-style:dashed}
+.slots button.on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
+.slots #exportBtn{margin-inline-start:6px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tabs button{display:grid;gap:0;text-align:left;padding:8px 14px;border-radius:10px;min-width:150px}
+.tabs button small{color:var(--muted);font-size:12px}
+.tabs button.on{border-color:var(--accent);background:var(--accent-soft)}
+.tabs button.on span{color:var(--accent);font-weight:600}
+[dir=rtl] .topbar{direction:ltr} [dir=rtl] .topbar .tabs button{unicode-bidi:plaintext}

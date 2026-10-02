@@ -1,0 +1,19 @@
+/* the squad summary: headcount and the skills / animals tables */
+.tstats{display:grid;gap:6px;margin-bottom:12px;font-size:14px;color:var(--muted)}
+.tstats b{color:var(--ink);font-variant-numeric:tabular-nums}
+.ts-head{display:flex;flex-wrap:wrap;gap:4px 16px}
+.ts-tbl{overflow-x:auto;max-width:100%}
+/* skills and animals: side by side when there is room */
+.ts-tbls{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;min-width:0}
+.ts-tbls>.ts-tbl{min-width:0}
+.ts-tbl table{border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.ts-tbl th,.ts-tbl td{padding:3px 8px;text-align:center;white-space:nowrap}
+.ts-tbl th.gh{font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--muted);border-left:1px solid var(--line);padding-top:6px}
+.ts-tbl th.sk-h{font-weight:400;font-size:11px;color:var(--muted);border-bottom:1px solid var(--line)}
+.ts-tbl th.sk-h span{display:block;font-size:10px}
+.ts-tbl .gs{border-left:1px solid var(--line)}
+.ts-tbl th.st{text-align:left;font-size:11px;letter-spacing:.04em;text-transform:uppercase;font-weight:500;color:var(--muted);padding-left:10px}
+.ts-tbl td b{color:var(--ink);font-size:14px}
+.ts-tbl td .pr{color:var(--accent);font-weight:600;font-size:14px}
+.ts-tbl td.z{color:var(--line)}
+.ts-tbl .nc{border-left:1px solid var(--line);font-size:11px;color:var(--muted)}

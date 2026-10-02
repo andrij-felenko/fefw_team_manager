@@ -1,45 +1,14 @@
-// Fire Emblem: Fortune's Weave squad planner: languages. Loaded first, then js/data.js and js/app.js.
-// ---------- language ----------
-// every visible string exists in Ukrainian and English; tr(uk, en) picks the current one
-var LANG="en";
-// Languages are listed by how many people it is the national language of (the population of the countries and regions
-// where it is the nation's own language, e.g. Ireland for Irish, Wales for Welsh, plus the people living abroad), roughly, largest first.
-// Ukrainian and English are written in the code as tr("uk","en") pairs; the other languages look the English text up
-// in L10N (one file per language in js/l10n/), falling back to English when a phrase is missing
-var LANGS=[["en","English"],["es","Español"],["ar","العربية"],["pt","Português"],["de","Deutsch"],["fr","Français"],["tr","Türkçe"],["it","Italiano"],["uk","Українська"],["pl","Polski"],["nl","Nederlands"],["ro","Română"],["hu","Magyar"],["el","Ελληνικά"],["cs","Čeština"],["sv","Svenska"],["be","Беларуская"],["ga","Gaeilge"],["da","Dansk"],["nb","Norsk"],["fi","Suomi"],["ka","ქართული"],["lt","Lietuvių"],["cy","Cymraeg"],["crh","Qırımtatarca"]];
-// phrases of the other languages: js/l10n/<code>.js, loaded the first time that language is used
-var L10N={};
-function loc(en){if(LANG==="en")return en;var d=L10N[LANG];return d&&d[en]!=null?d[en]:en}
-function tr(uk,en){return LANG==="uk"?uk:loc(en)}
-function pick(a){return LANG==="uk"?a[0]:loc(a[1])}
-// runs cb once the language's phrases are in (at once for English, Ukrainian and languages already loaded);
-// if the file can't be loaded the page stays in English rather than breaking
-function withLang(l,cb){
-  if(l==="en"||l==="uk"||L10N[l]||!LANGS.some(function(p){return p[0]===l})){cb();return}
-  var sc=document.createElement("script"); sc.src="js/l10n/"+l+".js";
-  sc.onload=sc.onerror=function(){cb()};
-  document.head.appendChild(sc);
-}
-function fmt(t,o){return t.replace(/\{(\w+)\}/g,function(m,k){return o[k]!=null?o[k]:m})}
-var T={
-  h_squad:["Загін","Squad"], h_all:["Усі бійці","All fighters"], h_classes:["Класи","Classes"],
-  f_free:["Ще ні в якому загоні","Not in any squad yet"], f_all:["Усі","Everyone"],
-  sx_any:["Будь-яка стать","Any gender"], sx_f:["♀ Жінки","♀ Women"], sx_m:["♂ Чоловіки","♂ Men"],
-  hide_blocked:["сховати недоступні","hide unavailable"],
-  q_ph:["Пошук за іменем або навичкою (сокира, політ…)","Search by name or skill (axe, flying…)"],
-  title:["Heroic Games · конструктор","Heroic Games · squad planner"],
-  src:['Фанатський планувальник, не пов\'язаний з Nintendo чи Intelligent Systems. Дані: сторінки персонажів і класів <a href="https://fortunesweave.wiki.fextralife.com/Characters" target="_blank" rel="noopener">Fextralife</a>, вимоги класів і умови вербування <a href="https://game8.co/games/Fire-Emblem-Fortunes-Weave/archives/620256" target="_blank" rel="noopener">Game8</a>, стать і вік <a href="https://fireemblemwiki.org/wiki/List_of_characters_in_Fire_Emblem:_Fortune%27s_Weave" target="_blank" rel="noopener">Fire Emblem Wiki</a> і <a href="https://fireemblem.fandom.com/wiki/List_of_characters_in_Fire_Emblem:_Fortune%27s_Weave" target="_blank" rel="noopener">Fandom</a>, обмеження <a href="https://www.thegamer.com/fire-emblem-fortunes-weave-how-to-change-class/" target="_blank" rel="noopener">TheGamer</a>; вересень 2026. Ранги — мінімум для іспиту (E+ &lt; D &lt; C &lt; B &lt; A &lt; S). Приріст у класі = власний приріст + надбавка класу (<a href="https://game8.co/games/Fire-Emblem-Fortunes-Weave/archives/618974" target="_blank" rel="noopener">Game8</a>, <a href="https://serenesforest.net/fortunes-weave/characters/growth-rates/" target="_blank" rel="noopener">Serenes Forest</a>). Вік — до перестрибування в часі. Боєць може бути лише в одному загоні. Усе зберігається лише в цьому браузері.',
-       'Fan-made planner, not affiliated with Nintendo or Intelligent Systems. Data: character and class pages on <a href="https://fortunesweave.wiki.fextralife.com/Characters" target="_blank" rel="noopener">Fextralife</a>, class requirements and recruitment conditions from <a href="https://game8.co/games/Fire-Emblem-Fortunes-Weave/archives/620256" target="_blank" rel="noopener">Game8</a>, gender and age from <a href="https://fireemblemwiki.org/wiki/List_of_characters_in_Fire_Emblem:_Fortune%27s_Weave" target="_blank" rel="noopener">Fire Emblem Wiki</a> and <a href="https://fireemblem.fandom.com/wiki/List_of_characters_in_Fire_Emblem:_Fortune%27s_Weave" target="_blank" rel="noopener">Fandom</a>, restrictions from <a href="https://www.thegamer.com/fire-emblem-fortunes-weave-how-to-change-class/" target="_blank" rel="noopener">TheGamer</a>; September 2026. Ranks are the exam minimum (E+ &lt; D &lt; C &lt; B &lt; A &lt; S). Growth in a class = personal growth + class modifier (<a href="https://game8.co/games/Fire-Emblem-Fortunes-Weave/archives/618974" target="_blank" rel="noopener">Game8</a>, <a href="https://serenesforest.net/fortunes-weave/characters/growth-rates/" target="_blank" rel="noopener">Serenes Forest</a>). Ages are before the timeskip. A fighter can be in one squad only. Everything is saved in this browser only.']
-};
-var SK,STAT,STAGE,STAGE_S;
-var SK_UK={sw:"меч",sp:"спис",ax:"сокира",bo:"лук",br:"рукопашка",wm:"біла магія",bm:"чорна магія",au:"підтримка",he:"броня",ri:"їзда",fl:"політ",in:"піхота"};
-var SK_EN={sw:"sword",sp:"spear",ax:"axe",bo:"bow",br:"brawling",wm:"white magic",bm:"black magic",au:"authority",he:"heavy armor",ri:"riding",fl:"flying",in:"infantry"};
-var STAT_UK=["HP","Сил","Маг","Спр","Шв","Уд","Зах","Оп","Чар"], STAT_EN=["HP","Str","Mag","Dex","Spd","Lck","Def","Res","Cha"];
-var STAGE_UK=["Початковий","Спеціальний","Просунутий","Майстер","Божественний"], STAGE_EN=["Beginner","Specialty","Advanced","Master","Divine"];
-var STAGE_S_UK=["Поч.","Спец.","Прос.","Майст.","Бож."], STAGE_S_EN=["Beg.","Spec.","Adv.","Mast.","Div."];
+// The fixed game terms of every language: skills, stats, tiers and the stage marks of the skill path.
+// SK / STAT / STAGE / STAGE_S always hold the current language's terms (setLangTables, called by setLang in i18n.js)
+export let SK,STAT,STAGE,STAGE_S;
+const SK_UK={sw:"меч",sp:"спис",ax:"сокира",bo:"лук",br:"рукопашка",wm:"біла магія",bm:"чорна магія",au:"підтримка",he:"броня",ri:"їзда",fl:"політ",in:"піхота"};
+export const SK_EN={sw:"sword",sp:"spear",ax:"axe",bo:"bow",br:"brawling",wm:"white magic",bm:"black magic",au:"authority",he:"heavy armor",ri:"riding",fl:"flying",in:"infantry"};
+const STAT_UK=["HP","Сил","Маг","Спр","Шв","Уд","Зах","Оп","Чар"], STAT_EN=["HP","Str","Mag","Dex","Spd","Lck","Def","Res","Cha"];
+const STAGE_UK=["Початковий","Спеціальний","Просунутий","Майстер","Божественний"], STAGE_EN=["Beginner","Specialty","Advanced","Master","Divine"];
+const STAGE_S_UK=["Поч.","Спец.","Прос.","Майст.","Бож."], STAGE_S_EN=["Beg.","Spec.","Adv.","Mast.","Div."];
 // skills, stats and tiers in the other languages; order as in SK_EN / STAT_EN / STAGE_EN. Spanish, French, German and
 // Italian use Nintendo's official Three Houses / Engage names (FE Wiki), Dutch the official Echoes names for weapons and magic
-var TERMS={
+const TERMS={
  es:{sk:["espada","lanza","hacha","arco","puños","magia blanca","magia negra","mando","coraza","equitación","vuelo","infantería"],
    st:["PV","Fue","Mag","Hab","Vel","Sue","Def","Res","Car"],stage:["Novel","Especialidad","Avanzada","Suprema","Divina"],short:["Nov.","Esp.","Avan.","Sup.","Div."],mk:["N","E","A","S"]},
  ro:{sk:["sabie","suliță","topor","arc","pumni","magie albă","magie neagră","autoritate","armură grea","călărie","zbor","infanterie"],
@@ -86,12 +55,11 @@ var TERMS={
    st:["صحة","قوة","سحر","براعة","سرعة","حظ","دفاع","مقاومة","جاذبية"],stage:["مبتدئ","متخصص","متقدم","خبير","إلهي"],short:["مبتدئ","متخصص","متقدم","خبير","إلهي"],mk:["0","1","2","3"]},
  da:{sk:["sværd","spyd","økse","bue","næver","hvid magi","sort magi","autoritet","tung rustning","ridning","flyvning","infanteri"],
    st:["HP","Sty","Mag","Fær","Hur","Held","For","Mod","Cha"],stage:["Begynder","Specialist","Avanceret","Mester","Guddommelig"],short:["Beg.","Spec.","Av.","Mest.","Gud."],mk:["B","S","A","M"]}};
-var MARKS={uk:["П","С","Пр","М"],en:["B","S","A","M"]};
-function setLangTables(){
-  var t=TERMS[LANG];
-  if(LANG==="uk"){SK=SK_UK;STAT=STAT_UK;STAGE=STAGE_UK;STAGE_S=STAGE_S_UK}
+export const MARKS={uk:["П","С","Пр","М"],en:["B","S","A","M"]};
+export function setLangTables(l){
+  var t=TERMS[l];
+  if(l==="uk"){SK=SK_UK;STAT=STAT_UK;STAGE=STAGE_UK;STAGE_S=STAGE_S_UK}
   else if(!t){SK=SK_EN;STAT=STAT_EN;STAGE=STAGE_EN;STAGE_S=STAGE_S_EN}
   else{SK={};Object.keys(SK_EN).forEach(function(k,i){SK[k]=t.sk[i]});STAT=t.st;STAGE=t.stage;STAGE_S=t.short}
-  if(t)MARKS[LANG]=t.mk;
+  if(t)MARKS[l]=t.mk;
 }
-

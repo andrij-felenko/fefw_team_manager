@@ -1,6 +1,6 @@
-// Magyar: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Magyar: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Magyar; corrections are welcome.
-L10N["hu"]={
+export default {
 "en":"en",
 "Leda's squad":"Leda osztaga",
 "Cai's squad":"Cai osztaga",
@@ -121,7 +121,7 @@ L10N["hu"]={
 "its number is ":"a száma ",
 "green, “not ripe yet”":"zöld, „még éretlen”",
 "poor":"gyenge",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · a statok az út során halmozódnak: a 10. szintig saját növekedés, utána a kaszt módosítójával (Kezdő a 10.-től, Specialista a 20.-tól), plusz a harcos aktuális kasztjának statbónusza; értékelés: Kezdő a 20., Specialista a 35., Haladó a 45., Mester ezen a szinten: ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · a statok az út során halmozódnak: az 5. szintig saját növekedés, utána a kaszt módosítójával (Kezdő az 5.-től, Specialista a 20.-tól), plusz a harcos aktuális kasztjának statbónusza; értékelés: Kezdő a 20., Specialista a 35., Haladó a 45., Mester ezen a szinten: ",
 "End-game level":"Játék végi szint",
 "duplicate · main: ":"duplikátum · fő viselő: ",
 ": choose class":": kaszt választása",
@@ -356,5 +356,21 @@ L10N["hu"]={
 "the class's mount (hover: how to get one)":"a kaszt hátasa (vidd fölé: hogyan szerezd meg)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Történet: ezen az útvonalon ezt a harcost a játék adja; mégis áttehető egy másik vezér osztagába",
 "The squad's lord":"Az osztag vezére",
-"Home squad: {w} — {t}":"Saját osztag: {w} — {t}"
+"Home squad: {w} — {t}":"Saját osztag: {w} — {t}",
+"≈ Lv {n}":"≈ {n}. szint",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Csatlakozás – {w}: {c}, ≈ {n}. szint (becslés a fejezetek ajánlott szintjei alapján)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Addig magától fejlődik, mint {k}; az általad választott kasztok attól a szinttől számítanak",
+"before joining":"csatlakozás előtt",
+"from ≈ Lv {n}":"≈ {n}. szinttől",
+"Full cards":"Teljes kártyák",
+"Compact":"Tömör",
+"View":"Nézet",
+"Stages:":"Szakaszok:",
+"All (planning)":"Mind (tervezés)",
+"From joining":"Csatlakozástól",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"A statok attól a szinttől számítanak, amelyen a harcos csatlakozik: a késői újonc már felszintezve érkezik",
+"Whole path":"Teljes út",
+"Stats count from level 1, as if the fighter were with you from the start":"A statok az 1. szinttől számítanak, mintha a harcos kezdettől veled lenne",
+"Stats":"Statok",
+"Open or close the full card":"Teljes kártya megnyitása vagy bezárása"
 };

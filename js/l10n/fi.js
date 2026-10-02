@@ -1,6 +1,6 @@
-// Suomi: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Suomi: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Suomi; corrections are welcome.
-L10N["fi"]={
+export default {
 "en":"en",
 "Leda's squad":"Ledan ryhmä",
 "Cai's squad":"Cain ryhmä",
@@ -121,7 +121,7 @@ L10N["fi"]={
 "its number is ":"luku on ",
 "green, “not ripe yet”":"vihreä, ”ei vielä kypsä”",
 "poor":"huono",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · ominaisuudet kertyvät matkan varrella: oma kasvu tasolle 10 asti, sitten luokkamodifikaattorin kanssa (Aloittelija tasolta 10, Erikois tasolta 20), plus taistelijan nykyisen luokan ominaisuusbonus; Aloittelija arvioidaan tasolla 20, Erikois tasolla 35, Edistynyt tasolla 45, Mestari tasolla ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · ominaisuudet kertyvät matkan varrella: oma kasvu tasolle 5 asti, sitten luokkamodifikaattorin kanssa (Aloittelija tasolta 5, Erikois tasolta 20), plus taistelijan nykyisen luokan ominaisuusbonus; Aloittelija arvioidaan tasolla 20, Erikois tasolla 35, Edistynyt tasolla 45, Mestari tasolla ",
 "End-game level":"Loppupelin taso",
 "duplicate · main: ":"tupla · ensisijainen: ",
 ": choose class":": valitse luokka",
@@ -356,5 +356,21 @@ L10N["fi"]={
 "the class's mount (hover: how to get one)":"luokan ratsu (vie hiiri päälle: miten sen saa)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Juoni: tällä reitillä peli antaa tämän taistelijan; voit silti siirtää hänet toisen johtajan ryhmään",
 "The squad's lord":"Ryhmän johtaja",
-"Home squad: {w} — {t}":"Kotiryhmä: {w} — {t}"
+"Home squad: {w} — {t}":"Kotiryhmä: {w} — {t}",
+"≈ Lv {n}":"≈ taso {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Liittyy – {w}: {c}, ≈ taso {n} (arvio lukujen suositustasojen mukaan)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Sitä ennen kasvaa itsekseen luokassa {k}; valitsemasi luokat lasketaan siitä tasosta",
+"before joining":"ennen liittymistä",
+"from ≈ Lv {n}":"≈ tasolta {n}",
+"Full cards":"Täydet kortit",
+"Compact":"Tiivis",
+"View":"Näkymä",
+"Stages:":"Vaiheet:",
+"All (planning)":"Kaikki (suunnittelu)",
+"From joining":"Liittymisestä",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Ominaisuudet lasketaan siitä tasosta, jolla taistelija liittyy: myöhäinen värvätty tulee jo valmiiksi kehittyneenä",
+"Whole path":"Koko polku",
+"Stats count from level 1, as if the fighter were with you from the start":"Ominaisuudet lasketaan tasolta 1, ikään kuin taistelija olisi ollut mukana alusta asti",
+"Stats":"Ominaisuudet",
+"Open or close the full card":"Avaa tai sulje koko kortti"
 };

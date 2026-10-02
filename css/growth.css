@@ -1,0 +1,29 @@
+/* skill path bars, the ability line, growth bars */
+.prog{display:grid;gap:6px}
+.sk{display:grid;grid-template-columns:108px 1fr 22px;align-items:end;gap:8px;font-size:13px}
+.sk-n{display:inline-flex;align-items:center;gap:4px;white-space:nowrap;padding-bottom:2px}
+.sk.p .sk-n,.sk.p .sk-g{color:var(--plus)} .sk.m .sk-n,.sk.m .sk-g{color:var(--minus)}
+.sk-g{text-align:center;font-weight:600;padding-bottom:2px}
+.track{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px}
+.seg{position:relative;display:grid;grid-template-rows:12px 6px 12px;text-align:center}
+.seg::before{content:"";grid-row:2;background:var(--line);border-radius:2px}
+.seg.on::before{background:var(--accent)}
+.sk.m .seg.on::before{background:var(--minus)}
+.seg em{grid-row:1;font-style:normal;font-size:9px;line-height:12px;color:var(--ink);white-space:nowrap;overflow:visible}
+.seg i{grid-row:3;font-style:normal;font-size:9px;line-height:12px;color:var(--muted)}
+.ability{font-size:13px;color:var(--muted)}
+.ability b{color:var(--ink);font-weight:600}
+.fit{font-size:13px;display:grid;gap:2px}
+.good{color:var(--plus)} .warn{color:var(--warn)}
+.grow{display:grid;grid-template-columns:repeat(9,1fr);gap:3px;align-items:end;height:46px}
+.g{display:grid;grid-template-rows:1fr auto;height:100%;text-align:center;font-size:9px;line-height:1.2;color:var(--muted);font-variant-numeric:tabular-nums}
+.g i{display:block;align-self:end;background:var(--bar);border-radius:2px 2px 0 0}
+.g i.hi{background:var(--accent)}
+/* growth stats that matter for the chosen weapons: direct teal, indirect pale teal (teal is no lord's colour) */
+.g i.rd{background:var(--rel)} .g i.ri{background:var(--rel-soft)}
+.g.gd span{color:var(--rel)} .g.gd span b{color:var(--rel)}
+.g span b{display:block;font-weight:600;color:var(--ink);font-size:10px}
+.grow.cg{height:38px;margin-top:6px}
+.g em{display:block;font-style:normal;font-size:9px;color:var(--muted)}
+.g em.up{color:var(--plus)} .g em.dn{color:var(--minus)}
+.lbl{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}

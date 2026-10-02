@@ -1,6 +1,6 @@
-// Lietuvių: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Lietuvių: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Lietuvių; corrections are welcome.
-L10N["lt"]={
+export default {
 "en":"en",
 "Leda's squad":"Ledos būrys",
 "Cai's squad":"Cai būrys",
@@ -121,7 +121,7 @@ L10N["lt"]={
 "its number is ":"skaičius būna ",
 "green, “not ripe yet”":"žalias, “dar neprinokęs”",
 "poor":"prasta",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · rodikliai kaupiasi kelyje: iki 10 lygio savas augimas, toliau su klasės modifikatoriumi (Pradedantysis nuo 10, Specialybė nuo 20), plius dabartinės kovotojo klasės rodiklių priedas; Pradedantysis vertinamas ties 20 lygiu, Specialybė ties 35, Pažengęs ties 45, Meistras ties lygiu ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · rodikliai kaupiasi kelyje: iki 5 lygio savas augimas, toliau su klasės modifikatoriumi (Pradedantysis nuo 5, Specialybė nuo 20), plius dabartinės kovotojo klasės rodiklių priedas; Pradedantysis vertinamas ties 20 lygiu, Specialybė ties 35, Pažengęs ties 45, Meistras ties lygiu ",
 "End-game level":"Pabaigos lygis",
 "duplicate · main: ":"dublikatas · pagrindinis: ",
 ": choose class":": pasirinkti klasę",
@@ -356,5 +356,21 @@ L10N["lt"]={
 "the class's mount (hover: how to get one)":"klasės gyvūnas (užvesk pelę: kaip gauti)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Siužetas: šiame maršrute šį kovotoją duoda žaidimas; vis tiek gali jį perkelti į kito lyderio būrį",
 "The squad's lord":"Būrio lyderis",
-"Home squad: {w} — {t}":"Gimtasis būrys: {w} — {t}"
+"Home squad: {w} — {t}":"Gimtasis būrys: {w} — {t}",
+"≈ Lv {n}":"≈ {n} lyg.",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Prisijungimas — {w}: {c}, ≈ {n} lyg. (įvertis pagal skyrių rekomenduojamus lygius)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Iki tol auga pats kaip {k}; tavo pasirinktos klasės skaičiuojamos nuo to lygio",
+"before joining":"iki prisijungimo",
+"from ≈ Lv {n}":"nuo ≈ {n} lyg.",
+"Full cards":"Pilnos kortelės",
+"Compact":"Kompaktiškai",
+"View":"Vaizdas",
+"Stages:":"Etapai:",
+"All (planning)":"Visi (planavimas)",
+"From joining":"Nuo prisijungimo",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Rodikliai skaičiuojami nuo lygio, kuriuo kovotojas prisijungia: vėlyvas rekrutas ateina jau pakėlęs lygį",
+"Whole path":"Visas kelias",
+"Stats count from level 1, as if the fighter were with you from the start":"Rodikliai skaičiuojami nuo 1 lygio, tarsi kovotojas būtų su tavimi nuo pradžių",
+"Stats":"Rodikliai",
+"Open or close the full card":"Atverti arba užverti pilną kortelę"
 };

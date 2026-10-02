@@ -1,6 +1,6 @@
-// العربية: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// العربية: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is العربية; corrections are welcome.
-L10N["ar"]={
+export default {
 "en":"en",
 "Leda's squad":"فرقة Leda",
 "Cai's squad":"فرقة Cai",
@@ -121,7 +121,7 @@ L10N["ar"]={
 "its number is ":"رقمه ",
 "green, “not ripe yet”":"أخضر، «لم ينضج بعد»",
 "poor":"ضعيف",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · تتراكم الإحصائيات على طول المسار: نمو ذاتي حتى المستوى 10، ثم مع معدِّل الصنف («مبتدئ» من 10 و«متخصص» من 20)، إضافة إلى مكافأة إحصائيات الصنف الحالي للمقاتل؛ يُقيَّم «مبتدئ» عند 20، و«متخصص» عند 35، و«متقدم» عند 45، و«خبير» عند المستوى ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · تتراكم الإحصائيات على طول المسار: نمو ذاتي حتى المستوى 5، ثم مع معدِّل الصنف («مبتدئ» من 5 و«متخصص» من 20)، إضافة إلى مكافأة إحصائيات الصنف الحالي للمقاتل؛ يُقيَّم «مبتدئ» عند 20، و«متخصص» عند 35، و«متقدم» عند 45، و«خبير» عند المستوى ",
 "End-game level":"مستوى نهاية اللعبة",
 "duplicate · main: ":"مكرر · الأساسي: ",
 ": choose class":": اختر الصنف",
@@ -356,5 +356,21 @@ L10N["ar"]={
 "the class's mount (hover: how to get one)":"مطية الصنف (مرّر المؤشر: كيف تحصل عليها)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"القصة: في هذا المسار تمنحك اللعبة هذا المقاتل؛ ومع ذلك يمكنك نقله إلى فرقة قائد آخر",
 "The squad's lord":"قائد الفرقة",
-"Home squad: {w} — {t}":"الفرقة الأصلية: {w} — {t}"
+"Home squad: {w} — {t}":"الفرقة الأصلية: {w} — {t}",
+"≈ Lv {n}":"≈ مستوى {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"الانضمام إلى {w}: {c}، ≈ المستوى {n} (تقدير حسب المستويات الموصى بها للفصول)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"قبل ذلك ينمو وحده بصفته {k}؛ وتُحتسب الأصناف التي تختارها من ذلك المستوى",
+"before joining":"قبل الانضمام",
+"from ≈ Lv {n}":"من ≈ المستوى {n}",
+"Full cards":"بطاقات كاملة",
+"Compact":"مضغوط",
+"View":"العرض",
+"Stages:":"المراحل:",
+"All (planning)":"الكل (التخطيط)",
+"From joining":"من الانضمام",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"تُحسب الإحصائيات من المستوى الذي ينضم به المقاتل: المجنَّد المتأخر يصل بمستوى أعلى",
+"Whole path":"المسار كله",
+"Stats count from level 1, as if the fighter were with you from the start":"تُحسب الإحصائيات من المستوى 1، كأن المقاتل معك منذ البداية",
+"Stats":"الإحصائيات",
+"Open or close the full card":"فتح البطاقة الكاملة أو إغلاقها"
 };

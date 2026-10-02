@@ -1,6 +1,6 @@
-// Norsk: the planner's phrases, looked up by their English text (see loc() in js/i18n.js).
+// Norsk: the planner's phrases, looked up by their English text (see loc() in js/core/i18n.js).
 // Only the text after the colon is Norsk; corrections are welcome.
-L10N["nb"]={
+export default {
 "en":"en",
 "Leda's squad":"Ledas tropp",
 "Cai's squad":"Cais tropp",
@@ -121,7 +121,7 @@ L10N["nb"]={
 "its number is ":"tallet er ",
 "green, “not ripe yet”":"grønt, “ikke modent ennå”",
 "poor":"dårlig",
-" · stats build up along the path: own growth up to level 10, then with the class modifier (Beginner class from 10, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · verdiene bygges opp langs veien: egen vekst til nivå 10, deretter med klassemodifikatoren (Nybegynner fra 10, Spesialist fra 20), pluss verdibonusen fra klassen kjemperen er i; Nybegynner vurderes på nivå 20, Spesialist på 35, Avansert på 45, Mester på nivå ",
+" · stats build up along the path: own growth up to level 5, then with the class modifier (Beginner class from 5, Specialty from 20), plus the stat bonus of the class the fighter is in; Beginner is judged at 20, Specialty at 35, Advanced at 45, Master at level ":" · verdiene bygges opp langs veien: egen vekst til nivå 5, deretter med klassemodifikatoren (Nybegynner fra 5, Spesialist fra 20), pluss verdibonusen fra klassen kjemperen er i; Nybegynner vurderes på nivå 20, Spesialist på 35, Avansert på 45, Mester på nivå ",
 "End-game level":"Sluttnivå",
 "duplicate · main: ":"duplikat · hovedinnehaver: ",
 ": choose class":": velg klasse",
@@ -356,5 +356,21 @@ L10N["nb"]={
 "the class's mount (hover: how to get one)":"klassens ridedyr (hold musen over: hvordan få et)",
 "Story: on this path the game gives you this fighter; you can still move them to another lord's squad":"Historie: på denne ruten gir spillet deg denne kjemperen; du kan likevel flytte den til en annen leders tropp",
 "The squad's lord":"Troppens leder",
-"Home squad: {w} — {t}":"Hjemmetropp: {w} — {t}"
+"Home squad: {w} — {t}":"Hjemmetropp: {w} — {t}",
+"≈ Lv {n}":"≈ Nv. {n}",
+"Joining {w}: {c}, ≈ Lv {n} (estimated from the chapters' recommended levels)":"Blir med hos {w}: {c}, ≈ Nv. {n} (anslått ut fra kapitlenes anbefalte nivåer)",
+"Before that they grow on their own as {k}; the classes you choose count from that level":"Før det vokser den på egen hånd som {k}; klassene du velger teller fra det nivået",
+"before joining":"før den blir med",
+"from ≈ Lv {n}":"fra ≈ Nv. {n}",
+"Full cards":"Hele kort",
+"Compact":"Kompakt",
+"View":"Visning",
+"Stages:":"Trinn:",
+"All (planning)":"Alle (planlegging)",
+"From joining":"Fra tilslutning",
+"Stats count from the level the fighter joins at: a late recruit arrives levelled up":"Verdiene teller fra nivået kjemperen blir med på: en sen rekrutt kommer allerede oppnivået",
+"Whole path":"Hele veien",
+"Stats count from level 1, as if the fighter were with you from the start":"Verdiene teller fra nivå 1, som om kjemperen var med deg fra starten",
+"Stats":"Verdier",
+"Open or close the full card":"Åpne eller lukk hele kortet"
 };
