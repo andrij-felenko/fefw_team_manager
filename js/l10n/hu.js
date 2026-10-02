@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Teljes kártya megnyitása vagy bezárása",
 "Strong in:":"Erős:",
 "Not in other squads":"Nincs más osztagban",
-"Not yet in this squad":"Még nincs ebben az osztagban"
+"Not yet in this squad":"Még nincs ebben az osztagban",
+"{w}'s temple":"{w} temploma"
 };

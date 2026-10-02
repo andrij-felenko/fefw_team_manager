@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Åpne eller lukk hele kortet",
 "Strong in:":"Sterk i:",
 "Not in other squads":"Ikke i andre tropper",
-"Not yet in this squad":"Ennå ikke i denne troppen"
+"Not yet in this squad":"Ennå ikke i denne troppen",
+"{w}'s temple":"{w}-tempelet"
 };

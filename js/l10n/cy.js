@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Agor neu gau'r cerdyn llawn",
 "Strong in:":"Cryf yn:",
 "Not in other squads":"Ddim mewn carfanau eraill",
-"Not yet in this squad":"Ddim yn y garfan hon eto"
+"Not yet in this squad":"Ddim yn y garfan hon eto",
+"{w}'s temple":"teml {w}"
 };

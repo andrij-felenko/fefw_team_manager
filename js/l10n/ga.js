@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Oscail nó dún an cárta iomlán",
 "Strong in:":"Láidir i:",
 "Not in other squads":"Ní i scuaid eile",
-"Not yet in this squad":"Nach bhfuil sa scuad seo fós"
+"Not yet in this squad":"Nach bhfuil sa scuad seo fós",
+"{w}'s temple":"teampall: {w}"
 };

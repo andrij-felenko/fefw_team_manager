@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Tam kartı aç ya da kapat",
 "Strong in:":"Güçlü olduğu:",
 "Not in other squads":"Başka ekipte değil",
-"Not yet in this squad":"Henüz bu ekipte değil"
+"Not yet in this squad":"Henüz bu ekipte değil",
+"{w}'s temple":"{w} tapınağı"
 };

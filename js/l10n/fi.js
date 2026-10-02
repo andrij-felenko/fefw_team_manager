@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Avaa tai sulje koko kortti",
 "Strong in:":"Vahva:",
 "Not in other squads":"Ei muissa ryhmissä",
-"Not yet in this squad":"Ei vielä tässä ryhmässä"
+"Not yet in this squad":"Ei vielä tässä ryhmässä",
+"{w}'s temple":"temppeli: {w}"
 };

@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Volle Karte öffnen oder schließen",
 "Strong in:":"Stark in:",
 "Not in other squads":"Nicht in anderen Trupps",
-"Not yet in this squad":"Noch nicht in diesem Trupp"
+"Not yet in this squad":"Noch nicht in diesem Trupp",
+"{w}'s temple":"Tempel von {w}"
 };

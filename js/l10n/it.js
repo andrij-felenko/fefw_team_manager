@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Apri o chiudi la scheda completa",
 "Strong in:":"Forte in:",
 "Not in other squads":"Non in altre squadre",
-"Not yet in this squad":"Non ancora in questa squadra"
+"Not yet in this squad":"Non ancora in questa squadra",
+"{w}'s temple":"tempio di {w}"
 };

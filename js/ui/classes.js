@@ -1,5 +1,5 @@
 // Classes: every tier's classes with who in the squad can take them — for the fighter opened above, or the squad.
-import {tr,pick} from "../core/i18n.js";
+import {LANG,tr,pick,loc,fmt} from "../core/i18n.js";
 import {$,esc} from "../core/utils.js";
 import {S,save,team,classFor} from "../core/state.js";
 import {lordUa} from "../data/lords.js";
@@ -16,7 +16,8 @@ function ruleOf(C){
 export function restr(c){
   var x=c.x,o=[];
   if(x.route&&x.route.indexOf(S.cur)>=0)o.push('<i class="mine">'+tr("клас маршруту","path class")+'</i>');
-  if(x.temple)o.push('<i class="soft">'+tr("храм "+TEMPLE_UK[x.temple],x.temple+"'s temple")+'</i>');
+  // the god's name stays as it is; the other languages translate the frame around it
+  if(x.temple)o.push('<i class="soft">'+(LANG==="uk"?"храм "+TEMPLE_UK[x.temple]:fmt(loc("{w}'s temple"),{w:x.temple}))+'</i>');
   if(x.p3)o.push('<i class="soft">'+tr("з Частини III","from Part III")+'</i>');
   if(x.item)o.push('<i class="soft">'+tr("Ключ Діадеми + ","Key of the Diadem + ")+x.item+'</i>');
   if(x.note)o.push('<i class="soft">'+pick(NOTES[x.note])+'</i>');

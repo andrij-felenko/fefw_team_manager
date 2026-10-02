@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Otwórz lub zamknij pełną kartę",
 "Strong in:":"Mocne w:",
 "Not in other squads":"Nie w innych oddziałach",
-"Not yet in this squad":"Jeszcze nie w tym oddziale"
+"Not yet in this squad":"Jeszcze nie w tym oddziale",
+"{w}'s temple":"świątynia: {w}"
 };

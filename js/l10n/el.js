@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Άνοιγμα ή κλείσιμο της πλήρους κάρτας",
 "Strong in:":"Δυνατός σε:",
 "Not in other squads":"Όχι σε άλλες ομάδες",
-"Not yet in this squad":"Όχι ακόμη σε αυτή την ομάδα"
+"Not yet in this squad":"Όχι ακόμη σε αυτή την ομάδα",
+"{w}'s temple":"ναός: {w}"
 };

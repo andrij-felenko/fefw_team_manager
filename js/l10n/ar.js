@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"فتح البطاقة الكاملة أو إغلاقها",
 "Strong in:":"قوي في:",
 "Not in other squads":"ليس في فرق أخرى",
-"Not yet in this squad":"ليس بعد في هذه الفرقة"
+"Not yet in this squad":"ليس بعد في هذه الفرقة",
+"{w}'s temple":"معبد {w}"
 };

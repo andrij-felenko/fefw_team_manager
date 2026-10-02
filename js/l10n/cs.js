@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Otevřít nebo zavřít plnou kartu",
 "Strong in:":"Silný v:",
 "Not in other squads":"Ne v jiných oddílech",
-"Not yet in this squad":"Ještě ne v tomto oddílu"
+"Not yet in this squad":"Ještě ne v tomto oddílu",
+"{w}'s temple":"chrám: {w}"
 };

@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Atverti arba užverti pilną kortelę",
 "Strong in:":"Stiprus:",
 "Not in other squads":"Ne kituose būriuose",
-"Not yet in this squad":"Dar ne šiame būryje"
+"Not yet in this squad":"Dar ne šiame būryje",
+"{w}'s temple":"šventykla: {w}"
 };

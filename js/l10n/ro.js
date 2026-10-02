@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Deschide sau închide fișa completă",
 "Strong in:":"Puternic la:",
 "Not in other squads":"Nu în alte echipe",
-"Not yet in this squad":"Încă nu în această echipă"
+"Not yet in this squad":"Încă nu în această echipă",
+"{w}'s temple":"templul: {w}"
 };

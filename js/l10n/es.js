@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Abrir o cerrar la ficha completa",
 "Strong in:":"Fuerte en:",
 "Not in other squads":"No en otros escuadrones",
-"Not yet in this squad":"Aún no en este escuadrón"
+"Not yet in this squad":"Aún no en este escuadrón",
+"{w}'s temple":"templo de {w}"
 };

@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Tolu kartanı aç ya da qapat",
 "Strong in:":"Küçlü:",
 "Not in other squads":"Başqa bölüklerde degil",
-"Not yet in this squad":"Daa bu bölükte degil"
+"Not yet in this squad":"Daa bu bölükte degil",
+"{w}'s temple":"{w} ibadethanesi"
 };

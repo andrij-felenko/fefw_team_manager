@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"სრული ბარათის გახსნა ან დამალვა",
 "Strong in:":"ძლიერია:",
 "Not in other squads":"არ არის სხვა რაზმებში",
-"Not yet in this squad":"ჯერ არ არის ამ რაზმში"
+"Not yet in this squad":"ჯერ არ არის ამ რაზმში",
+"{w}'s temple":"{w}-ის ტაძარი"
 };

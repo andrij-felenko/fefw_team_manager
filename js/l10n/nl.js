@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Volledige kaart openen of sluiten",
 "Strong in:":"Sterk in:",
 "Not in other squads":"Niet in andere ploegen",
-"Not yet in this squad":"Nog niet in deze ploeg"
+"Not yet in this squad":"Nog niet in deze ploeg",
+"{w}'s temple":"tempel van {w}"
 };

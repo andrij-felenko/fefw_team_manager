@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Öppna eller stäng hela kortet",
 "Strong in:":"Stark i:",
 "Not in other squads":"Inte i andra trupper",
-"Not yet in this squad":"Inte än i den här truppen"
+"Not yet in this squad":"Inte än i den här truppen",
+"{w}'s temple":"{w}-templet"
 };

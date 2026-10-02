@@ -368,5 +368,6 @@ export default {
 "Open or close the full card":"Адкрыць або схаваць поўную картку",
 "Strong in:":"Моцны ў:",
 "Not in other squads":"Не ў іншых загонах",
-"Not yet in this squad":"Яшчэ не ў гэтым загоне"
+"Not yet in this squad":"Яшчэ не ў гэтым загоне",
+"{w}'s temple":"храм: {w}"
 };
