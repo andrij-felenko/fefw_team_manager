@@ -336,9 +336,7 @@ L10N["cs"]={
 "Save slots":"Pozice pro uložení",
 "Recruiting on each path (★ soonest)":"Naverbování na každé cestě (★ nejdříve)",
 "Sooner on another path":"Dříve na jiné cestě",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Sláva roste pomalu: zhruba 4 v Kap. 5, 8 v Kap. 8, 10 v Kap. 10",
 "Path":"Cesta",
 "Condition":"Podmínka",
-"automatic":"automaticky",
-"orange “≈ Ch.” — later because of renown":"oranžové „≈ Kap.“: později kvůli slávě"
+"automatic":"automaticky"
 };

@@ -336,9 +336,7 @@ L10N["ga"]={
 "Save slots":"Sliotáin sábhála",
 "Recruiting on each path (★ soonest)":"Earcú ar gach bealach (★ an ceann is luaithe)",
 "Sooner on another path":"Níos luaithe ar bhealach eile",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Fásann an clú go mall: thart ar 4 faoi Chaib. 5, 8 faoi Chaib. 8, 10 faoi Chaib. 10",
 "Path":"Bealach",
 "Condition":"Coinníoll",
-"automatic":"uathoibríoch",
-"orange “≈ Ch.” — later because of renown":"“≈ Caib.” oráiste: níos déanaí mar gheall ar an gclú"
+"automatic":"uathoibríoch"
 };

@@ -336,9 +336,7 @@ L10N["lt"]={
 "Save slots":"Išsaugojimo vietos",
 "Recruiting on each path (★ soonest)":"Užverbavimas kiekviename maršrute (★ anksčiausiai)",
 "Sooner on another path":"Kitame maršrute anksčiau",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Šlovė auga lėtai: apie 4 iki 5 sk., 8 iki 8 sk., 10 iki 10 sk.",
 "Path":"Maršrutas",
 "Condition":"Sąlyga",
-"automatic":"automatiškai",
-"orange “≈ Ch.” — later because of renown":"oranžinis „≈ Sk.“ — vėliau dėl šlovės"
+"automatic":"automatiškai"
 };

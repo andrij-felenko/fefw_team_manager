@@ -336,9 +336,7 @@ L10N["ar"]={
 "Save slots":"خانات الحفظ",
 "Recruiting on each path (★ soonest)":"التجنيد في كل مسار (★ الأبكر)",
 "Sooner on another path":"أبكر في مسار آخر",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"السمعة ترتفع ببطء: نحو 4 في الفصل 5، و8 في الفصل 8، و10 في الفصل 10",
 "Path":"المسار",
 "Condition":"الشرط",
-"automatic":"تلقائيًا، الفصل",
-"orange “≈ Ch.” — later because of renown":"«≈ الفصل» بالبرتقالي: لاحقًا بسبب السمعة"
+"automatic":"تلقائيًا، الفصل"
 };

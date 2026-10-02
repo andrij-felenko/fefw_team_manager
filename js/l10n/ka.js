@@ -336,9 +336,7 @@ L10N["ka"]={
 "Save slots":"შენახვის სლოტები",
 "Recruiting on each path (★ soonest)":"აყვანა ყველა მარშრუტზე (★ ყველაზე ადრე)",
 "Sooner on another path":"სხვა მარშრუტზე უფრო ადრე",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"დიდება ნელა იზრდება: დაახლოებით 4 მე-5 თავისთვის, 8 — მე-8 თავისთვის, 10 — მე-10 თავისთვის",
 "Path":"მარშრუტი",
 "Condition":"პირობა",
-"automatic":"ავტომატურად",
-"orange “≈ Ch.” — later because of renown":"ნარინჯისფერი „≈ თავი“ — გვიან დიდების გამო"
+"automatic":"ავტომატურად"
 };

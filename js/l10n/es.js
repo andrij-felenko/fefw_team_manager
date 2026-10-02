@@ -336,9 +336,7 @@ L10N["es"]={
 "Save slots":"Ranuras de guardado",
 "Recruiting on each path (★ soonest)":"Reclutamiento en cada ruta (★ la más temprana)",
 "Sooner on another path":"Antes en otra ruta",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"El renombre sube despacio: unos 4 en el Cap. 5, 8 en el Cap. 8, 10 en el Cap. 10",
 "Path":"Ruta",
 "Condition":"Condición",
-"automatic":"automático",
-"orange “≈ Ch.” — later because of renown":"«≈ Cap.» en naranja: más tarde por el renombre"
+"automatic":"automático"
 };

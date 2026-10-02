@@ -736,9 +736,7 @@ function pathsCard(u){
   });
   return (P.sooner?'<div class="pc-s">'+tr("На іншому маршруті — раніше","Sooner on another path")+'</div>':'')+
     '<div class="pc-h">'+tr("Вербування на кожному маршруті (★ — найраніше)","Recruiting on each path (★ soonest)")+'</div>'+h+'</tbody></table>'+
-    (same&&conds[0]?'<div class="pc-x">'+tr("Умова","Condition")+': '+esc(cond(conds[0]))+'</div>':'')+
-    '<div class="pc-n">'+tr("Слава росте повільно: приблизно 4 до Гл. 5, 8 до Гл. 8, 10 до Гл. 10","Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10")+
-    (P.all.some(function(r){return r.w&&r.w[0]>r.w[3]})?'; '+tr("помаранчеве «≈ Гл.» — пізніше через славу","orange “≈ Ch.” — later because of renown"):'')+'</div>';
+    (same&&conds[0]?'<div class="pc-x">'+tr("Умова","Condition")+': '+esc(cond(conds[0]))+'</div>':'');
 }
 function renderPool(){
   var q=(S.q||"").trim().toLowerCase();

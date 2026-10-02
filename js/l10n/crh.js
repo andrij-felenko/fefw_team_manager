@@ -336,9 +336,7 @@ L10N["crh"]={
 "Save slots":"Saqlav yerleri",
 "Recruiting on each path (★ soonest)":"Er yolda bölükke alınuv (★ eñ erte)",
 "Sooner on another path":"Başqa yolda daa erte",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Şan yavaş arta: 5-nci bapqa qadar taqriben 4, 8-ncige qadar 8, 10-ncıge qadar 10",
 "Path":"Yol",
 "Condition":"Şart",
-"automatic":"avtomatik",
-"orange “≈ Ch.” — later because of renown":"turuncı «≈ Bap» — şan sebebinden soñra"
+"automatic":"avtomatik"
 };

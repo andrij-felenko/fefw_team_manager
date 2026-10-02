@@ -336,9 +336,7 @@ L10N["it"]={
 "Save slots":"Slot di salvataggio",
 "Recruiting on each path (★ soonest)":"Reclutamento in ogni percorso (★ il più presto)",
 "Sooner on another path":"Prima in un altro percorso",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"La fama cresce piano: circa 4 al Cap. 5, 8 al Cap. 8, 10 al Cap. 10",
 "Path":"Percorso",
 "Condition":"Condizione",
-"automatic":"automatico",
-"orange “≈ Ch.” — later because of renown":"«≈ Cap.» arancione: più tardi per la fama"
+"automatic":"automatico"
 };

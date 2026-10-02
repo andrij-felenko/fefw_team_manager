@@ -336,9 +336,7 @@ L10N["ro"]={
 "Save slots":"Sloturi de salvare",
 "Recruiting on each path (★ soonest)":"Recrutarea pe fiecare rută (★ cel mai devreme)",
 "Sooner on another path":"Mai devreme pe altă rută",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Renumele crește încet: cam 4 la Cap. 5, 8 la Cap. 8, 10 la Cap. 10",
 "Path":"Rută",
 "Condition":"Condiție",
-"automatic":"automat",
-"orange “≈ Ch.” — later because of renown":"„≈ Cap.” portocaliu: mai târziu din cauza renumelui"
+"automatic":"automat"
 };

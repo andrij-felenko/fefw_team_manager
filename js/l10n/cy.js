@@ -336,9 +336,7 @@ L10N["cy"]={
 "Save slots":"Slotiau cadw",
 "Recruiting on each path (★ soonest)":"Recriwtio ar bob llwybr (★ cynharaf)",
 "Sooner on another path":"Yn gynharach ar lwybr arall",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Mae bri'n codi'n araf: tua 4 erbyn Pen. 5, 8 erbyn Pen. 8, 10 erbyn Pen. 10",
 "Path":"Llwybr",
 "Condition":"Amod",
-"automatic":"awtomatig",
-"orange “≈ Ch.” — later because of renown":"“≈ Pen.” oren: yn hwyrach oherwydd bri"
+"automatic":"awtomatig"
 };

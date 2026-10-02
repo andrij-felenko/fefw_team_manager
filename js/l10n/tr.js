@@ -336,9 +336,7 @@ L10N["tr"]={
 "Save slots":"Kayıt yuvaları",
 "Recruiting on each path (★ soonest)":"Her rotada katılım (★ en erken)",
 "Sooner on another path":"Başka bir rotada daha erken",
-"Renown grows slowly: about 4 by Ch. 5, 8 by Ch. 8, 10 by Ch. 10":"Şöhret yavaş artar: Böl. 5'te yaklaşık 4, Böl. 8'de 8, Böl. 10'da 10",
 "Path":"Rota",
 "Condition":"Koşul",
-"automatic":"otomatik",
-"orange “≈ Ch.” — later because of renown":"turuncu «≈ Böl.»: şöhret yüzünden daha geç"
+"automatic":"otomatik"
 };

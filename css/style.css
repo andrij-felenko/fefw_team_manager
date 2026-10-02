@@ -88,7 +88,6 @@ svg.ic{width:16px;height:16px;flex:none;vertical-align:-3px;fill:currentColor}
 .pc tr.best td:first-child{border-start-start-radius:5px;border-end-start-radius:5px}
 .pc tr.best td:last-child{border-start-end-radius:5px;border-end-end-radius:5px}
 .pc-x{margin-top:5px}
-.pc-n{margin-top:5px;color:var(--muted);font-size:11px}
 /* after the recruit line: how the other paths recruit (green: sooner on another path) */
 .paths{display:inline-flex;vertical-align:-3px;margin-inline-start:6px;color:var(--muted);cursor:help;border-radius:4px}
 .paths svg{width:15px;height:15px;display:block}
